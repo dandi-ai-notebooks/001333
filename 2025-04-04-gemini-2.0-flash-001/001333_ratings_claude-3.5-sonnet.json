@@ -1,0 +1,180 @@
+{
+    "scores": [
+        {
+            "name": "describe-dandiset",
+            "version": 1,
+            "score": 10.0,
+            "reps": [
+                {
+                    "score": 10.0,
+                    "thinking": "The notebook provides a thorough description of the Dandiset including: 1) Title (Parkinson's Electrophysiological Signal Dataset), 2) ID (001333), 3) Clear purpose (studying electrophysiological signals in healthy vs parkinsonian subjects), 4) Detailed content description (Beta ARV and LFP signals from STN, with explanation of each), 5) Key metadata (contributor, date, variables measured, measurement techniques), 6) Reference to related publication, and 7) Data file organization shown through asset listing. The description is well-structured and provides comprehensive understanding of what the dataset contains and how it can be used.",
+                    "repnum": 0
+                },
+                {
+                    "score": 10.0,
+                    "thinking": "The notebook provides a detailed description of the Dandiset including: 1) Title (Parkinson's Electrophysiological Signal Dataset), 2) ID (001333), 3) Clear purpose (electrophysiological signals from healthy and parkinsonian subjects), 4) Detailed content description (Beta ARV and LFP signals, with explanation of each), 5) Key metadata (contributor, date, variables measured, measurement techniques), 6) Reference to related article, and 7) Clear explanation of data organization and signal types. The description is comprehensive, well-structured, and provides readers with a thorough understanding of the dataset's purpose and contents.",
+                    "repnum": 1
+                },
+                {
+                    "score": 10.0,
+                    "thinking": "The notebook provides a very thorough description of the Dandiset. It includes: 1) The title (PESD), 2) The Dandiset ID (001333), 3) Clear purpose (electrophysiological signals from healthy and parkinsonian subjects), 4) Detailed content description (Beta ARV and LFP signals, with explanation of each), 5) Scientific context and methodology, 6) Key metadata including contributor, date, variables measured, and measurement techniques, and 7) Reference to related publication. The organization of the data (subjects, sessions, file types) is also evident from the asset examples shown. The description is both comprehensive and well-structured.",
+                    "repnum": 2
+                }
+            ]
+        },
+        {
+            "name": "load-dandiset",
+            "version": 1,
+            "score": 6.333333333333333,
+            "reps": [
+                {
+                    "score": 6.0,
+                    "thinking": "The notebook shows successful loading of the Dandiset using DandiAPIClient and displays some basic information. It loads the Dandiset ID (001333) and lists assets within it. Key metadata is included in markdown (contributor, date created, variables measured, measurement technique) but this appears to be manually written rather than programmatically extracted. The code demonstrates basic interaction with the Dandiset API by listing assets and their paths but doesn't explore the full metadata programmatically. While functional, it doesn't provide comprehensive metadata exploration or detailed field descriptions.",
+                    "repnum": 0
+                },
+                {
+                    "score": 6.0,
+                    "thinking": "The notebook shows successful loading of the Dandiset using the DANDI API client (client.get_dandiset(\"001333\")) and displays basic metadata in markdown cells including contributor, date created, variables measured, and measurement techniques. It also demonstrates how to list assets in the Dandiset and shows the first 5 asset paths. However, it doesn't systematically explore all available metadata fields or provide detailed descriptions of each field. The metadata shown appears to be manually written rather than programmatically extracted from the Dandiset.",
+                    "repnum": 1
+                },
+                {
+                    "score": 7.0,
+                    "thinking": "The notebook successfully loads the Dandiset using the DANDI API client and demonstrates basic metadata exploration by listing assets and their paths. It includes a dataset description with key information about the signals and measurement techniques. Key metadata fields like contributor, date created, variables measured, and measurement techniques are listed. However, it doesn't provide a comprehensive exploration of all available metadata fields or demonstrate methods to systematically query and display metadata attributes. The interaction with metadata is primarily focused on asset listing rather than deep exploration of metadata structure.",
+                    "repnum": 2
+                }
+            ]
+        },
+        {
+            "name": "load-dandiset-assets",
+            "version": 1,
+            "score": 6.0,
+            "reps": [
+                {
+                    "score": 6.0,
+                    "thinking": "The notebook demonstrates successful asset loading at multiple levels: 1) It connects to the DANDI API and retrieves the Dandiset, 2) Lists the first 5 assets showing their paths, 3) Selects and downloads a specific NWB file, 4) Successfully loads and extracts data from the downloaded asset for visualization. However, it doesn't explore multiple asset types or provide comprehensive metadata exploration. The focus is mainly on demonstrating basic asset loading and usage with a single example.",
+                    "repnum": 0
+                },
+                {
+                    "score": 6.0,
+                    "thinking": "The notebook demonstrates successful asset handling at a basic level. It shows how to: 1) connect to the DANDI API and list assets in the Dandiset, 2) print paths of the first 5 assets, and 3) successfully load and work with a specific asset (sub-healthy-simulated-beta_ses-218_ecephys.nwb) to extract and visualize data. However, it doesn't extensively explore asset metadata or demonstrate handling multiple asset types. The asset loading functionality is focused on a single use case rather than providing a comprehensive overview.",
+                    "repnum": 1
+                },
+                {
+                    "score": 6.0,
+                    "thinking": "The notebook demonstrates successful asset handling through multiple steps: 1) It uses DandiAPIClient to get the Dandiset and list assets, 2) Shows how to list paths of specific assets, 3) Downloads and loads a specific NWB file for visualization. However, it doesn't extensively explore different asset types or show comprehensive metadata access beyond basic path information. The asset handling is functional but focused primarily on a single use case.",
+                    "repnum": 2
+                }
+            ]
+        },
+        {
+            "name": "load-nwb",
+            "version": 1,
+            "score": 6.0,
+            "reps": [
+                {
+                    "score": 6.0,
+                    "thinking": "The notebook successfully demonstrates loading an NWB file using h5py and accesses specific data components (Beta_Band_Voltage data and timestamps from the processing/ecephys/LFP group). It shows how to download the file, open it, and extract meaningful data for visualization. However, it doesn't explore multiple data structures within the NWB file or provide a comprehensive view of the file hierarchy. The focus is limited to accessing one specific dataset for plotting.",
+                    "repnum": 0
+                },
+                {
+                    "score": 6.0,
+                    "thinking": "The notebook successfully loads an NWB file using h5py and demonstrates accessing specific components (Beta_Band_Voltage data and timestamps from the processing/ecephys/LFP group). It shows how to extract and work with these components, including visualization. However, it doesn't explore multiple data structures or provide a comprehensive view of the NWB file hierarchy. The focus is limited to one specific data component rather than showing the broader file structure or exploring different types of stored information.",
+                    "repnum": 1
+                },
+                {
+                    "score": 6.0,
+                    "thinking": "The notebook successfully opens an NWB file using h5py and demonstrates accessing specific components within the processing/ecephys/LFP structure to extract Beta_Band_Voltage data and timestamps. However, it doesn't explore multiple data structures or show a comprehensive view of the NWB file hierarchy. It focuses on one specific data component without showing the broader file structure or explaining other available data types.",
+                    "repnum": 2
+                }
+            ]
+        },
+        {
+            "name": "load-nwb-data",
+            "version": 1,
+            "score": 5.333333333333333,
+            "reps": [
+                {
+                    "score": 6.0,
+                    "thinking": "The notebook demonstrates successful loading of NWB data using h5py, accessing specific data elements (Beta_Band_Voltage data and timestamps) from the processing/ecephys/LFP group. It shows how to handle the data practically by creating subsets and visualizing them. However, it only focuses on one type of data (Beta Band Voltage) and doesn't explore other data types or more complex structures that might be present in the NWB file. The code is functional and includes error handling and proper resource cleanup, but it doesn't demonstrate advanced data access techniques or comprehensive handling of multiple data types.",
+                    "repnum": 0
+                },
+                {
+                    "score": 5.0,
+                    "thinking": "The notebook demonstrates successful loading of data from NWB files using h5py, accessing specific data elements (Beta_Band_Voltage data and timestamps) from the processing/ecephys/LFP group. The code includes proper error handling and cleanup of temporary files. However, it only shows accessing a single data type and doesn't explore the full complexity of NWB file structure or demonstrate loading multiple different types of data that are mentioned in the dataset description (like LFP signals). The code is functional but basic in terms of data access capabilities.",
+                    "repnum": 1
+                },
+                {
+                    "score": 5.0,
+                    "thinking": "The notebook demonstrates basic successful data loading from NWB files using h5py, showing how to access specific data elements (Beta_Band_Voltage data and timestamps) from the processing/ecephys group. The code successfully executes and includes error handling. However, it only shows accessing one type of data (voltage measurements) and doesn't explore other available data types or demonstrate more complex data structures. The code includes proper file handling with temporary files but doesn't show how to navigate through different NWB file structures or handle multiple data types.",
+                    "repnum": 2
+                }
+            ]
+        },
+        {
+            "name": "visualize-nwb-data",
+            "version": 1,
+            "score": 7.0,
+            "reps": [
+                {
+                    "score": 7.0,
+                    "thinking": "The notebook successfully creates a basic visualization of Beta Band Voltage data from an NWB file with proper axis labels, title, and grid. The plot is reasonably formatted with appropriate figure size and shows time series data clearly. However, it only demonstrates one type of visualization for one data type. While the code handles errors appropriately and includes cleanup of temporary files, it doesn't explore more advanced visualization techniques or show multiple data types (though LFP data is available). The plot formatting is basic but functional.",
+                    "repnum": 0
+                },
+                {
+                    "score": 7.0,
+                    "thinking": "The notebook successfully demonstrates basic data visualization from an NWB file, showing Beta Band Voltage over time with proper axis labels, title, and grid. The code includes error handling and cleanup. The plot is clear and properly formatted with appropriate figure size and basic styling. However, it only shows one type of data (Beta Band Voltage) and doesn't explore more advanced visualization techniques or multiple data types, despite the dataset containing both ARV and LFP signals. The markdown cells provide good context about what is being plotted.",
+                    "repnum": 1
+                },
+                {
+                    "score": 7.0,
+                    "thinking": "The notebook successfully creates a basic visualization of beta band voltage data from an NWB file with proper axis labels, title, and grid. The code includes error handling, manages temporary files appropriately, and uses matplotlib effectively. However, it only shows one type of visualization (line plot) of one data type (Beta Band Voltage), despite the dataset containing both ARV and LFP signals. The plot formatting is basic but functional, with clear labels and appropriate figure sizing. The code and visualization process are well-documented with markdown explanations.",
+                    "repnum": 2
+                }
+            ]
+        },
+        {
+            "name": "plot-quality",
+            "version": 1,
+            "score": 7.0,
+            "reps": [
+                {
+                    "score": 7.0,
+                    "thinking": "The notebook contains a single plot of Beta Band Voltage data over time. The plot includes essential elements like axis labels with units, a title, and a grid. The figure size is deliberately set (10,5) for better visualization. However, it lacks some professional elements like font size specifications, legend (though not strictly needed here), color choices explanation, or detailed caption. The plot is clear and readable but could be enhanced with more sophisticated formatting and additional context about the data ranges or significant features.",
+                    "repnum": 0
+                },
+                {
+                    "score": 7.0,
+                    "thinking": "The notebook contains one plot showing Beta Band Voltage data. The plot has several good qualities: proper axis labels with units, a descriptive title, a grid for better readability, and appropriate figure sizing (10x5). However, it lacks some elements that would make it publication-ready: no legend (though not strictly necessary here), no indication of data units in the title, no error bars or confidence intervals, and the formatting could be more refined (e.g., custom tick marks, improved font sizes). The plot is definitely clear and well-formatted for analysis purposes but falls short of publication standards.",
+                    "repnum": 1
+                },
+                {
+                    "score": 7.0,
+                    "thinking": "The notebook contains one plot showing Beta Band Voltage data over time. The plot has proper axis labels including units (Time (s) and Beta Band Voltage (ARV)), a clear title (\"Sample Beta Band Voltage Data\"), and includes a grid for better readability. The figure size is appropriately set (10,5) for good visualization. However, it lacks some elements that would make it publication-ready, such as legend, statistical annotations, or indication of data subset size in the title. The formatting is clean and professional but could be enhanced with additional context and styling.",
+                    "repnum": 2
+                }
+            ]
+        },
+        {
+            "name": "plot-quantity",
+            "version": 1,
+            "score": 2.0,
+            "reps": [
+                {
+                    "score": 2.0,
+                    "thinking": "The notebook contains exactly one plot showing the Beta Band Voltage data over time. The plot is basic but functional, including proper axis labels, title, and grid. While the plot effectively visualizes the temporal dynamics of the beta band voltage, it represents only a single aspect of the available data (first 1000 samples of beta band voltage). No other plots or visualization types are included.",
+                    "repnum": 0
+                },
+                {
+                    "score": 2.0,
+                    "thinking": "The notebook contains a single basic plot showing Beta Band Voltage over time for a subset of data (1000 samples) from one NWB file. While the plot is relevant and includes proper labeling (axis labels, title, and grid), it is the only visualization present in the notebook. The plot shows temporal variations in Beta Band Voltage but doesn't explore other aspects of the dataset or use different visualization types.",
+                    "repnum": 1
+                },
+                {
+                    "score": 2.0,
+                    "thinking": "The notebook contains only one plot showing the Beta Band Voltage data over time. While the plot is well-constructed with proper labels, title, and grid, it only shows a single aspect (time series) of one data type (Beta Band Voltage). The plot is basic but effective in showing the temporal pattern of the voltage data, using a subset of 1000 samples. No other visualization types or data aspects are presented.",
+                    "repnum": 2
+                }
+            ]
+        }
+    ]
+}
