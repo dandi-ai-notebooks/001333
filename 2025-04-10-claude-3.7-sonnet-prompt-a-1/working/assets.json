@@ -1,0 +1,107 @@
+{
+  "results": {
+    "count": 1305,
+    "results": [
+      {
+        "asset_id": "1d94c7ad-dbaf-43ea-89f2-1b2518fab158",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1044_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "e0fa57b2-02a4-4c20-92df-d7eb64b60170",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1046_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "7e145df2-0510-4e6b-8742-f554bf0377db",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1070_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "945ddecb-afa5-4531-ad6a-ed92d5425817",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1251_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "209d6d4d-59fb-4496-a46c-b989bbf35a77",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1259_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "82c72c37-a008-4d78-9912-45dcdb78ffb5",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1289_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "8d3641e4-1f1f-4b20-9b5e-28d8a3023ecb",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1392_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "0a94eef1-9c29-4cc7-b115-51d623a076d1",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1433_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "8009eb30-ca64-4474-8885-0a808dabdd17",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1460_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "e8370b8d-1615-46cc-9d5c-7198f74e4e79",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1533_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "c5f536b1-8500-48dc-904b-584efd33a72a",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-162_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "59af8249-fcac-493a-8b69-91af83b8c360",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1654_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "c3226e97-9615-4dab-9768-92431fc6b3de",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1656_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "8fb1ac97-62a8-47e9-a0a5-63af4ed4cba2",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1745_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "f2f08026-bc36-457a-a6ac-85bb6d83a6aa",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1746_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "39d38326-c4e0-4b8b-8d74-508ddb560e49",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1913_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "b16e119b-d2bc-4a9d-a219-b2ea83997119",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1983_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "7bd5cd24-215e-4518-8f95-8c2a68e48092",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-2081_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "cff96466-d0cc-4f2d-bfa0-9332f58e1703",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-218_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "243ea741-d74e-4e88-8a02-d5a3f190c8f0",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-2357_ecephys.nwb",
+        "size": 225936
+      }
+    ]
+  }
+}
