@@ -1,0 +1,893 @@
+Using model: google/gemini-2.0-flash-001
+Num. messages in conversation: 2
+Submitting completion request...
+Processing response...
+I need to create a Jupytext notebook (`notebook.py`) to explore Dandiset 001333. I will use the provided `tools_cli.py` script to gather information about the Dandiset and its assets. I'll then construct the notebook, convert it to a Jupyter notebook (`notebook.ipynb`), and execute it to ensure it runs without errors. I will iterate on the notebook's content until it runs successfully.
+
+Here's the plan:
+
+1.  **Gather Dandiset metadata:** Use `python tools_cli.py dandiset-info 001333`.
+2.  **Gather Dandiset assets:** Use `python tools_cli.py dandiset-assets 001333`.
+3.  **Choose an NWB file and gather its information:** Select an NWB file from the assets and use `python tools_cli.py nwb-file-info 001333 <NWB_FILE_URL>`.
+4.  **Write the notebook content to `notebook.py`:** Based on the gathered information, create the notebook content, including markdown and code cells as requested. I'll ensure that the notebook follows the specified structure and formatting guidelines.
+5.  **Convert and execute the notebook:** Run `jupytext --to notebook notebook.py && jupyter execute --inplace notebook.ipynb` to convert the notebook to a Jupyter notebook and execute the resulting `notebook.ipynb`.
+6.  **Iterate until successful:** If there are errors, fix them in the Jupytext `notebook.py` file, re-run the above command to convert and execute, repeating these steps until the notebook runs properly.
+7.  **Attempt completion:** Once the notebook runs successfully, use the `attempt_completion` tool to present the results.
+
+I'll start by gathering the Dandiset metadata.
+
+Tool: execute_command
+Params: {'command': 'python tools_cli.py dandiset-info 001333', 'requires_approval': 'false'}
+================================
+Command to be executed
+python tools_cli.py dandiset-info 001333
+================================
+{
+  "results": {
+    "id": "DANDI:001333/draft",
+    "name": "Parkinson's Electrophysiological Signal Dataset (PESD)",
+    "access": [
+      {
+        "status": "dandi:OpenAccess",
+        "schemaKey": "AccessRequirements"
+      }
+    ],
+    "license": [
+      "spdx:CC-BY-4.0"
+    ],
+    "version": "draft",
+    "citation": "Biswas, Ananna (2025) Parkinson's Electrophysiological Signal Dataset (PESD) (Version draft) [Data set]. DANDI Archive. https://dandiarchive.org/dandiset/001333/draft",
+    "identifier": "DANDI:001333",
+    "contributor": [
+      "Biswas, Ananna"
+    ],
+    "dateCreated": "2025-02-08T10:15:43.847350+00:00",
+    "description": "The dataset contains electrophysiological signals from both healthy and parkinsonian subjects. We generated two types of samples from each group. The parkinsonian signals show a relatively high power density at the beta frequency (13 to 30 Hz). Thus, the beta oscillations (13 to 30 Hz) in the subthalamic nucleus (STN) are typically used as the pathological biomarkers for PD symptoms. Each sample includes two types of signals: Beta Average Rectified Voltage (ARV) and Local Field Potential (LFP) from the Subthalamic Nucleus (STN). The ARV signals are in the frequency domain and LFP signals are in the time domain.\n\nBeta ARV Signal: The controller beta values are determined by calculating the Average Rectified Value (ARV) of the beta band. This is achieved by fully rectifying the filtered LFP signal using a fourth-order Chebyshev band-pass filter with an 8 Hz bandwidth, centered around the peak of the LFP power spectrum. Local Field Potential (LFP) - STN: Local Field Potentials are derived from the synchronized activity of neuron populations between the cortex, STN, and thalamus.\n\nMore details can be found in our article named, \u201cPreliminary Results of Neuromorphic Controller Design and a Parkinson's Disease Dataset Building for Closed-Loop Deep Brain Stimulation\u201d, available at https://arxiv.org/abs/2407.17756",
+    "variableMeasured": [
+      "ElectricalSeries",
+      "LFP",
+      "ProcessingModule",
+      "ElectrodeGroup"
+    ],
+    "measurementTechnique": [
+      {
+        "name": "signal filtering technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "multi electrode extracellular electrophysiology recording technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "analytical technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "surgical technique",
+        "schemaKey": "MeasurementTechniqueType"
+      }
+    ]
+  }
+}
+Total prompt tokens: 8249 + 0
+Total completion tokens: 469 + 0
+
+=========================================
+
+execute_command 'python tools_cli.py dandiset-info 001333' (requires approval):
+Command executed successfully
+STDOUT:
+{
+  "results": {
+    "id": "DANDI:001333/draft",
+    "name": "Parkinson's Electrophysiological Signal Dataset (PESD)",
+    "access": [
+      {
+        "status": "dandi:OpenAccess",
+        "schemaKey": "AccessRequirements"
+      }
+    ],
+    "license": [
+      "spdx:CC-BY-4.0"
+    ],
+    "version": "draft",
+    "citation": "Biswas, Ananna (2025) Parkinson's Electrophysiological Signal Dataset (PESD) (Version draft) [Data set]. DANDI Archive. https://dandiarchive.org/dandiset/001333/draft",
+    "identifier": "DANDI:001333",
+    "contributor": [
+      "Biswas, Ananna"
+    ],
+    "dateCreated": "2025-02-08T10:15:43.847350+00:00",
+    "description": "The dataset contains electrophysiological signals from both healthy and parkinsonian subjects. We generated two types of samples from each group. The parkinsonian signals show a relatively high power density at the beta frequency (13 to 30 Hz). Thus, the beta oscillations (13 to 30 Hz) in the subthalamic nucleus (STN) are typically used as the pathological biomarkers for PD symptoms. Each sample includes two types of signals: Beta Average Rectified Voltage (ARV) and Local Field Potential (LFP) from the Subthalamic Nucleus (STN). The ARV signals are in the frequency domain and LFP signals are in the time domain.\n\nBeta ARV Signal: The controller beta values are determined by calculating the Average Rectified Value (ARV) of the beta band. This is achieved by fully rectifying the filtered LFP signal using a fourth-order Chebyshev band-pass filter with an 8 Hz bandwidth, centered around the peak of the LFP power spectrum. Local Field Potential (LFP) - STN: Local Field Potentials are derived from the synchronized activity of neuron populations between the cortex, STN, and thalamus.\n\nMore details can be found in our article named, \u201cPreliminary Results of Neuromorphic Controller Design and a Parkinson's Disease Dataset Building for Closed-Loop Deep Brain Stimulation\u201d, available at https://arxiv.org/abs/2407.17756",
+    "variableMeasured": [
+      "ElectricalSeries",
+      "LFP",
+      "ProcessingModule",
+      "ElectrodeGroup"
+    ],
+    "measurementTechnique": [
+      {
+        "name": "signal filtering technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "multi electrode extracellular electrophysiology recording technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "analytical technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "surgical technique",
+        "schemaKey": "MeasurementTechniqueType"
+      }
+    ]
+  }
+}
+
+=========================================
+
+Using model: google/gemini-2.0-flash-001
+Num. messages in conversation: 4
+Submitting completion request...
+Processing response...
+I have successfully retrieved the Dandiset metadata. Now, I need to gather the Dandiset assets to identify the NWB files within the Dandiset.
+
+Tool: execute_command
+Params: {'command': 'python tools_cli.py dandiset-assets 001333', 'requires_approval': 'false'}
+================================
+Command to be executed
+python tools_cli.py dandiset-assets 001333
+================================
+{
+  "results": {
+    "count": 1304,
+    "results": [
+      {
+        "asset_id": "1d94c7ad-dbaf-43ea-89f2-1b2518fab158",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1044_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "e0fa57b2-02a4-4c20-92df-d7eb64b60170",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1046_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "7e145df2-0510-4e6b-8742-f554bf0377db",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1070_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "945ddecb-afa5-4531-ad6a-ed92d5425817",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1251_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "209d6d4d-59fb-4496-a46c-b989bbf35a77",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1259_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "82c72c37-a008-4d78-9912-45dcdb78ffb5",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1289_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "8d3641e4-1f1f-4b20-9b5e-28d8a3023ecb",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1392_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "0a94eef1-9c29-4cc7-b115-51d623a076d1",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1433_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "8009eb30-ca64-4474-8885-0a808dabdd17",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1460_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "e8370b8d-1615-46cc-9d5c-7198f74e4e79",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1533_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "c5f536b1-8500-48dc-904b-584efd33a72a",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-162_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "59af8249-fcac-493a-8b69-91af83b8c360",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1654_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "c3226e97-9615-4dab-9768-92431fc6b3de",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1656_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "8fb1ac97-62a8-47e9-a0a5-63af4ed4cba2",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1745_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "f2f08026-bc36-457a-a6ac-85bb6d83a6aa",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1746_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "39d38326-c4e0-4b8b-8d74-508ddb560e49",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1913_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "b16e119b-d2bc-4a9d-a219-b2ea83997119",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1983_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "7bd5cd24-215e-4518-8f95-8c2a68e48092",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-2081_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "cff96466-d0cc-4f2d-bfa0-9332f58e1703",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-218_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "243ea741-d74e-4e88-8a02-d5a3f190c8f0",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-2357_ecephys.nwb",
+        "size": 225936
+      }
+    ]
+  }
+}
+Total prompt tokens: 17774 + 0
+Total completion tokens: 559 + 0
+
+=========================================
+
+execute_command 'python tools_cli.py dandiset-assets 001333' (requires approval):
+Command executed successfully
+STDOUT:
+{
+  "results": {
+    "count": 1304,
+    "results": [
+      {
+        "asset_id": "1d94c7ad-dbaf-43ea-89f2-1b2518fab158",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1044_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "e0fa57b2-02a4-4c20-92df-d7eb64b60170",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1046_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "7e145df2-0510-4e6b-8742-f554bf0377db",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1070_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "945ddecb-afa5-4531-ad6a-ed92d5425817",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1251_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "209d6d4d-59fb-4496-a46c-b989bbf35a77",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1259_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "82c72c37-a008-4d78-9912-45dcdb78ffb5",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1289_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "8d3641e4-1f1f-4b20-9b5e-28d8a3023ecb",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1392_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "0a94eef1-9c29-4cc7-b115-51d623a076d1",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1433_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "8009eb30-ca64-4474-8885-0a808dabdd17",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1460_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "e8370b8d-1615-46cc-9d5c-7198f74e4e79",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1533_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "c5f536b1-8500-48dc-904b-584efd33a72a",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-162_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "59af8249-fcac-493a-8b69-91af83b8c360",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1654_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "c3226e97-9615-4dab-9768-92431fc6b3de",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1656_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "8fb1ac97-62a8-47e9-a0a5-63af4ed4cba2",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1745_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "f2f08026-bc36-457a-a6ac-85bb6d83a6aa",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1746_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "39d38326-c4e0-4b8b-8d74-508ddb560e49",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1913_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "b16e119b-d2bc-4a9d-a219-b2ea83997119",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1983_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "7bd5cd24-215e-4518-8f95-8c2a68e48092",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-2081_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "cff96466-d0cc-4f2d-bfa0-9332f58e1703",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-218_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "243ea741-d74e-4e88-8a02-d5a3f190c8f0",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-2357_ecephys.nwb",
+        "size": 225936
+      }
+    ]
+  }
+}
+
+=========================================
+
+Using model: google/gemini-2.0-flash-001
+Num. messages in conversation: 6
+Submitting completion request...
+Processing response...
+I have retrieved the Dandiset assets. There are 1304 assets in this Dandiset. Many of these assets are NWB files. I will choose the first NWB file from this list: `sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1044_ecephys.nwb` with asset ID `1d94c7ad-dbaf-43ea-89f2-1b2518fab158`. Thus, the NWB file URL is `https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/`
+
+Now, I need to gather the information about this NWB file to determine how to load the data.
+
+Tool: execute_command
+Params: {'command': 'python tools_cli.py nwb-file-info 001333 https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/', 'requires_approval': 'false'}
+================================
+Command to be executed
+python tools_cli.py nwb-file-info 001333 https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/
+================================
+/opt/conda/lib/python3.11/site-packages/hdmf/spec/namespace.py:535: UserWarning: Ignoring cached namespace 'core' version 2.8.0 because version 2.7.0 is already loaded.
+  warn("Ignoring cached namespace '%s' version %s because version %s is already loaded."
+/home/jovyan/dandi-ai-notebooks-3/packages/get-nwbfile-info/src/get_nwbfile_info/core.py:319: UserWarning: Warning: Duplicate entries found in the results.
+  warnings.warn("Warning: Duplicate entries found in the results.")
+# This script shows how to load the NWB file at https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/ in Python using PyNWB
+
+import pynwb
+import h5py
+import remfile
+
+# Load
+url = "https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/"
+remote_file = remfile.File(url)
+h5_file = h5py.File(remote_file)
+io = pynwb.NWBHDF5IO(file=h5_file)
+nwb = io.read()
+
+nwb # (NWBFile)
+nwb.session_description # (str) Parkinson's Electrophysiological Signal Dataset (PESD) Generated from Simulation
+nwb.identifier # (str) 84828db4-a3a3-4b2e-abff-6db2b404dd68
+nwb.session_start_time # (datetime) 2025-04-03T12:30:26.094607-04:00
+nwb.timestamps_reference_time # (datetime) 2025-04-03T12:30:26.094607-04:00
+nwb.file_create_date # (list) [datetime.datetime(2025, 4, 3, 12, 30, 26, 128020, tzinfo=tzoffset(None, -14400))]
+nwb.experimenter # (tuple) ['Ananna Biswas']
+nwb.related_publications # (tuple) ['https://arxiv.org/abs/2407.17756', 'DOI: 10.3389/fnins.2020.00166']
+nwb.keywords # (StrDataset) shape (4,); dtype object
+# nwb.keywords[:] # Access all data
+# nwb.keywords[0:10] # Access first 10 elements
+# First few values of nwb.keywords: ['ecephys' 'LFP' "Parkinson's Disease" 'Beta Band']
+nwb.processing # (LabelledDict)
+nwb.processing["ecephys"] # (ProcessingModule)
+nwb.processing["ecephys"].description # (str) Processed electrophysiology data
+nwb.processing["ecephys"].data_interfaces # (LabelledDict)
+nwb.processing["ecephys"].data_interfaces["LFP"] # (LFP)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series # (LabelledDict)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"] # (ElectricalSeries)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].resolution # (float64) -1.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].comments # (str) no comments
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].description # (str) no description
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].conversion # (float64) 1.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].offset # (float64) 0.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].unit # (str) volts
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data # (Dataset) shape (1400,); dtype float64
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data[:] # Access all data
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data[0:10] # Access first 10 elements
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps # (Dataset) shape (1400,); dtype float64
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps[:] # Access all data
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps[0:10] # Access first 10 elements
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps_unit # (str) seconds
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].interval # (int) 1
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes # (DynamicTableRegion)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.description # (str) all electrodes
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table # (DynamicTable)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.description # (str) metadata about extracellular electrodes
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.columns # (tuple)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.id # (ElementIdentifiers)
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+# Number of rows: 12
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.label # (VectorData) label of electrode
+nwb.electrode_groups # (LabelledDict)
+nwb.electrode_groups["shank0"] # (ElectrodeGroup)
+nwb.electrode_groups["shank0"].description # (str) Simulated electrode group for shank 0
+nwb.electrode_groups["shank0"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank0"].device # (Device)
+nwb.electrode_groups["shank0"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank0"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank1"] # (ElectrodeGroup)
+nwb.electrode_groups["shank1"].description # (str) Simulated electrode group for shank 1
+nwb.electrode_groups["shank1"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank1"].device # (Device)
+nwb.electrode_groups["shank1"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank1"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank2"] # (ElectrodeGroup)
+nwb.electrode_groups["shank2"].description # (str) Simulated electrode group for shank 2
+nwb.electrode_groups["shank2"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank2"].device # (Device)
+nwb.electrode_groups["shank2"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank2"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank3"] # (ElectrodeGroup)
+nwb.electrode_groups["shank3"].description # (str) Simulated electrode group for shank 3
+nwb.electrode_groups["shank3"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank3"].device # (Device)
+nwb.electrode_groups["shank3"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank3"].device.manufacturer # (str) N/A
+nwb.devices # (LabelledDict)
+nwb.devices["NEURON_Simulator"] # (Device)
+nwb.devices["NEURON_Simulator"].description # (str) Virtual probe used in NEURON simulation
+nwb.devices["NEURON_Simulator"].manufacturer # (str) N/A
+nwb.experiment_description # (str) The PESD dataset is generated from a cortico-basal-ganglia network for a Parkinsonian computation...
+nwb.lab # (str) BrainX Lab
+nwb.institution # (str) Michigan Technological University
+nwb.electrodes # (DynamicTable)
+nwb.electrodes.description # (str) metadata about extracellular electrodes
+nwb.electrodes.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.electrodes.columns # (tuple)
+nwb.electrodes.id # (ElementIdentifiers)
+# nwb.electrodes.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# nwb.electrodes.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+# Number of rows: 12
+nwb.electrodes.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.electrodes.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.electrodes.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.electrodes.label # (VectorData) label of electrode
+nwb.subject # (Subject)
+nwb.subject.age # (str) P0D
+nwb.subject.age__reference # (str) birth
+nwb.subject.description # (str) This is a simulated dataset generated from a computational model.
+nwb.subject.sex # (str) U
+nwb.subject.species # (str) Homo sapiens
+nwb.subject.subject_id # (str) healthy-simulated-beta
+Total prompt tokens: 29432 + 0
+Total completion tokens: 853 + 0
+
+=========================================
+
+execute_command 'python tools_cli.py nwb-file-info 001333 https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/' (requires approval):
+Command executed successfully
+STDOUT:
+# This script shows how to load the NWB file at https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/ in Python using PyNWB
+
+import pynwb
+import h5py
+import remfile
+
+# Load
+url = "https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/"
+remote_file = remfile.File(url)
+h5_file = h5py.File(remote_file)
+io = pynwb.NWBHDF5IO(file=h5_file)
+nwb = io.read()
+
+nwb # (NWBFile)
+nwb.session_description # (str) Parkinson's Electrophysiological Signal Dataset (PESD) Generated from Simulation
+nwb.identifier # (str) 84828db4-a3a3-4b2e-abff-6db2b404dd68
+nwb.session_start_time # (datetime) 2025-04-03T12:30:26.094607-04:00
+nwb.timestamps_reference_time # (datetime) 2025-04-03T12:30:26.094607-04:00
+nwb.file_create_date # (list) [datetime.datetime(2025, 4, 3, 12, 30, 26, 128020, tzinfo=tzoffset(None, -14400))]
+nwb.experimenter # (tuple) ['Ananna Biswas']
+nwb.related_publications # (tuple) ['https://arxiv.org/abs/2407.17756', 'DOI: 10.3389/fnins.2020.00166']
+nwb.keywords # (StrDataset) shape (4,); dtype object
+# nwb.keywords[:] # Access all data
+# nwb.keywords[0:10] # Access first 10 elements
+# First few values of nwb.keywords: ['ecephys' 'LFP' "Parkinson's Disease" 'Beta Band']
+nwb.processing # (LabelledDict)
+nwb.processing["ecephys"] # (ProcessingModule)
+nwb.processing["ecephys"].description # (str) Processed electrophysiology data
+nwb.processing["ecephys"].data_interfaces # (LabelledDict)
+nwb.processing["ecephys"].data_interfaces["LFP"] # (LFP)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series # (LabelledDict)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"] # (ElectricalSeries)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].resolution # (float64) -1.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].comments # (str) no comments
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].description # (str) no description
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].conversion # (float64) 1.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].offset # (float64) 0.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].unit # (str) volts
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data # (Dataset) shape (1400,); dtype float64
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data[:] # Access all data
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data[0:10] # Access first 10 elements
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps # (Dataset) shape (1400,); dtype float64
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps[:] # Access all data
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps[0:10] # Access first 10 elements
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps_unit # (str) seconds
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].interval # (int) 1
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes # (DynamicTableRegion)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.description # (str) all electrodes
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table # (DynamicTable)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.description # (str) metadata about extracellular electrodes
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.columns # (tuple)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.id # (ElementIdentifiers)
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+# Number of rows: 12
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.label # (VectorData) label of electrode
+nwb.electrode_groups # (LabelledDict)
+nwb.electrode_groups["shank0"] # (ElectrodeGroup)
+nwb.electrode_groups["shank0"].description # (str) Simulated electrode group for shank 0
+nwb.electrode_groups["shank0"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank0"].device # (Device)
+nwb.electrode_groups["shank0"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank0"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank1"] # (ElectrodeGroup)
+nwb.electrode_groups["shank1"].description # (str) Simulated electrode group for shank 1
+nwb.electrode_groups["shank1"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank1"].device # (Device)
+nwb.electrode_groups["shank1"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank1"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank2"] # (ElectrodeGroup)
+nwb.electrode_groups["shank2"].description # (str) Simulated electrode group for shank 2
+nwb.electrode_groups["shank2"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank2"].device # (Device)
+nwb.electrode_groups["shank2"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank2"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank3"] # (ElectrodeGroup)
+nwb.electrode_groups["shank3"].description # (str) Simulated electrode group for shank 3
+nwb.electrode_groups["shank3"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank3"].device # (Device)
+nwb.electrode_groups["shank3"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank3"].device.manufacturer # (str) N/A
+nwb.devices # (LabelledDict)
+nwb.devices["NEURON_Simulator"] # (Device)
+nwb.devices["NEURON_Simulator"].description # (str) Virtual probe used in NEURON simulation
+nwb.devices["NEURON_Simulator"].manufacturer # (str) N/A
+nwb.experiment_description # (str) The PESD dataset is generated from a cortico-basal-ganglia network for a Parkinsonian computation...
+nwb.lab # (str) BrainX Lab
+nwb.institution # (str) Michigan Technological University
+nwb.electrodes # (DynamicTable)
+nwb.electrodes.description # (str) metadata about extracellular electrodes
+nwb.electrodes.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.electrodes.columns # (tuple)
+nwb.electrodes.id # (ElementIdentifiers)
+# nwb.electrodes.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# nwb.electrodes.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+# Number of rows: 12
+nwb.electrodes.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.electrodes.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.electrodes.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.electrodes.label # (VectorData) label of electrode
+nwb.subject # (Subject)
+nwb.subject.age # (str) P0D
+nwb.subject.age__reference # (str) birth
+nwb.subject.description # (str) This is a simulated dataset generated from a computational model.
+nwb.subject.sex # (str) U
+nwb.subject.species # (str) Homo sapiens
+nwb.subject.subject_id # (str) healthy-simulated-beta
+
+STDERR:
+/opt/conda/lib/python3.11/site-packages/hdmf/spec/namespace.py:535: UserWarning: Ignoring cached namespace 'core' version 2.8.0 because version 2.7.0 is already loaded.
+  warn("Ignoring cached namespace '%s' version %s because version %s is already loaded."
+/home/jovyan/dandi-ai-notebooks-3/packages/get-nwbfile-info/src/get_nwbfile_info/core.py:319: UserWarning: Warning: Duplicate entries found in the results.
+  warnings.warn("Warning: Duplicate entries found in the results.")
+
+=========================================
+
+Using model: google/gemini-2.0-flash-001
+Num. messages in conversation: 8
+Submitting completion request...
+Processing response...
+I have successfully retrieved the information about the NWB file. I now have all the information I need to create the notebook.
+
+I'm going to write the notebook content to `notebook.py`. I'll use the information I gathered from the `dandiset-info`, `dandiset-assets`, and `nwb-file-info` commands. It is crucial that I load data exactly as presented from the nwb-file-info tool's output.
+
+Tool: write_to_file
+Params: {'path': 'notebook.py', 'content': '# %% [markdown]\n# # Exploring Dandiset 001333: Parkinson\'s Electrophysiological Signal Dataset (PESD)\n\n# %% [markdown]\n# **Disclaimer:** This notebook was AI-generated using dandi-notebook-gen and has not been fully verified. Use caution when interpreting the code or results.\n\n# %% [markdown]\n# ## Overview of the Dandiset\n#\n# This notebook explores Dandiset 001333, the "Parkinson\'s Electrophysiological Signal Dataset (PESD)". This dataset contains electrophysiological signals from both healthy and parkinsonian subjects, focusing on beta oscillations in the subthalamic nucleus (STN) as biomarkers for Parkinson\'s Disease (PD). The dataset includes Beta Average Rectified Voltage (ARV) signals (frequency domain) and Local Field Potential (LFP) signals from the STN (time domain). More details about the data can be found in the associated publication: "Preliminary Results of Neuromorphic Controller Design and a Parkinson\'s Disease Dataset Building for Closed-Loop Deep Brain Stimulation" (https://arxiv.org/abs/2407.17756). The metadata can be accessed at https://dandiarchive.org/dandiset/001333\n#\n# You can explore the dandiset using the neurosift interface: https://neurosift.app/dandiset/001333\n\n# %% [markdown]\n# ## Scope of this Notebook\n#\n# This notebook demonstrates how to:\n#\n# 1.  Load the Dandiset using the DANDI API.\n# 2.  Access and explore the metadata of an NWB file within the Dandiset.\n# 3.  Load and visualize electrophysiological data (LFP signals) from the NWB file.\n\n# %% [markdown]\n# ## Required Packages\n#\n# The following packages are required to run this notebook. Ensure that they are installed in your environment.\n#\n# *   `pynwb`\n# *   `h5py`\n# *   `remfile`\n# *   `matplotlib`\n\n# %% [markdown]\n# ## Loading the Dandiset using the DANDI API\n\n# %%\nfrom dandi.dandiapi import DandiAPIClient\n\n# Connect to DANDI archive\nclient = DandiAPIClient()\ndandiset = client.get_dandiset("001333")\nassets = list(dandiset.get_assets())\n\nprint(f"Found {len(assets)} assets in the dataset")\nprint("\\nFirst 5 assets:")\nfor asset in assets[:5]:\n    print(f"- {asset.path}")\n\n# %% [markdown]\n# ## Loading and Exploring an NWB File\n#\n# This section demonstrates how to load an NWB file from the Dandiset and explore its metadata. We will load the file `sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1044_ecephys.nwb`.\n#\n\n# %%\n# This script shows how to load the NWB file at https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/ in Python using PyNWB\n\nimport pynwb\nimport h5py\nimport remfile\n\n# Load\nurl = "https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/"\nremote_file = remfile.File(url)\nh5_file = h5py.File(remote_file)\nio = pynwb.NWBHDF5IO(file=h5_file)\nnwb = io.read()\n\nnwb.session_description # (str) Parkinson\'s Electrophysiological Signal Dataset (PESD) Generated from Simulation\nnwb.identifier # (str) 84828db4-a3a3-4b2e-abff-6db2b404dd68\nnwb.session_start_time # (datetime) 2025-04-03T12:30:26.094607-04:00\nnwb.timestamps_reference_time # (datetime) 2025-04-03T12:30:26.094607-04:00\nnwb.file_create_date # (list) [datetime.datetime(2025, 4, 3, 12, 30, 26, 128020, tzinfo=tzoffset(None, -14400))]\nnwb.experimenter # (tuple) [\'Ananna Biswas\']\nnwb.related_publications # (tuple) [\'https://arxiv.org/abs/2407.17756\', \'DOI: 10.3389/fnins.2020.00166\']\nnwb.keywords # (StrDataset) shape (4,); dtype object\n# nwb.keywords[:] # Access all data\n# nwb.keywords[0:10] # Access first 10 elements\n# First few values of nwb.keywords: [\'ecephys\' \'LFP\' "Parkinson\'s Disease" \'Beta Band\']\nnwb.processing # (LabelledDict)\nnwb.processing["ecephys"] # (ProcessingModule)\nnwb.processing["ecephys"].description # (str) Processed electrophysiology data\nnwb.processing["ecephys"].data_interfaces # (LabelledDict)\nnwb.processing["ecephys"].data_interfaces["LFP"] # (LFP)\nnwb.processing["ecephys"].data_interfaces["LFP"].electrical_series # (LabelledDict)\nnwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"] # (ElectricalSeries)\nnwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].resolution # (float64) -1.0\nnwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].comments # (str) no comments\nnwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].description # (str) no description\nnwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].conversion # (float64) 1.0\nnwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].offset # (float64) 0.0\nnwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].unit # (str) volts\nnwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes # (DynamicTableRegion)\nnwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.description # (str) all electrodes\nnwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table # (DynamicTable)\nnwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.description # (str) metadata about extracellular electrodes\nnwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.colnames # (tuple) [\'location\', \'group\', \'group_name\', \'label\']\nnwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.id # (ElementIdentifiers)\nnwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.location # (VectorData) the location of channel within the subject e.g. brain region\nnwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of\nnwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of\nnwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.label # (VectorData) label of electrode\nnwb.electrode_groups # (LabelledDict)\nnwb.electrode_groups["shank0"] # (ElectrodeGroup)\nnwb.electrode_groups["shank0"].description # (str) Simulated electrode group for shank 0\nnwb.electrode_groups["shank0"].location # (str) Simulated Cortico-basal-ganglia network of brain\nnwb.electrode_groups["shank0"].device # (Device)\nnwb.electrode_groups["shank0"].device.description # (str) Virtual probe used in NEURON simulation\nnwb.electrode_groups["shank0"].device.manufacturer # (str) N/A\nnwb.electrode_groups["shank1"] # (ElectrodeGroup)\nnwb.electrode_groups["shank1"].description # (str) Simulated electrode group for shank 1\nnwb.electrode_groups["shank1"].location # (str) Simulated Cortico-basal-ganglia network of brain\nnwb.electrode_groups["shank1"].device # (Device)\nnwb.electrode_groups["shank1"].device.description # (str) Virtual probe used in NEURON simulation\nnwb.electrode_groups["shank1"].device.manufacturer # (str) N/A\nnwb.electrode_groups["shank2"] # (ElectrodeGroup)\nnwb.electrode_groups["shank2"].description # (str) Simulated electrode group for shank 2\nnwb.electrode_groups["shank2"].location # (str) Simulated Cortico-basal-ganglia network of brain\nnwb.electrode_groups["shank2"].device # (Device)\nnwb.electrode_groups["shank2"].device.description # (str) Virtual probe used in NEURON simulation\nnwb.electrode_groups["shank2"].device.manufacturer # (str) N/A\nnwb.electrode_groups["shank3"] # (ElectrodeGroup)\nnwb.electrode_groups["shank3"].description # (str) Simulated electrode group for shank 3\nnwb.electrode_groups["shank3"].location # (str) Simulated Cortico-basal-ganglia network of brain\nnwb.electrode_groups["shank3"].device # (Device)\nnwb.electrode_groups["shank3"].device.description # (str) Virtual probe used in NEURON simulation\nnwb.electrode_groups["shank3"].device.manufacturer # (str) N/A\nnwb.devices # (LabelledDict)\nnwb.devices["NEURON_Simulator"] # (Device)\nnwb.devices["NEURON_Simulator"].description # (str) Virtual probe used in NEURON simulation\nnwb.devices["NEURON_Simulator"].manufacturer # (str) N/A\nnwb.experiment_description # (str) The PESD dataset is generated from a cortico-basal-ganglia network for a Parkinsonian computation...\nnwb.lab # (str) BrainX Lab\nnwb.institution # (str) Michigan Technological University\nnwb.electrodes # (DynamicTable)\nnwb.electrodes.description # (str) metadata about extracellular electrodes\nnwb.electrodes.colnames # (tuple) [\'location\', \'group\', \'group_name\', \'label\']\nnwb.electrodes.columns # (tuple)\nnwb.electrodes.id # (ElementIdentifiers)\nnwb.electrodes.location # (VectorData) the location of channel within the subject e.g. brain region\nnwb.electrodes.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of\nnwb.electrodes.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of\nnwb.electrodes.label # (VectorData) label of electrode\nnwb.subject # (Subject)\nnwb.subject.age # (str) P0D\nnwb.subject.age__reference # (str) birth\nnwb.subject.description # (str) This is a simulated dataset generated from a computational model.\nnwb.subject.sex # (str) U\nnwb.subject.species # (str) Homo sapiens\nnwb.subject.subject_id # (str) healthy-simulated-beta\n\n# %% [markdown]\n# ## Loading and Visualizing Electrophysiological Data\n#\n# This section demonstrates how to load and visualize electrophysiological data (LFP signals) from the NWB file. We will load the "Beta_Band_Voltage" ElectricalSeries from the LFP data interface.\n\n# %%\nimport pynwb\nimport h5py\nimport remfile\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nsns.set_theme()\n\n# Load\nurl = "https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/"\nremote_file = remfile.File(url)\nh5_file = h5py.File(remote_file)\nio = pynwb.NWBHDF5IO(file=h5_file)\nnwb = io.read()\n\ndata = nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data\ntimestamps = nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps\n\n# Access all data\ndata[:]\ntimestamps[:]\n\n# Access first 10 elements\ndata[0:10]\ntimestamps[0:10]\n\n# Plot the first 1000 data points\nplt.figure(figsize=(10, 5))\nplt.plot(timestamps[0:1000], data[0:1000])\nplt.xlabel("Time (s)")\nplt.ylabel("Beta Band Voltage (V)")\nplt.title("LFP Signal (Beta Band Voltage)")\nplt.show()\n\n# %% [markdown]\n# ## Summary and Future Directions\n#\n# This notebook provided a basic introduction to exploring the Parkinson\'s Electrophysiological Signal Dataset (PESD) using the DANDI API and PyNWB. We demonstrated how to load the Dandiset, access metadata, and visualize electrophysiological data from an NWB file.\n#\n# Further analysis could involve:\n#\n# *   Exploring other NWB files in the Dandiset.\n# *   Analyzing the frequency content of the LFP signals.\n# *   Comparing data from healthy and parkinsonian subjects.\n# *   Developing more advanced visualizations to highlight key features of the data.'}
+================================
+Content to be written to notebook.py:
+# %% [markdown]
+# # Exploring Dandiset 001333: Parkinson's Electrophysiological Signal Dataset (PESD)
+
+# %% [markdown]
+# **Disclaimer:** This notebook was AI-generated using dandi-notebook-gen and has not been fully verified. Use caution when interpreting the code or results.
+
+# %% [markdown]
+# ## Overview of the Dandiset
+#
+# This notebook explores Dandiset 001333, the "Parkinson's Electrophysiological Signal Dataset (PESD)". This dataset contains electrophysiological signals from both healthy and parkinsonian subjects, focusing on beta oscillations in the subthalamic nucleus (STN) as biomarkers for Parkinson's Disease (PD). The dataset includes Beta Average Rectified Voltage (ARV) signals (frequency domain) and Local Field Potential (LFP) signals from the STN (time domain). More details about the data can be found in the associated publication: "Preliminary Results of Neuromorphic Controller Design and a Parkinson's Disease Dataset Building for Closed-Loop Deep Brain Stimulation" (https://arxiv.org/abs/2407.17756). The metadata can be accessed at https://dandiarchive.org/dandiset/001333
+#
+# You can explore the dandiset using the neurosift interface: https://neurosift.app/dandiset/001333
+
+# %% [markdown]
+# ## Scope of this Notebook
+#
+# This notebook demonstrates how to:
+#
+# 1.  Load the Dandiset using the DANDI API.
+# 2.  Access and explore the metadata of an NWB file within the Dandiset.
+# 3.  Load and visualize electrophysiological data (LFP signals) from the NWB file.
+
+# %% [markdown]
+# ## Required Packages
+#
+# The following packages are required to run this notebook. Ensure that they are installed in your environment.
+#
+# *   `pynwb`
+# *   `h5py`
+# *   `remfile`
+# *   `matplotlib`
+
+# %% [markdown]
+# ## Loading the Dandiset using the DANDI API
+
+# %%
+from dandi.dandiapi import DandiAPIClient
+
+# Connect to DANDI archive
+client = DandiAPIClient()
+dandiset = client.get_dandiset("001333")
+assets = list(dandiset.get_assets())
+
+print(f"Found {len(assets)} assets in the dataset")
+print("\nFirst 5 assets:")
+for asset in assets[:5]:
+    print(f"- {asset.path}")
+
+# %% [markdown]
+# ## Loading and Exploring an NWB File
+#
+# This section demonstrates how to load an NWB file from the Dandiset and explore its metadata. We will load the file `sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1044_ecephys.nwb`.
+#
+
+# %%
+# This script shows how to load the NWB file at https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/ in Python using PyNWB
+
+import pynwb
+import h5py
+import remfile
+
+# Load
+url = "https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/"
+remote_file = remfile.File(url)
+h5_file = h5py.File(remote_file)
+io = pynwb.NWBHDF5IO(file=h5_file)
+nwb = io.read()
+
+nwb.session_description # (str) Parkinson's Electrophysiological Signal Dataset (PESD) Generated from Simulation
+nwb.identifier # (str) 84828db4-a3a3-4b2e-abff-6db2b404dd68
+nwb.session_start_time # (datetime) 2025-04-03T12:30:26.094607-04:00
+nwb.timestamps_reference_time # (datetime) 2025-04-03T12:30:26.094607-04:00
+nwb.file_create_date # (list) [datetime.datetime(2025, 4, 3, 12, 30, 26, 128020, tzinfo=tzoffset(None, -14400))]
+nwb.experimenter # (tuple) ['Ananna Biswas']
+nwb.related_publications # (tuple) ['https://arxiv.org/abs/2407.17756', 'DOI: 10.3389/fnins.2020.00166']
+nwb.keywords # (StrDataset) shape (4,); dtype object
+# nwb.keywords[:] # Access all data
+# nwb.keywords[0:10] # Access first 10 elements
+# First few values of nwb.keywords: ['ecephys' 'LFP' "Parkinson's Disease" 'Beta Band']
+nwb.processing # (LabelledDict)
+nwb.processing["ecephys"] # (ProcessingModule)
+nwb.processing["ecephys"].description # (str) Processed electrophysiology data
+nwb.processing["ecephys"].data_interfaces # (LabelledDict)
+nwb.processing["ecephys"].data_interfaces["LFP"] # (LFP)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series # (LabelledDict)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"] # (ElectricalSeries)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].resolution # (float64) -1.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].comments # (str) no comments
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].description # (str) no description
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].conversion # (float64) 1.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].offset # (float64) 0.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].unit # (str) volts
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes # (DynamicTableRegion)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.description # (str) all electrodes
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table # (DynamicTable)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.description # (str) metadata about extracellular electrodes
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.id # (ElementIdentifiers)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.label # (VectorData) label of electrode
+nwb.electrode_groups # (LabelledDict)
+nwb.electrode_groups["shank0"] # (ElectrodeGroup)
+nwb.electrode_groups["shank0"].description # (str) Simulated electrode group for shank 0
+nwb.electrode_groups["shank0"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank0"].device # (Device)
+nwb.electrode_groups["shank0"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank0"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank1"] # (ElectrodeGroup)
+nwb.electrode_groups["shank1"].description # (str) Simulated electrode group for shank 1
+nwb.electrode_groups["shank1"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank1"].device # (Device)
+nwb.electrode_groups["shank1"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank1"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank2"] # (ElectrodeGroup)
+nwb.electrode_groups["shank2"].description # (str) Simulated electrode group for shank 2
+nwb.electrode_groups["shank2"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank2"].device # (Device)
+nwb.electrode_groups["shank2"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank2"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank3"] # (ElectrodeGroup)
+nwb.electrode_groups["shank3"].description # (str) Simulated electrode group for shank 3
+nwb.electrode_groups["shank3"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank3"].device # (Device)
+nwb.electrode_groups["shank3"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank3"].device.manufacturer # (str) N/A
+nwb.devices # (LabelledDict)
+nwb.devices["NEURON_Simulator"] # (Device)
+nwb.devices["NEURON_Simulator"].description # (str) Virtual probe used in NEURON simulation
+nwb.devices["NEURON_Simulator"].manufacturer # (str) N/A
+nwb.experiment_description # (str) The PESD dataset is generated from a cortico-basal-ganglia network for a Parkinsonian computation...
+nwb.lab # (str) BrainX Lab
+nwb.institution # (str) Michigan Technological University
+nwb.electrodes # (DynamicTable)
+nwb.electrodes.description # (str) metadata about extracellular electrodes
+nwb.electrodes.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.electrodes.columns # (tuple)
+nwb.electrodes.id # (ElementIdentifiers)
+nwb.electrodes.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.electrodes.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.electrodes.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.electrodes.label # (VectorData) label of electrode
+nwb.subject # (Subject)
+nwb.subject.age # (str) P0D
+nwb.subject.age__reference # (str) birth
+nwb.subject.description # (str) This is a simulated dataset generated from a computational model.
+nwb.subject.sex # (str) U
+nwb.subject.species # (str) Homo sapiens
+nwb.subject.subject_id # (str) healthy-simulated-beta
+
+# %% [markdown]
+# ## Loading and Visualizing Electrophysiological Data
+#
+# This section demonstrates how to load and visualize electrophysiological data (LFP signals) from the NWB file. We will load the "Beta_Band_Voltage" ElectricalSeries from the LFP data interface.
+
+# %%
+import pynwb
+import h5py
+import remfile
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set_theme()
+
+# Load
+url = "https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/"
+remote_file = remfile.File(url)
+h5_file = h5py.File(remote_file)
+io = pynwb.NWBHDF5IO(file=h5_file)
+nwb = io.read()
+
+data = nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data
+timestamps = nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps
+
+# Access all data
+data[:]
+timestamps[:]
+
+# Access first 10 elements
+data[0:10]
+timestamps[0:10]
+
+# Plot the first 1000 data points
+plt.figure(figsize=(10, 5))
+plt.plot(timestamps[0:1000], data[0:1000])
+plt.xlabel("Time (s)")
+plt.ylabel("Beta Band Voltage (V)")
+plt.title("LFP Signal (Beta Band Voltage)")
+plt.show()
+
+# %% [markdown]
+# ## Summary and Future Directions
+#
+# This notebook provided a basic introduction to exploring the Parkinson's Electrophysiological Signal Dataset (PESD) using the DANDI API and PyNWB. We demonstrated how to load the Dandiset, access metadata, and visualize electrophysiological data from an NWB file.
+#
+# Further analysis could involve:
+#
+# *   Exploring other NWB files in the Dandiset.
+# *   Analyzing the frequency content of the LFP signals.
+# *   Comparing data from healthy and parkinsonian subjects.
+# *   Developing more advanced visualizations to highlight key features of the data.
+================================
+Total prompt tokens: 44467 + 0
+Total completion tokens: 4476 + 0
+
+=========================================
+
+write_to_file for 'notebook.py':
+Successfully wrote 11223 characters to notebook.py
+=========================================
+
+Using model: google/gemini-2.0-flash-001
+Num. messages in conversation: 10
+Submitting completion request...
+Processing response...
+I have written the content of the notebook to `notebook.py`. Now I need to convert it to a Jupyter notebook and execute it to make sure it runs without errors.
+
+Tool: execute_command
+Params: {'command': 'jupytext --to notebook notebook.py && jupyter execute --inplace notebook.ipynb --timeout=600', 'requires_approval': 'false'}
+================================
+Command to be executed
+jupytext --to notebook notebook.py && jupyter execute --inplace notebook.ipynb --timeout=600
+================================
+[jupytext] Reading notebook.py in format py
+[jupytext] Writing notebook.ipynb
+[NbClientApp] Executing notebook.ipynb
+[NbClientApp] Executing notebook with kernel: 
+[NbClientApp] Save executed results to notebook.ipynb
+Total prompt tokens: 63197 + 0
+Total completion tokens: 4575 + 0
+
+=========================================
+
+execute_command 'jupytext --to notebook notebook.py && jupyter execute --inplace notebook.ipynb --timeout=600' (requires approval):
+Command executed successfully
+STDOUT:
+[jupytext] Reading notebook.py in format py
+[jupytext] Writing notebook.ipynb
+
+STDERR:
+[NbClientApp] Executing notebook.ipynb
+[NbClientApp] Executing notebook with kernel: 
+[NbClientApp] Save executed results to notebook.ipynb
+
+=========================================
+
+Using model: google/gemini-2.0-flash-001
+Num. messages in conversation: 12
+Submitting completion request...
+Processing response...
+The notebook has been successfully converted to a Jupyter notebook and executed without errors. Now I can present the result to the user.
+
+Tool: attempt_completion
+Params: {'result': 'I have created a Jupytext notebook called `notebook.py` that helps researchers explore and analyze Dandiset 001333. The notebook was converted to `notebook.ipynb` and executed successfully, producing output cells. The notebook demonstrates how to load the Dandiset using the DANDI API, access and explore the metadata of an NWB file within the Dandiset, and load and visualize electrophysiological data (LFP signals) from the NWB file.', 'command': 'open notebook.ipynb'}
+I have created a Jupytext notebook called `notebook.py` that helps researchers explore and analyze Dandiset 001333. The notebook was converted to `notebook.ipynb` and executed successfully, producing output cells. The notebook demonstrates how to load the Dandiset using the DANDI API, access and explore the metadata of an NWB file within the Dandiset, and load and visualize electrophysiological data (LFP signals) from the NWB file.
+Total prompt tokens: 82187 + 0
+Total completion tokens: 4742 + 0
+

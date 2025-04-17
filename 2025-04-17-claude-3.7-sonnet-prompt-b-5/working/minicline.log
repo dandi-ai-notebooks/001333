@@ -1,0 +1,2978 @@
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 2
+Submitting completion request...
+Processing response...
+First, I need to get information about the Dandiset using the tools_cli.py script. This will help me understand what the Dandiset contains, which is essential for creating a meaningful notebook.
+
+Tool: execute_command
+Params: {'command': 'python tools_cli.py dandiset-info 001333', 'requires_approval': 'false'}
+================================
+Command to be executed
+python tools_cli.py dandiset-info 001333
+================================
+{
+  "results": {
+    "id": "DANDI:001333/draft",
+    "name": "Parkinson's Electrophysiological Signal Dataset (PESD)",
+    "access": [
+      {
+        "status": "dandi:OpenAccess",
+        "schemaKey": "AccessRequirements"
+      }
+    ],
+    "license": [
+      "spdx:CC-BY-4.0"
+    ],
+    "version": "draft",
+    "citation": "Biswas, Ananna (2025) Parkinson's Electrophysiological Signal Dataset (PESD) (Version draft) [Data set]. DANDI Archive. https://dandiarchive.org/dandiset/001333/draft",
+    "identifier": "DANDI:001333",
+    "contributor": [
+      "Biswas, Ananna"
+    ],
+    "dateCreated": "2025-02-08T10:15:43.847350+00:00",
+    "description": "The dataset contains electrophysiological signals from both healthy and parkinsonian subjects. We generated two types of samples from each group. The parkinsonian signals show a relatively high power density at the beta frequency (13 to 30 Hz). Thus, the beta oscillations (13 to 30 Hz) in the subthalamic nucleus (STN) are typically used as the pathological biomarkers for PD symptoms. Each sample includes two types of signals: Beta Average Rectified Voltage (ARV) and Local Field Potential (LFP) from the Subthalamic Nucleus (STN). The ARV signals are in the frequency domain and LFP signals are in the time domain.\n\nBeta ARV Signal: The controller beta values are determined by calculating the Average Rectified Value (ARV) of the beta band. This is achieved by fully rectifying the filtered LFP signal using a fourth-order Chebyshev band-pass filter with an 8 Hz bandwidth, centered around the peak of the LFP power spectrum. Local Field Potential (LFP) - STN: Local Field Potentials are derived from the synchronized activity of neuron populations between the cortex, STN, and thalamus.\n\nMore details can be found in our article named, \u201cPreliminary Results of Neuromorphic Controller Design and a Parkinson's Disease Dataset Building for Closed-Loop Deep Brain Stimulation\u201d, available at https://arxiv.org/abs/2407.17756",
+    "variableMeasured": [
+      "ElectricalSeries",
+      "LFP",
+      "ProcessingModule",
+      "ElectrodeGroup"
+    ],
+    "measurementTechnique": [
+      {
+        "name": "signal filtering technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "multi electrode extracellular electrophysiology recording technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "analytical technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "surgical technique",
+        "schemaKey": "MeasurementTechniqueType"
+      }
+    ]
+  }
+}
+Total prompt tokens: 9013 + 0
+Total completion tokens: 153 + 0
+
+=========================================
+
+execute_command 'python tools_cli.py dandiset-info 001333' (requires approval):
+Command executed successfully
+STDOUT:
+{
+  "results": {
+    "id": "DANDI:001333/draft",
+    "name": "Parkinson's Electrophysiological Signal Dataset (PESD)",
+    "access": [
+      {
+        "status": "dandi:OpenAccess",
+        "schemaKey": "AccessRequirements"
+      }
+    ],
+    "license": [
+      "spdx:CC-BY-4.0"
+    ],
+    "version": "draft",
+    "citation": "Biswas, Ananna (2025) Parkinson's Electrophysiological Signal Dataset (PESD) (Version draft) [Data set]. DANDI Archive. https://dandiarchive.org/dandiset/001333/draft",
+    "identifier": "DANDI:001333",
+    "contributor": [
+      "Biswas, Ananna"
+    ],
+    "dateCreated": "2025-02-08T10:15:43.847350+00:00",
+    "description": "The dataset contains electrophysiological signals from both healthy and parkinsonian subjects. We generated two types of samples from each group. The parkinsonian signals show a relatively high power density at the beta frequency (13 to 30 Hz). Thus, the beta oscillations (13 to 30 Hz) in the subthalamic nucleus (STN) are typically used as the pathological biomarkers for PD symptoms. Each sample includes two types of signals: Beta Average Rectified Voltage (ARV) and Local Field Potential (LFP) from the Subthalamic Nucleus (STN). The ARV signals are in the frequency domain and LFP signals are in the time domain.\n\nBeta ARV Signal: The controller beta values are determined by calculating the Average Rectified Value (ARV) of the beta band. This is achieved by fully rectifying the filtered LFP signal using a fourth-order Chebyshev band-pass filter with an 8 Hz bandwidth, centered around the peak of the LFP power spectrum. Local Field Potential (LFP) - STN: Local Field Potentials are derived from the synchronized activity of neuron populations between the cortex, STN, and thalamus.\n\nMore details can be found in our article named, \u201cPreliminary Results of Neuromorphic Controller Design and a Parkinson's Disease Dataset Building for Closed-Loop Deep Brain Stimulation\u201d, available at https://arxiv.org/abs/2407.17756",
+    "variableMeasured": [
+      "ElectricalSeries",
+      "LFP",
+      "ProcessingModule",
+      "ElectrodeGroup"
+    ],
+    "measurementTechnique": [
+      {
+        "name": "signal filtering technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "multi electrode extracellular electrophysiology recording technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "analytical technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "surgical technique",
+        "schemaKey": "MeasurementTechniqueType"
+      }
+    ]
+  }
+}
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 4
+Submitting completion request...
+Processing response...
+Now I need to get information about the assets (files) available in the Dandiset. This will help me understand what NWB files are available and how to access them.
+
+Tool: execute_command
+Params: {'command': 'python tools_cli.py dandiset-assets 001333', 'requires_approval': 'false'}
+================================
+Command to be executed
+python tools_cli.py dandiset-assets 001333
+================================
+{
+  "results": {
+    "count": 1304,
+    "results": [
+      {
+        "asset_id": "1d94c7ad-dbaf-43ea-89f2-1b2518fab158",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1044_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "e0fa57b2-02a4-4c20-92df-d7eb64b60170",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1046_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "7e145df2-0510-4e6b-8742-f554bf0377db",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1070_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "945ddecb-afa5-4531-ad6a-ed92d5425817",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1251_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "209d6d4d-59fb-4496-a46c-b989bbf35a77",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1259_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "82c72c37-a008-4d78-9912-45dcdb78ffb5",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1289_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "8d3641e4-1f1f-4b20-9b5e-28d8a3023ecb",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1392_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "0a94eef1-9c29-4cc7-b115-51d623a076d1",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1433_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "8009eb30-ca64-4474-8885-0a808dabdd17",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1460_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "e8370b8d-1615-46cc-9d5c-7198f74e4e79",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1533_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "c5f536b1-8500-48dc-904b-584efd33a72a",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-162_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "59af8249-fcac-493a-8b69-91af83b8c360",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1654_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "c3226e97-9615-4dab-9768-92431fc6b3de",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1656_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "8fb1ac97-62a8-47e9-a0a5-63af4ed4cba2",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1745_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "f2f08026-bc36-457a-a6ac-85bb6d83a6aa",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1746_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "39d38326-c4e0-4b8b-8d74-508ddb560e49",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1913_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "b16e119b-d2bc-4a9d-a219-b2ea83997119",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1983_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "7bd5cd24-215e-4518-8f95-8c2a68e48092",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-2081_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "cff96466-d0cc-4f2d-bfa0-9332f58e1703",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-218_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "243ea741-d74e-4e88-8a02-d5a3f190c8f0",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-2357_ecephys.nwb",
+        "size": 225936
+      }
+    ]
+  }
+}
+Total prompt tokens: 19055 + 0
+Total completion tokens: 284 + 0
+
+=========================================
+
+execute_command 'python tools_cli.py dandiset-assets 001333' (requires approval):
+Command executed successfully
+STDOUT:
+{
+  "results": {
+    "count": 1304,
+    "results": [
+      {
+        "asset_id": "1d94c7ad-dbaf-43ea-89f2-1b2518fab158",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1044_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "e0fa57b2-02a4-4c20-92df-d7eb64b60170",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1046_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "7e145df2-0510-4e6b-8742-f554bf0377db",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1070_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "945ddecb-afa5-4531-ad6a-ed92d5425817",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1251_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "209d6d4d-59fb-4496-a46c-b989bbf35a77",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1259_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "82c72c37-a008-4d78-9912-45dcdb78ffb5",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1289_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "8d3641e4-1f1f-4b20-9b5e-28d8a3023ecb",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1392_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "0a94eef1-9c29-4cc7-b115-51d623a076d1",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1433_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "8009eb30-ca64-4474-8885-0a808dabdd17",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1460_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "e8370b8d-1615-46cc-9d5c-7198f74e4e79",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1533_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "c5f536b1-8500-48dc-904b-584efd33a72a",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-162_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "59af8249-fcac-493a-8b69-91af83b8c360",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1654_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "c3226e97-9615-4dab-9768-92431fc6b3de",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1656_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "8fb1ac97-62a8-47e9-a0a5-63af4ed4cba2",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1745_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "f2f08026-bc36-457a-a6ac-85bb6d83a6aa",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1746_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "39d38326-c4e0-4b8b-8d74-508ddb560e49",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1913_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "b16e119b-d2bc-4a9d-a219-b2ea83997119",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1983_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "7bd5cd24-215e-4518-8f95-8c2a68e48092",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-2081_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "cff96466-d0cc-4f2d-bfa0-9332f58e1703",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-218_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "243ea741-d74e-4e88-8a02-d5a3f190c8f0",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-2357_ecephys.nwb",
+        "size": 225936
+      }
+    ]
+  }
+}
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 6
+Submitting completion request...
+Processing response...
+I'm selecting the first NWB file from the list to explore its contents:
+- asset_id: "1d94c7ad-dbaf-43ea-89f2-1b2518fab158"
+- path: "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1044_ecephys.nwb"
+- size: 225936 (relatively small file)
+
+Now I'll use the nwb-file-info tool to get more details about what's inside this file.
+
+Tool: execute_command
+Params: {'command': 'python tools_cli.py nwb-file-info 001333 https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/', 'requires_approval': 'false'}
+================================
+Command to be executed
+python tools_cli.py nwb-file-info 001333 https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/
+================================
+/opt/conda/lib/python3.11/site-packages/hdmf/spec/namespace.py:535: UserWarning: Ignoring cached namespace 'core' version 2.8.0 because version 2.7.0 is already loaded.
+  warn("Ignoring cached namespace '%s' version %s because version %s is already loaded."
+/home/jovyan/dandi-ai-notebooks-3/packages/get-nwbfile-info/src/get_nwbfile_info/core.py:319: UserWarning: Warning: Duplicate entries found in the results.
+  warnings.warn("Warning: Duplicate entries found in the results.")
+# This script shows how to load the NWB file at https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/ in Python using PyNWB
+
+import pynwb
+import h5py
+import remfile
+
+# Load
+url = "https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/"
+remote_file = remfile.File(url)
+h5_file = h5py.File(remote_file)
+io = pynwb.NWBHDF5IO(file=h5_file)
+nwb = io.read()
+
+nwb # (NWBFile)
+nwb.session_description # (str) Parkinson's Electrophysiological Signal Dataset (PESD) Generated from Simulation
+nwb.identifier # (str) 84828db4-a3a3-4b2e-abff-6db2b404dd68
+nwb.session_start_time # (datetime) 2025-04-03T12:30:26.094607-04:00
+nwb.timestamps_reference_time # (datetime) 2025-04-03T12:30:26.094607-04:00
+nwb.file_create_date # (list) [datetime.datetime(2025, 4, 3, 12, 30, 26, 128020, tzinfo=tzoffset(None, -14400))]
+nwb.experimenter # (tuple) ['Ananna Biswas']
+nwb.related_publications # (tuple) ['https://arxiv.org/abs/2407.17756', 'DOI: 10.3389/fnins.2020.00166']
+nwb.keywords # (StrDataset) shape (4,); dtype object
+# nwb.keywords[:] # Access all data
+# nwb.keywords[0:10] # Access first 10 elements
+# First few values of nwb.keywords: ['ecephys' 'LFP' "Parkinson's Disease" 'Beta Band']
+nwb.processing # (LabelledDict)
+nwb.processing["ecephys"] # (ProcessingModule)
+nwb.processing["ecephys"].description # (str) Processed electrophysiology data
+nwb.processing["ecephys"].data_interfaces # (LabelledDict)
+nwb.processing["ecephys"].data_interfaces["LFP"] # (LFP)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series # (LabelledDict)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"] # (ElectricalSeries)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].resolution # (float64) -1.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].comments # (str) no comments
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].description # (str) no description
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].conversion # (float64) 1.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].offset # (float64) 0.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].unit # (str) volts
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data # (Dataset) shape (1400,); dtype float64
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data[:] # Access all data
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data[0:10] # Access first 10 elements
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps # (Dataset) shape (1400,); dtype float64
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps[:] # Access all data
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps[0:10] # Access first 10 elements
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps_unit # (str) seconds
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].interval # (int) 1
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes # (DynamicTableRegion)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.description # (str) all electrodes
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table # (DynamicTable)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.description # (str) metadata about extracellular electrodes
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.columns # (tuple)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.id # (ElementIdentifiers)
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+# Number of rows: 12
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.label # (VectorData) label of electrode
+nwb.electrode_groups # (LabelledDict)
+nwb.electrode_groups["shank0"] # (ElectrodeGroup)
+nwb.electrode_groups["shank0"].description # (str) Simulated electrode group for shank 0
+nwb.electrode_groups["shank0"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank0"].device # (Device)
+nwb.electrode_groups["shank0"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank0"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank1"] # (ElectrodeGroup)
+nwb.electrode_groups["shank1"].description # (str) Simulated electrode group for shank 1
+nwb.electrode_groups["shank1"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank1"].device # (Device)
+nwb.electrode_groups["shank1"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank1"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank2"] # (ElectrodeGroup)
+nwb.electrode_groups["shank2"].description # (str) Simulated electrode group for shank 2
+nwb.electrode_groups["shank2"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank2"].device # (Device)
+nwb.electrode_groups["shank2"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank2"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank3"] # (ElectrodeGroup)
+nwb.electrode_groups["shank3"].description # (str) Simulated electrode group for shank 3
+nwb.electrode_groups["shank3"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank3"].device # (Device)
+nwb.electrode_groups["shank3"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank3"].device.manufacturer # (str) N/A
+nwb.devices # (LabelledDict)
+nwb.devices["NEURON_Simulator"] # (Device)
+nwb.devices["NEURON_Simulator"].description # (str) Virtual probe used in NEURON simulation
+nwb.devices["NEURON_Simulator"].manufacturer # (str) N/A
+nwb.experiment_description # (str) The PESD dataset is generated from a cortico-basal-ganglia network for a Parkinsonian computation...
+nwb.lab # (str) BrainX Lab
+nwb.institution # (str) Michigan Technological University
+nwb.electrodes # (DynamicTable)
+nwb.electrodes.description # (str) metadata about extracellular electrodes
+nwb.electrodes.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.electrodes.columns # (tuple)
+nwb.electrodes.id # (ElementIdentifiers)
+# nwb.electrodes.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# nwb.electrodes.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+# Number of rows: 12
+nwb.electrodes.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.electrodes.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.electrodes.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.electrodes.label # (VectorData) label of electrode
+nwb.subject # (Subject)
+nwb.subject.age # (str) P0D
+nwb.subject.age__reference # (str) birth
+nwb.subject.description # (str) This is a simulated dataset generated from a computational model.
+nwb.subject.sex # (str) U
+nwb.subject.species # (str) Homo sapiens
+nwb.subject.subject_id # (str) healthy-simulated-beta
+Total prompt tokens: 31017 + 0
+Total completion tokens: 556 + 0
+
+=========================================
+
+execute_command 'python tools_cli.py nwb-file-info 001333 https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/' (requires approval):
+Command executed successfully
+STDOUT:
+# This script shows how to load the NWB file at https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/ in Python using PyNWB
+
+import pynwb
+import h5py
+import remfile
+
+# Load
+url = "https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/"
+remote_file = remfile.File(url)
+h5_file = h5py.File(remote_file)
+io = pynwb.NWBHDF5IO(file=h5_file)
+nwb = io.read()
+
+nwb # (NWBFile)
+nwb.session_description # (str) Parkinson's Electrophysiological Signal Dataset (PESD) Generated from Simulation
+nwb.identifier # (str) 84828db4-a3a3-4b2e-abff-6db2b404dd68
+nwb.session_start_time # (datetime) 2025-04-03T12:30:26.094607-04:00
+nwb.timestamps_reference_time # (datetime) 2025-04-03T12:30:26.094607-04:00
+nwb.file_create_date # (list) [datetime.datetime(2025, 4, 3, 12, 30, 26, 128020, tzinfo=tzoffset(None, -14400))]
+nwb.experimenter # (tuple) ['Ananna Biswas']
+nwb.related_publications # (tuple) ['https://arxiv.org/abs/2407.17756', 'DOI: 10.3389/fnins.2020.00166']
+nwb.keywords # (StrDataset) shape (4,); dtype object
+# nwb.keywords[:] # Access all data
+# nwb.keywords[0:10] # Access first 10 elements
+# First few values of nwb.keywords: ['ecephys' 'LFP' "Parkinson's Disease" 'Beta Band']
+nwb.processing # (LabelledDict)
+nwb.processing["ecephys"] # (ProcessingModule)
+nwb.processing["ecephys"].description # (str) Processed electrophysiology data
+nwb.processing["ecephys"].data_interfaces # (LabelledDict)
+nwb.processing["ecephys"].data_interfaces["LFP"] # (LFP)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series # (LabelledDict)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"] # (ElectricalSeries)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].resolution # (float64) -1.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].comments # (str) no comments
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].description # (str) no description
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].conversion # (float64) 1.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].offset # (float64) 0.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].unit # (str) volts
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data # (Dataset) shape (1400,); dtype float64
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data[:] # Access all data
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data[0:10] # Access first 10 elements
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps # (Dataset) shape (1400,); dtype float64
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps[:] # Access all data
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps[0:10] # Access first 10 elements
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps_unit # (str) seconds
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].interval # (int) 1
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes # (DynamicTableRegion)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.description # (str) all electrodes
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table # (DynamicTable)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.description # (str) metadata about extracellular electrodes
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.columns # (tuple)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.id # (ElementIdentifiers)
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+# Number of rows: 12
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.label # (VectorData) label of electrode
+nwb.electrode_groups # (LabelledDict)
+nwb.electrode_groups["shank0"] # (ElectrodeGroup)
+nwb.electrode_groups["shank0"].description # (str) Simulated electrode group for shank 0
+nwb.electrode_groups["shank0"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank0"].device # (Device)
+nwb.electrode_groups["shank0"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank0"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank1"] # (ElectrodeGroup)
+nwb.electrode_groups["shank1"].description # (str) Simulated electrode group for shank 1
+nwb.electrode_groups["shank1"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank1"].device # (Device)
+nwb.electrode_groups["shank1"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank1"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank2"] # (ElectrodeGroup)
+nwb.electrode_groups["shank2"].description # (str) Simulated electrode group for shank 2
+nwb.electrode_groups["shank2"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank2"].device # (Device)
+nwb.electrode_groups["shank2"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank2"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank3"] # (ElectrodeGroup)
+nwb.electrode_groups["shank3"].description # (str) Simulated electrode group for shank 3
+nwb.electrode_groups["shank3"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank3"].device # (Device)
+nwb.electrode_groups["shank3"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank3"].device.manufacturer # (str) N/A
+nwb.devices # (LabelledDict)
+nwb.devices["NEURON_Simulator"] # (Device)
+nwb.devices["NEURON_Simulator"].description # (str) Virtual probe used in NEURON simulation
+nwb.devices["NEURON_Simulator"].manufacturer # (str) N/A
+nwb.experiment_description # (str) The PESD dataset is generated from a cortico-basal-ganglia network for a Parkinsonian computation...
+nwb.lab # (str) BrainX Lab
+nwb.institution # (str) Michigan Technological University
+nwb.electrodes # (DynamicTable)
+nwb.electrodes.description # (str) metadata about extracellular electrodes
+nwb.electrodes.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.electrodes.columns # (tuple)
+nwb.electrodes.id # (ElementIdentifiers)
+# nwb.electrodes.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# nwb.electrodes.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+# Number of rows: 12
+nwb.electrodes.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.electrodes.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.electrodes.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.electrodes.label # (VectorData) label of electrode
+nwb.subject # (Subject)
+nwb.subject.age # (str) P0D
+nwb.subject.age__reference # (str) birth
+nwb.subject.description # (str) This is a simulated dataset generated from a computational model.
+nwb.subject.sex # (str) U
+nwb.subject.species # (str) Homo sapiens
+nwb.subject.subject_id # (str) healthy-simulated-beta
+
+STDERR:
+/opt/conda/lib/python3.11/site-packages/hdmf/spec/namespace.py:535: UserWarning: Ignoring cached namespace 'core' version 2.8.0 because version 2.7.0 is already loaded.
+  warn("Ignoring cached namespace '%s' version %s because version %s is already loaded."
+/home/jovyan/dandi-ai-notebooks-3/packages/get-nwbfile-info/src/get_nwbfile_info/core.py:319: UserWarning: Warning: Duplicate entries found in the results.
+  warnings.warn("Warning: Duplicate entries found in the results.")
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 8
+Submitting completion request...
+Processing response...
+I should try to get information about a different type of subject. I see in the initial results, the files are from "sub-healthy-simulated-beta", but the Dandiset description mentions both healthy and parkinsonian subjects. Let me try to find a parkinsonian subject NWB file by searching more of the assets.
+
+Tool: execute_command
+Params: {'command': 'python tools_cli.py dandiset-assets 001333 | grep "sub-parkinsonian"', 'requires_approval': 'false'}
+================================
+Command to be executed
+python tools_cli.py dandiset-assets 001333 | grep "sub-parkinsonian"
+================================
+Total prompt tokens: 46606 + 0
+Total completion tokens: 737 + 0
+
+=========================================
+
+execute_command 'python tools_cli.py dandiset-assets 001333 | grep "sub-parkinsonian"' (requires approval):
+Command failed with exit code 1
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 10
+Submitting completion request...
+Processing response...
+Since the grep command didn't return any results, let's look at more assets to better understand the structure and see what different types of subjects or data are available.
+
+Tool: execute_command
+Params: {'command': 'mkdir -p explore', 'requires_approval': 'false'}
+================================
+Command to be executed
+mkdir -p explore
+================================
+Total prompt tokens: 62464 + 0
+Total completion tokens: 837 + 0
+
+=========================================
+
+execute_command 'mkdir -p explore' (requires approval):
+Command executed successfully
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 12
+Submitting completion request...
+Processing response...
+I'll write a script to examine the full list of assets to understand what types of subjects or data are available in the Dandiset.
+
+Tool: write_to_file
+Params: {'path': 'explore/examine_asset_paths.py', 'content': '"""\nThis script examines the full list of assets to understand what types of subjects\nor data are available in the Dandiset 001333.\n"""\n\nimport json\nimport subprocess\nimport re\nfrom collections import Counter\n\n# Get all assets\nresult = subprocess.run([\'python\', \'../tools_cli.py\', \'dandiset-assets\', \'001333\'], \n                        capture_output=True, text=True)\ndata = json.loads(result.stdout)\n\n# Extract subject categories\nsubject_patterns = set()\nfull_paths = []\n\nfor asset in data[\'results\'][\'results\']:\n    path = asset[\'path\']\n    full_paths.append(path)\n    \n    # Extract subject pattern (e.g., sub-healthy-simulated-beta)\n    match = re.match(r\'(sub-[^/]+)\', path)\n    if match:\n        subject_patterns.add(match.group(1))\n\n# Analyze and print results\nprint(f"Total assets: {data[\'results\'][\'count\']}")\nprint(f"\\nSubject categories found ({len(subject_patterns)}):")\nfor pattern in sorted(subject_patterns):\n    count = sum(1 for path in full_paths if path.startswith(pattern))\n    print(f"- {pattern}: {count} assets")\n\n# Sample paths\nprint("\\nSample paths for each subject category:")\nfor pattern in sorted(subject_patterns):\n    for path in full_paths:\n        if path.startswith(pattern):\n            print(f"- {path}")\n            break\n\n# Look for any patterns in file naming\nprint("\\nAnalyzing file naming patterns:")\nextensions = Counter([path.split(\'.\')[-1] for path in full_paths])\nprint(f"File extensions: {dict(extensions)}")\n\nsession_patterns = set()\nfor path in full_paths:\n    match = re.search(r\'ses-([^_]+)\', path)\n    if match:\n        session_patterns.add(match.group(1))\nprint(f"Session patterns: {sorted(session_patterns) if len(session_patterns) < 20 else f\'{len(session_patterns)} unique session IDs\'}")\n\n# Analyze data types indicated in filenames\ndatatypes = set()\nfor path in full_paths:\n    parts = path.split(\'_\')\n    if len(parts) > 1:\n        last_part = parts[-1].split(\'.\')[0]  # Remove file extension\n        datatypes.add(last_part)\nprint(f"Data types: {sorted(datatypes)}")'}
+================================
+Content to be written to explore/examine_asset_paths.py:
+"""
+This script examines the full list of assets to understand what types of subjects
+or data are available in the Dandiset 001333.
+"""
+
+import json
+import subprocess
+import re
+from collections import Counter
+
+# Get all assets
+result = subprocess.run(['python', '../tools_cli.py', 'dandiset-assets', '001333'], 
+                        capture_output=True, text=True)
+data = json.loads(result.stdout)
+
+# Extract subject categories
+subject_patterns = set()
+full_paths = []
+
+for asset in data['results']['results']:
+    path = asset['path']
+    full_paths.append(path)
+    
+    # Extract subject pattern (e.g., sub-healthy-simulated-beta)
+    match = re.match(r'(sub-[^/]+)', path)
+    if match:
+        subject_patterns.add(match.group(1))
+
+# Analyze and print results
+print(f"Total assets: {data['results']['count']}")
+print(f"\nSubject categories found ({len(subject_patterns)}):")
+for pattern in sorted(subject_patterns):
+    count = sum(1 for path in full_paths if path.startswith(pattern))
+    print(f"- {pattern}: {count} assets")
+
+# Sample paths
+print("\nSample paths for each subject category:")
+for pattern in sorted(subject_patterns):
+    for path in full_paths:
+        if path.startswith(pattern):
+            print(f"- {path}")
+            break
+
+# Look for any patterns in file naming
+print("\nAnalyzing file naming patterns:")
+extensions = Counter([path.split('.')[-1] for path in full_paths])
+print(f"File extensions: {dict(extensions)}")
+
+session_patterns = set()
+for path in full_paths:
+    match = re.search(r'ses-([^_]+)', path)
+    if match:
+        session_patterns.add(match.group(1))
+print(f"Session patterns: {sorted(session_patterns) if len(session_patterns) < 20 else f'{len(session_patterns)} unique session IDs'}")
+
+# Analyze data types indicated in filenames
+datatypes = set()
+for path in full_paths:
+    parts = path.split('_')
+    if len(parts) > 1:
+        last_part = parts[-1].split('.')[0]  # Remove file extension
+        datatypes.add(last_part)
+print(f"Data types: {sorted(datatypes)}")
+================================
+Total prompt tokens: 78486 + 0
+Total completion tokens: 1531 + 0
+
+=========================================
+
+write_to_file for 'explore/examine_asset_paths.py':
+Successfully wrote 2024 characters to explore/examine_asset_paths.py
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 14
+Submitting completion request...
+Processing response...
+Let's run the script to analyze the asset paths and understand what types of subjects and data are available in this Dandiset.
+
+Tool: execute_command
+Params: {'command': 'cd explore && python examine_asset_paths.py', 'requires_approval': 'false', 'timeout': '90'}
+================================
+Command to be executed
+cd explore && python examine_asset_paths.py
+================================
+Total assets: 1304
+
+Subject categories found (1):
+- sub-healthy-simulated-beta: 20 assets
+
+Sample paths for each subject category:
+- sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1044_ecephys.nwb
+
+Analyzing file naming patterns:
+File extensions: {'nwb': 20}
+Session patterns: 20 unique session IDs
+Data types: ['ecephys']
+Total prompt tokens: 95294 + 0
+Total completion tokens: 1636 + 0
+
+=========================================
+
+execute_command 'cd explore && python examine_asset_paths.py' (requires approval):
+Command executed successfully
+STDOUT:
+Total assets: 1304
+
+Subject categories found (1):
+- sub-healthy-simulated-beta: 20 assets
+
+Sample paths for each subject category:
+- sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-1044_ecephys.nwb
+
+Analyzing file naming patterns:
+File extensions: {'nwb': 20}
+Session patterns: 20 unique session IDs
+Data types: ['ecephys']
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 16
+Submitting completion request...
+Processing response...
+The API appears to be paginating results, showing only the first 20 items. Let's modify our script to fetch more assets to get a complete picture of what's in the Dandiset.
+
+Tool: write_to_file
+Params: {'path': 'explore/examine_asset_paths_with_pagination.py', 'content': '"""\nThis script examines the full list of assets with pagination to understand what types of subjects\nor data are available in the Dandiset 001333.\n"""\n\nimport json\nimport subprocess\nimport re\nfrom collections import Counter\n\n# Function to get assets with pagination\ndef get_assets_with_pagination(dandiset_id, limit=100, skip=0, max_results=1000):\n    all_assets = []\n    total_count = None\n    \n    while total_count is None or skip < total_count:\n        if skip >= max_results:\n            print(f"Reached maximum result limit of {max_results}")\n            break\n            \n        cmd = [\'python\', \'../tools_cli.py\', \'dandiset-assets\', dandiset_id, \n               \'--limit\', str(limit), \'--skip\', str(skip)]\n        result = subprocess.run(cmd, capture_output=True, text=True)\n        \n        try:\n            data = json.loads(result.stdout)\n            \n            # Get the total count if we don\'t have it yet\n            if total_count is None:\n                total_count = data[\'results\'][\'count\']\n                print(f"Total assets reported by API: {total_count}")\n            \n            # Add the current page results\n            page_results = data[\'results\'][\'results\']\n            all_assets.extend(page_results)\n            print(f"Retrieved {len(page_results)} assets. Total so far: {len(all_assets)}")\n            \n            # Move to next page\n            skip += limit\n            \n            # If we got fewer results than the limit, we\'re done\n            if len(page_results) < limit:\n                break\n                \n        except json.JSONDecodeError:\n            print(f"Error parsing response: {result.stdout[:100]}...")\n            break\n            \n    return all_assets, total_count\n\n# Get assets with pagination\nall_assets, total_count = get_assets_with_pagination(\'001333\', limit=100, max_results=500)\n\n# Extract subject categories\nsubject_patterns = set()\nfull_paths = []\n\nfor asset in all_assets:\n    path = asset[\'path\']\n    full_paths.append(path)\n    \n    # Extract subject pattern (e.g., sub-healthy-simulated-beta)\n    match = re.match(r\'(sub-[^/]+)\', path)\n    if match:\n        subject_patterns.add(match.group(1))\n\n# Count assets per subject type\nsubject_counts = {}\nfor pattern in subject_patterns:\n    subject_counts[pattern] = sum(1 for path in full_paths if path.startswith(pattern))\n\n# Analyze and print results\nprint(f"\\nRetrieved {len(all_assets)} assets out of {total_count} total")\nprint(f"\\nSubject categories found ({len(subject_patterns)}):")\nfor pattern, count in sorted(subject_counts.items(), key=lambda x: x[1], reverse=True):\n    print(f"- {pattern}: {count} assets")\n\n# Sample paths for each subject category\nprint("\\nSample paths for each subject category:")\nfor pattern in sorted(subject_patterns):\n    found = False\n    for path in full_paths:\n        if path.startswith(pattern):\n            print(f"- {path}")\n            found = True\n            break\n    if not found:\n        print(f"- No sample found for {pattern}")\n\n# Look for any patterns in file naming\nprint("\\nAnalyzing file naming patterns:")\nextensions = Counter([path.split(\'.\')[-1] for path in full_paths])\nprint(f"File extensions: {dict(extensions)}")\n\n# Analyze session patterns\nsessions_per_subject = {}\nfor pattern in subject_patterns:\n    sessions = set()\n    for path in full_paths:\n        if path.startswith(pattern):\n            match = re.search(r\'ses-([^_]+)\', path)\n            if match:\n                sessions.add(match.group(1))\n    sessions_per_subject[pattern] = sessions\n\nprint("\\nSessions per subject type:")\nfor subject, sessions in sessions_per_subject.items():\n    session_count = len(sessions)\n    session_display = sorted(sessions) if session_count < 10 else f"{session_count} unique session IDs"\n    print(f"- {subject}: {session_display}")\n\n# Analyze data types indicated in filenames\ndatatypes_per_subject = {}\nfor pattern in subject_patterns:\n    datatypes = set()\n    for path in full_paths:\n        if path.startswith(pattern):\n            parts = path.split(\'_\')\n            if len(parts) > 1:\n                last_part = parts[-1].split(\'.\')[0]  # Remove file extension\n                datatypes.add(last_part)\n    datatypes_per_subject[pattern] = datatypes\n\nprint("\\nData types per subject type:")\nfor subject, datatypes in datatypes_per_subject.items():\n    print(f"- {subject}: {sorted(datatypes)}")'}
+================================
+Content to be written to explore/examine_asset_paths_with_pagination.py:
+"""
+This script examines the full list of assets with pagination to understand what types of subjects
+or data are available in the Dandiset 001333.
+"""
+
+import json
+import subprocess
+import re
+from collections import Counter
+
+# Function to get assets with pagination
+def get_assets_with_pagination(dandiset_id, limit=100, skip=0, max_results=1000):
+    all_assets = []
+    total_count = None
+    
+    while total_count is None or skip < total_count:
+        if skip >= max_results:
+            print(f"Reached maximum result limit of {max_results}")
+            break
+            
+        cmd = ['python', '../tools_cli.py', 'dandiset-assets', dandiset_id, 
+               '--limit', str(limit), '--skip', str(skip)]
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        
+        try:
+            data = json.loads(result.stdout)
+            
+            # Get the total count if we don't have it yet
+            if total_count is None:
+                total_count = data['results']['count']
+                print(f"Total assets reported by API: {total_count}")
+            
+            # Add the current page results
+            page_results = data['results']['results']
+            all_assets.extend(page_results)
+            print(f"Retrieved {len(page_results)} assets. Total so far: {len(all_assets)}")
+            
+            # Move to next page
+            skip += limit
+            
+            # If we got fewer results than the limit, we're done
+            if len(page_results) < limit:
+                break
+                
+        except json.JSONDecodeError:
+            print(f"Error parsing response: {result.stdout[:100]}...")
+            break
+            
+    return all_assets, total_count
+
+# Get assets with pagination
+all_assets, total_count = get_assets_with_pagination('001333', limit=100, max_results=500)
+
+# Extract subject categories
+subject_patterns = set()
+full_paths = []
+
+for asset in all_assets:
+    path = asset['path']
+    full_paths.append(path)
+    
+    # Extract subject pattern (e.g., sub-healthy-simulated-beta)
+    match = re.match(r'(sub-[^/]+)', path)
+    if match:
+        subject_patterns.add(match.group(1))
+
+# Count assets per subject type
+subject_counts = {}
+for pattern in subject_patterns:
+    subject_counts[pattern] = sum(1 for path in full_paths if path.startswith(pattern))
+
+# Analyze and print results
+print(f"\nRetrieved {len(all_assets)} assets out of {total_count} total")
+print(f"\nSubject categories found ({len(subject_patterns)}):")
+for pattern, count in sorted(subject_counts.items(), key=lambda x: x[1], reverse=True):
+    print(f"- {pattern}: {count} assets")
+
+# Sample paths for each subject category
+print("\nSample paths for each subject category:")
+for pattern in sorted(subject_patterns):
+    found = False
+    for path in full_paths:
+        if path.startswith(pattern):
+            print(f"- {path}")
+            found = True
+            break
+    if not found:
+        print(f"- No sample found for {pattern}")
+
+# Look for any patterns in file naming
+print("\nAnalyzing file naming patterns:")
+extensions = Counter([path.split('.')[-1] for path in full_paths])
+print(f"File extensions: {dict(extensions)}")
+
+# Analyze session patterns
+sessions_per_subject = {}
+for pattern in subject_patterns:
+    sessions = set()
+    for path in full_paths:
+        if path.startswith(pattern):
+            match = re.search(r'ses-([^_]+)', path)
+            if match:
+                sessions.add(match.group(1))
+    sessions_per_subject[pattern] = sessions
+
+print("\nSessions per subject type:")
+for subject, sessions in sessions_per_subject.items():
+    session_count = len(sessions)
+    session_display = sorted(sessions) if session_count < 10 else f"{session_count} unique session IDs"
+    print(f"- {subject}: {session_display}")
+
+# Analyze data types indicated in filenames
+datatypes_per_subject = {}
+for pattern in subject_patterns:
+    datatypes = set()
+    for path in full_paths:
+        if path.startswith(pattern):
+            parts = path.split('_')
+            if len(parts) > 1:
+                last_part = parts[-1].split('.')[0]  # Remove file extension
+                datatypes.add(last_part)
+    datatypes_per_subject[pattern] = datatypes
+
+print("\nData types per subject type:")
+for subject, datatypes in datatypes_per_subject.items():
+    print(f"- {subject}: {sorted(datatypes)}")
+================================
+Total prompt tokens: 112400 + 0
+Total completion tokens: 2994 + 0
+
+=========================================
+
+write_to_file for 'explore/examine_asset_paths_with_pagination.py':
+Successfully wrote 4386 characters to explore/examine_asset_paths_with_pagination.py
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 18
+Submitting completion request...
+Processing response...
+This modified script should help us retrieve more assets and better understand the structure of the Dandiset, including what subject types are available.
+
+Tool: execute_command
+Params: {'command': 'cd explore && python examine_asset_paths_with_pagination.py', 'requires_approval': 'false', 'timeout': '90'}
+================================
+Command to be executed
+cd explore && python examine_asset_paths_with_pagination.py
+================================
+Error parsing response: ...
+
+Retrieved 0 assets out of None total
+
+Subject categories found (0):
+
+Sample paths for each subject category:
+
+Analyzing file naming patterns:
+File extensions: {}
+
+Sessions per subject type:
+
+Data types per subject type:
+Total prompt tokens: 130978 + 0
+Total completion tokens: 3108 + 0
+
+=========================================
+
+execute_command 'cd explore && python examine_asset_paths_with_pagination.py' (requires approval):
+Command executed successfully
+STDOUT:
+Error parsing response: ...
+
+Retrieved 0 assets out of None total
+
+Subject categories found (0):
+
+Sample paths for each subject category:
+
+Analyzing file naming patterns:
+File extensions: {}
+
+Sessions per subject type:
+
+Data types per subject type:
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 20
+Submitting completion request...
+Processing response...
+Let's try running the tools_cli command directly with pagination parameters and see if that helps. We need to understand if there are different subject types (healthy vs. parkinsonian) as mentioned in the Dandiset description.
+
+Tool: execute_command
+Params: {'command': 'python tools_cli.py dandiset-assets 001333 --limit 30 --skip 20', 'requires_approval': 'false'}
+================================
+Command to be executed
+python tools_cli.py dandiset-assets 001333 --limit 30 --skip 20
+================================
+Usage: tools_cli.py dandiset-assets [OPTIONS] DANDISET_ID
+Try 'tools_cli.py dandiset-assets --help' for help.
+
+Error: No such option: --limit
+Total prompt tokens: 149828 + 0
+Total completion tokens: 3251 + 0
+
+=========================================
+
+execute_command 'python tools_cli.py dandiset-assets 001333 --limit 30 --skip 20' (requires approval):
+Command failed with exit code 2
+STDERR:
+Usage: tools_cli.py dandiset-assets [OPTIONS] DANDISET_ID
+Try 'tools_cli.py dandiset-assets --help' for help.
+
+Error: No such option: --limit
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 22
+Submitting completion request...
+Processing response...
+Since we can't paginate through the results, let's try examining some of the NWB files we've already identified to get more information about the dataset structure. Let's write a script to analyze the first NWB file we found in more detail.
+
+Tool: write_to_file
+Params: {'path': 'explore/explore_nwb_structure.py', 'content': '"""\nThis script explores the structure of an NWB file from Dandiset 001333 to better understand\nwhat types of data are available.\n"""\n\nimport pynwb\nimport h5py\nimport remfile\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# URL of the NWB file to explore\nURL = "https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/"\n\ndef load_nwb(url):\n    """Load an NWB file from a URL."""\n    print(f"Loading NWB file from {url}...")\n    remote_file = remfile.File(url)\n    h5_file = h5py.File(remote_file)\n    io = pynwb.NWBHDF5IO(file=h5_file)\n    nwb = io.read()\n    print("NWB file loaded successfully")\n    return nwb, h5_file\n\ndef print_nwb_info(nwb):\n    """Print basic information about the NWB file."""\n    print("\\n=== NWB File Information ===")\n    print(f"Session description: {nwb.session_description}")\n    print(f"Identifier: {nwb.identifier}")\n    print(f"Session start time: {nwb.session_start_time}")\n    print(f"Experiment description: {nwb.experiment_description}")\n    print(f"Lab: {nwb.lab}")\n    print(f"Institution: {nwb.institution}")\n    print(f"Keywords: {nwb.keywords[:]}")\n    print(f"Related publications: {nwb.related_publications}")\n    print(f"Experimenter: {nwb.experimenter}")\n    \n    # Subject information\n    print("\\n=== Subject Information ===")\n    print(f"Subject ID: {nwb.subject.subject_id}")\n    print(f"Species: {nwb.subject.species}")\n    print(f"Sex: {nwb.subject.sex}")\n    print(f"Age: {nwb.subject.age}")\n    print(f"Description: {nwb.subject.description}")\n\ndef explore_data(nwb, h5_file):\n    """Explore the data in the NWB file."""\n    print("\\n=== Data Exploration ===")\n    \n    # Check whether it contains LFP data\n    if "ecephys" in nwb.processing:\n        print("\\nProcessing modules:")\n        print(f"- ecephys: {nwb.processing[\'ecephys\'].description}")\n        \n        if "LFP" in nwb.processing["ecephys"].data_interfaces:\n            lfp = nwb.processing["ecephys"].data_interfaces["LFP"]\n            print("\\nLFP electrical series:")\n            \n            for es_name, es in lfp.electrical_series.items():\n                print(f"\\n- {es_name}:")\n                print(f"  Description: {es.description}")\n                print(f"  Unit: {es.unit}")\n                print(f"  Data shape: {es.data.shape}")\n                print(f"  Timestamps shape: {es.timestamps.shape}")\n                \n                # Load a sample of the data for analysis\n                print("  Loading sample data...")\n                data_sample = es.data[:]  # Get all data (it\'s a small file)\n                timestamps_sample = es.timestamps[:]\n                \n                print(f"  Data statistics:")\n                print(f"    Min: {np.min(data_sample):.6f}")\n                print(f"    Max: {np.max(data_sample):.6f}")\n                print(f"    Mean: {np.mean(data_sample):.6f}")\n                print(f"    Std: {np.std(data_sample):.6f}")\n                \n                print(f"  Timestamps statistics:")\n                print(f"    Start: {timestamps_sample[0]:.6f} seconds")\n                print(f"    End: {timestamps_sample[-1]:.6f} seconds")\n                print(f"    Duration: {timestamps_sample[-1] - timestamps_sample[0]:.6f} seconds")\n                \n                # Plot the data\n                plt.figure(figsize=(12, 6))\n                plt.plot(timestamps_sample, data_sample)\n                plt.title(f"LFP {es_name}")\n                plt.xlabel("Time (seconds)")\n                plt.ylabel(f"Voltage ({es.unit})")\n                plt.grid(True)\n                plt.savefig(f"lfp_{es_name}_timeseries.png")\n                plt.close()\n                \n                # Also generate frequency domain plot\n                plt.figure(figsize=(12, 6))\n                fs = 1.0 / (timestamps_sample[1] - timestamps_sample[0])  # Sampling frequency\n                n = len(data_sample)\n                freqs = np.fft.rfftfreq(n, d=1/fs)\n                fft_vals = np.abs(np.fft.rfft(data_sample))\n                \n                plt.semilogy(freqs, fft_vals)\n                plt.title(f"LFP {es_name} - Frequency Domain")\n                plt.xlabel("Frequency (Hz)")\n                plt.ylabel("Amplitude")\n                plt.grid(True)\n                plt.savefig(f"lfp_{es_name}_frequency.png")\n                plt.close()\n                \n                # Generate a spectrogram\n                plt.figure(figsize=(12, 6))\n                plt.specgram(data_sample, Fs=fs, cmap=\'viridis\')\n                plt.title(f"LFP {es_name} - Spectrogram")\n                plt.xlabel("Time (seconds)")\n                plt.ylabel("Frequency (Hz)")\n                plt.colorbar(label="Power/Frequency (dB/Hz)")\n                plt.savefig(f"lfp_{es_name}_spectrogram.png")\n                plt.close()\n\n    # Check electrodes\n    if nwb.electrodes is not None:\n        print("\\nElectrodes information:")\n        electrode_df = nwb.electrodes.to_dataframe()\n        print(f"Number of electrodes: {len(electrode_df)}")\n        print("Electrode locations:")\n        locations = electrode_df[\'location\'].unique()\n        for loc in locations:\n            count = len(electrode_df[electrode_df[\'location\'] == loc])\n            print(f"- {loc}: {count} electrodes")\n        \n        print("\\nElectrode groups:")\n        for group_name, group in nwb.electrode_groups.items():\n            print(f"- {group_name}: {group.description} (Location: {group.location})")\n\ndef main():\n    try:\n        # Load the NWB file\n        nwb, h5_file = load_nwb(URL)\n        \n        # Print general information about the NWB file\n        print_nwb_info(nwb)\n        \n        # Explore the data in the NWB file\n        explore_data(nwb, h5_file)\n        \n        print("\\nExploration complete!")\n        \n    except Exception as e:\n        print(f"Error: {e}")\n\nif __name__ == "__main__":\n    main()'}
+================================
+Content to be written to explore/explore_nwb_structure.py:
+"""
+This script explores the structure of an NWB file from Dandiset 001333 to better understand
+what types of data are available.
+"""
+
+import pynwb
+import h5py
+import remfile
+import numpy as np
+import matplotlib.pyplot as plt
+
+# URL of the NWB file to explore
+URL = "https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/"
+
+def load_nwb(url):
+    """Load an NWB file from a URL."""
+    print(f"Loading NWB file from {url}...")
+    remote_file = remfile.File(url)
+    h5_file = h5py.File(remote_file)
+    io = pynwb.NWBHDF5IO(file=h5_file)
+    nwb = io.read()
+    print("NWB file loaded successfully")
+    return nwb, h5_file
+
+def print_nwb_info(nwb):
+    """Print basic information about the NWB file."""
+    print("\n=== NWB File Information ===")
+    print(f"Session description: {nwb.session_description}")
+    print(f"Identifier: {nwb.identifier}")
+    print(f"Session start time: {nwb.session_start_time}")
+    print(f"Experiment description: {nwb.experiment_description}")
+    print(f"Lab: {nwb.lab}")
+    print(f"Institution: {nwb.institution}")
+    print(f"Keywords: {nwb.keywords[:]}")
+    print(f"Related publications: {nwb.related_publications}")
+    print(f"Experimenter: {nwb.experimenter}")
+    
+    # Subject information
+    print("\n=== Subject Information ===")
+    print(f"Subject ID: {nwb.subject.subject_id}")
+    print(f"Species: {nwb.subject.species}")
+    print(f"Sex: {nwb.subject.sex}")
+    print(f"Age: {nwb.subject.age}")
+    print(f"Description: {nwb.subject.description}")
+
+def explore_data(nwb, h5_file):
+    """Explore the data in the NWB file."""
+    print("\n=== Data Exploration ===")
+    
+    # Check whether it contains LFP data
+    if "ecephys" in nwb.processing:
+        print("\nProcessing modules:")
+        print(f"- ecephys: {nwb.processing['ecephys'].description}")
+        
+        if "LFP" in nwb.processing["ecephys"].data_interfaces:
+            lfp = nwb.processing["ecephys"].data_interfaces["LFP"]
+            print("\nLFP electrical series:")
+            
+            for es_name, es in lfp.electrical_series.items():
+                print(f"\n- {es_name}:")
+                print(f"  Description: {es.description}")
+                print(f"  Unit: {es.unit}")
+                print(f"  Data shape: {es.data.shape}")
+                print(f"  Timestamps shape: {es.timestamps.shape}")
+                
+                # Load a sample of the data for analysis
+                print("  Loading sample data...")
+                data_sample = es.data[:]  # Get all data (it's a small file)
+                timestamps_sample = es.timestamps[:]
+                
+                print(f"  Data statistics:")
+                print(f"    Min: {np.min(data_sample):.6f}")
+                print(f"    Max: {np.max(data_sample):.6f}")
+                print(f"    Mean: {np.mean(data_sample):.6f}")
+                print(f"    Std: {np.std(data_sample):.6f}")
+                
+                print(f"  Timestamps statistics:")
+                print(f"    Start: {timestamps_sample[0]:.6f} seconds")
+                print(f"    End: {timestamps_sample[-1]:.6f} seconds")
+                print(f"    Duration: {timestamps_sample[-1] - timestamps_sample[0]:.6f} seconds")
+                
+                # Plot the data
+                plt.figure(figsize=(12, 6))
+                plt.plot(timestamps_sample, data_sample)
+                plt.title(f"LFP {es_name}")
+                plt.xlabel("Time (seconds)")
+                plt.ylabel(f"Voltage ({es.unit})")
+                plt.grid(True)
+                plt.savefig(f"lfp_{es_name}_timeseries.png")
+                plt.close()
+                
+                # Also generate frequency domain plot
+                plt.figure(figsize=(12, 6))
+                fs = 1.0 / (timestamps_sample[1] - timestamps_sample[0])  # Sampling frequency
+                n = len(data_sample)
+                freqs = np.fft.rfftfreq(n, d=1/fs)
+                fft_vals = np.abs(np.fft.rfft(data_sample))
+                
+                plt.semilogy(freqs, fft_vals)
+                plt.title(f"LFP {es_name} - Frequency Domain")
+                plt.xlabel("Frequency (Hz)")
+                plt.ylabel("Amplitude")
+                plt.grid(True)
+                plt.savefig(f"lfp_{es_name}_frequency.png")
+                plt.close()
+                
+                # Generate a spectrogram
+                plt.figure(figsize=(12, 6))
+                plt.specgram(data_sample, Fs=fs, cmap='viridis')
+                plt.title(f"LFP {es_name} - Spectrogram")
+                plt.xlabel("Time (seconds)")
+                plt.ylabel("Frequency (Hz)")
+                plt.colorbar(label="Power/Frequency (dB/Hz)")
+                plt.savefig(f"lfp_{es_name}_spectrogram.png")
+                plt.close()
+
+    # Check electrodes
+    if nwb.electrodes is not None:
+        print("\nElectrodes information:")
+        electrode_df = nwb.electrodes.to_dataframe()
+        print(f"Number of electrodes: {len(electrode_df)}")
+        print("Electrode locations:")
+        locations = electrode_df['location'].unique()
+        for loc in locations:
+            count = len(electrode_df[electrode_df['location'] == loc])
+            print(f"- {loc}: {count} electrodes")
+        
+        print("\nElectrode groups:")
+        for group_name, group in nwb.electrode_groups.items():
+            print(f"- {group_name}: {group.description} (Location: {group.location})")
+
+def main():
+    try:
+        # Load the NWB file
+        nwb, h5_file = load_nwb(URL)
+        
+        # Print general information about the NWB file
+        print_nwb_info(nwb)
+        
+        # Explore the data in the NWB file
+        explore_data(nwb, h5_file)
+        
+        print("\nExploration complete!")
+        
+    except Exception as e:
+        print(f"Error: {e}")
+
+if __name__ == "__main__":
+    main()
+================================
+Total prompt tokens: 168988 + 0
+Total completion tokens: 5239 + 0
+
+=========================================
+
+write_to_file for 'explore/explore_nwb_structure.py':
+Successfully wrote 5878 characters to explore/explore_nwb_structure.py
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 24
+Submitting completion request...
+Processing response...
+This script will load the NWB file, examine its structure, and generate visualizations of the contained data. This will help us understand what type of neurophysiology data is in the dataset and how to analyze it in our notebook.
+
+Tool: execute_command
+Params: {'command': 'cd explore && python explore_nwb_structure.py', 'requires_approval': 'false', 'timeout': '90'}
+================================
+Command to be executed
+cd explore && python explore_nwb_structure.py
+================================
+/opt/conda/lib/python3.11/site-packages/hdmf/spec/namespace.py:535: UserWarning: Ignoring cached namespace 'core' version 2.8.0 because version 2.7.0 is already loaded.
+  warn("Ignoring cached namespace '%s' version %s because version %s is already loaded."
+Loading NWB file from https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/...
+NWB file loaded successfully
+
+=== NWB File Information ===
+Session description: Parkinson's Electrophysiological Signal Dataset (PESD) Generated from Simulation
+Identifier: 84828db4-a3a3-4b2e-abff-6db2b404dd68
+Session start time: 2025-04-03 12:30:26.094607-04:00
+Experiment description: The PESD dataset is generated from a cortico-basal-ganglia network for a Parkinsonian computational model. The computational model of the cortico-basal-ganglia is originally presented by Fleming et al. in the article: 'Simulation of Closed-Loop Deep Brain Stimulation Control Schemes for Suppression of Pathological Beta Oscillations in Parkinson's Disease'.
+Lab: BrainX Lab
+Institution: Michigan Technological University
+Keywords: ['ecephys' 'LFP' "Parkinson's Disease" 'Beta Band']
+Related publications: ('https://arxiv.org/abs/2407.17756', 'DOI: 10.3389/fnins.2020.00166')
+Experimenter: ('Ananna Biswas',)
+
+=== Subject Information ===
+Subject ID: healthy-simulated-beta
+Species: Homo sapiens
+Sex: U
+Age: P0D
+Description: This is a simulated dataset generated from a computational model.
+
+=== Data Exploration ===
+
+Processing modules:
+- ecephys: Processed electrophysiology data
+
+LFP electrical series:
+
+- Beta_Band_Voltage:
+  Description: no description
+  Unit: volts
+  Data shape: (1400,)
+  Timestamps shape: (1400,)
+  Loading sample data...
+  Data statistics:
+    Min: 0.000004
+    Max: 0.000141
+    Mean: 0.000048
+    Std: 0.000025
+  Timestamps statistics:
+    Start: 10.019980 seconds
+    End: 37.999990 seconds
+    Duration: 27.980010 seconds
+
+Electrodes information:
+Number of electrodes: 12
+Electrode locations:
+- Simulated Cortico-basal-ganglia network of brain: 12 electrodes
+
+Electrode groups:
+- shank0: Simulated electrode group for shank 0 (Location: Simulated Cortico-basal-ganglia network of brain)
+- shank1: Simulated electrode group for shank 1 (Location: Simulated Cortico-basal-ganglia network of brain)
+- shank2: Simulated electrode group for shank 2 (Location: Simulated Cortico-basal-ganglia network of brain)
+- shank3: Simulated electrode group for shank 3 (Location: Simulated Cortico-basal-ganglia network of brain)
+
+Exploration complete!
+Total prompt tokens: 190258 + 0
+Total completion tokens: 5376 + 0
+
+=========================================
+
+execute_command 'cd explore && python explore_nwb_structure.py' (requires approval):
+Command executed successfully
+STDOUT:
+Loading NWB file from https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/...
+NWB file loaded successfully
+
+=== NWB File Information ===
+Session description: Parkinson's Electrophysiological Signal Dataset (PESD) Generated from Simulation
+Identifier: 84828db4-a3a3-4b2e-abff-6db2b404dd68
+Session start time: 2025-04-03 12:30:26.094607-04:00
+Experiment description: The PESD dataset is generated from a cortico-basal-ganglia network for a Parkinsonian computational model. The computational model of the cortico-basal-ganglia is originally presented by Fleming et al. in the article: 'Simulation of Closed-Loop Deep Brain Stimulation Control Schemes for Suppression of Pathological Beta Oscillations in Parkinson's Disease'.
+Lab: BrainX Lab
+Institution: Michigan Technological University
+Keywords: ['ecephys' 'LFP' "Parkinson's Disease" 'Beta Band']
+Related publications: ('https://arxiv.org/abs/2407.17756', 'DOI: 10.3389/fnins.2020.00166')
+Experimenter: ('Ananna Biswas',)
+
+=== Subject Information ===
+Subject ID: healthy-simulated-beta
+Species: Homo sapiens
+Sex: U
+Age: P0D
+Description: This is a simulated dataset generated from a computational model.
+
+=== Data Exploration ===
+
+Processing modules:
+- ecephys: Processed electrophysiology data
+
+LFP electrical series:
+
+- Beta_Band_Voltage:
+  Description: no description
+  Unit: volts
+  Data shape: (1400,)
+  Timestamps shape: (1400,)
+  Loading sample data...
+  Data statistics:
+    Min: 0.000004
+    Max: 0.000141
+    Mean: 0.000048
+    Std: 0.000025
+  Timestamps statistics:
+    Start: 10.019980 seconds
+    End: 37.999990 seconds
+    Duration: 27.980010 seconds
+
+Electrodes information:
+Number of electrodes: 12
+Electrode locations:
+- Simulated Cortico-basal-ganglia network of brain: 12 electrodes
+
+Electrode groups:
+- shank0: Simulated electrode group for shank 0 (Location: Simulated Cortico-basal-ganglia network of brain)
+- shank1: Simulated electrode group for shank 1 (Location: Simulated Cortico-basal-ganglia network of brain)
+- shank2: Simulated electrode group for shank 2 (Location: Simulated Cortico-basal-ganglia network of brain)
+- shank3: Simulated electrode group for shank 3 (Location: Simulated Cortico-basal-ganglia network of brain)
+
+Exploration complete!
+
+STDERR:
+/opt/conda/lib/python3.11/site-packages/hdmf/spec/namespace.py:535: UserWarning: Ignoring cached namespace 'core' version 2.8.0 because version 2.7.0 is already loaded.
+  warn("Ignoring cached namespace '%s' version %s because version %s is already loaded."
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 26
+Submitting completion request...
+Processing response...
+I should examine the time series, frequency domain, and spectrogram plots to understand the characteristics of the LFP data in this dataset.
+
+Tool: read_image
+Params: {'path': 'explore/lfp_Beta_Band_Voltage_timeseries.png', 'instructions': 'Look at this time series plot of the LFP Beta_Band_Voltage data and help me understand what kind of signal patterns are present. Is there visible beta oscillatory activity (13-30Hz) as mentioned in the dataset description? Describe any relevant features visible in the time domain.'}
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 2
+Submitting completion request...
+Processing response...
+Total prompt tokens: 212664 + 1047
+Total completion tokens: 5536 + 193
+
+=========================================
+
+read_image for 'explore/lfp_Beta_Band_Voltage_timeseries.png':
+The image for explore/lfp_Beta_Band_Voltage_timeseries.png is attached. AI description: The time series plot shows LFP Beta_Band_Voltage data with clear oscillatory patterns consistent with beta band activity (13-30Hz). The signal displays:
+
+1. Regular fluctuations with varying amplitudes, typically between 0.00002-0.00008 volts
+2. Several higher-amplitude transients (peaks reaching ~0.00014 volts) at various timepoints (~12, 18, 30, and 32 seconds)
+3. A rhythmic pattern with peaks and troughs occurring at frequencies that appear consistent with beta oscillations
+
+The rapid fluctuations across the ~30-second recording window suggest the presence of beta oscillations as mentioned in the dataset description. There's some temporal variability in both amplitude and frequency, which is typical of neurophysiological beta activity. The signal appears to have been filtered to highlight the beta frequency range.
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 28
+Submitting completion request...
+Processing response...
+The time-series plot clearly shows oscillatory activity. The frequency domain plot will give us more insight into the dominant frequencies present in the signal, which should help confirm if there is significant beta band (13-30 Hz) activity as mentioned in the dataset description.
+
+Tool: read_image
+Params: {'path': 'explore/lfp_Beta_Band_Voltage_frequency.png', 'instructions': 'Examine this frequency domain plot and identify the dominant frequency bands present in the signal. In particular, look for evidence of beta band activity (13-30 Hz). Is the beta frequency range prominent in this local field potential recording? Are there any other notable frequency components?'}
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 2
+Submitting completion request...
+Processing response...
+Total prompt tokens: 236559 + 2089
+Total completion tokens: 5720 + 388
+
+=========================================
+
+read_image for 'explore/lfp_Beta_Band_Voltage_frequency.png':
+The image for explore/lfp_Beta_Band_Voltage_frequency.png is attached. AI description: The frequency domain plot shows the LFP Beta_Band_Voltage with amplitude (on a logarithmic scale) versus frequency (Hz). 
+
+The dominant frequency activity appears in the lower frequencies (0-5 Hz), with the highest peak near 0 Hz and considerable power throughout the delta (0.5-4 Hz) and theta (4-8 Hz) ranges. 
+
+The beta band (13-30 Hz) is present but significantly less prominent, showing much lower amplitude (approximately 10^-5) compared to the lower frequency bands (10^-3 to 10^-2). The power spectrum demonstrates a clear decreasing trend as frequency increases.
+
+In summary, beta band activity is present but not prominent in this recording. The signal is dominated by lower frequency components, particularly in the delta and theta ranges, with a notable peak at or near 0 Hz.
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 30
+Submitting completion request...
+Processing response...
+The spectrogram will show us how the frequency content of the signal evolves over time, which is particularly important for understanding the dynamics of oscillatory activity and identifying any transient spectral features.
+
+Tool: read_image
+Params: {'path': 'explore/lfp_Beta_Band_Voltage_spectrogram.png', 'instructions': 'Analyze this spectrogram and describe how the spectral content of the signal changes over time. Look for any patterns or time-varying features in the frequency bands, especially in the beta range (13-30 Hz). Are there periods with stronger beta activity or other notable time-frequency patterns?'}
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 2
+Submitting completion request...
+Processing response...
+Total prompt tokens: 261965 + 3137
+Total completion tokens: 5898 + 607
+
+=========================================
+
+read_image for 'explore/lfp_Beta_Band_Voltage_spectrogram.png':
+The image for explore/lfp_Beta_Band_Voltage_spectrogram.png is attached. AI description: The spectrogram displays LFP (Local Field Potential) beta band voltage over approximately 22 seconds. Key observations:
+
+- Beta range (13-30 Hz) shows periodic modulation with stronger activity visible around 15-22 Hz, occurring in pulses roughly every 3-4 seconds.
+- Lower frequencies (0-5 Hz) display consistently higher power (yellow-green colors, -80 to -100 dB/Hz) throughout the recording.
+- The beta activity exhibits temporal oscillatory patterns, with notable power fluctuations appearing rhythmically.
+- Mid-beta range (15-20 Hz) shows more pronounced temporal variation than upper beta (20-30 Hz).
+- The most pronounced beta activity occurs around seconds 5, 10-11, and 15-17, suggesting a possible cyclic pattern of activation and suppression.
+
+The pattern suggests rhythmic modulation of beta oscillations, potentially indicating recurring neural processing events in the recorded brain region.
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 32
+Submitting completion request...
+Processing response...
+From our earlier examination, we've only seen "sub-healthy-simulated-beta" subjects. Let's try to find and examine another subject/session to see if there are any differences in the data. We should look at the list of assets again to try to find a file with a different naming pattern.
+
+Tool: execute_command
+Params: {'command': 'python tools_cli.py dandiset-assets 001333 | grep -v "sub-healthy-simulated-beta" | head', 'requires_approval': 'false'}
+================================
+Command to be executed
+python tools_cli.py dandiset-assets 001333 | grep -v "sub-healthy-simulated-beta" | head
+================================
+{
+  "results": {
+    "count": 1304,
+    "results": [
+      {
+        "asset_id": "1d94c7ad-dbaf-43ea-89f2-1b2518fab158",
+        "size": 225936
+      },
+      {
+        "asset_id": "e0fa57b2-02a4-4c20-92df-d7eb64b60170",
+Total prompt tokens: 288904 + 3137
+Total completion tokens: 6081 + 607
+
+=========================================
+
+execute_command 'python tools_cli.py dandiset-assets 001333 | grep -v "sub-healthy-simulated-beta" | head' (requires approval):
+Command executed successfully
+STDOUT:
+{
+  "results": {
+    "count": 1304,
+    "results": [
+      {
+        "asset_id": "1d94c7ad-dbaf-43ea-89f2-1b2518fab158",
+        "size": 225936
+      },
+      {
+        "asset_id": "e0fa57b2-02a4-4c20-92df-d7eb64b60170",
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 34
+Submitting completion request...
+Processing response...
+Let's try another approach - let's examine a different file from the healthy-simulated-beta subject to see if there are variations between sessions. We'll choose a different file from the assets list we saw earlier.
+
+Tool: execute_command
+Params: {'command': 'python tools_cli.py nwb-file-info 001333 https://api.dandiarchive.org/api/assets/e0fa57b2-02a4-4c20-92df-d7eb64b60170/download/', 'requires_approval': 'false'}
+================================
+Command to be executed
+python tools_cli.py nwb-file-info 001333 https://api.dandiarchive.org/api/assets/e0fa57b2-02a4-4c20-92df-d7eb64b60170/download/
+================================
+/opt/conda/lib/python3.11/site-packages/hdmf/spec/namespace.py:535: UserWarning: Ignoring cached namespace 'core' version 2.8.0 because version 2.7.0 is already loaded.
+  warn("Ignoring cached namespace '%s' version %s because version %s is already loaded."
+/home/jovyan/dandi-ai-notebooks-3/packages/get-nwbfile-info/src/get_nwbfile_info/core.py:319: UserWarning: Warning: Duplicate entries found in the results.
+  warnings.warn("Warning: Duplicate entries found in the results.")
+# This script shows how to load the NWB file at https://api.dandiarchive.org/api/assets/e0fa57b2-02a4-4c20-92df-d7eb64b60170/download/ in Python using PyNWB
+
+import pynwb
+import h5py
+import remfile
+
+# Load
+url = "https://api.dandiarchive.org/api/assets/e0fa57b2-02a4-4c20-92df-d7eb64b60170/download/"
+remote_file = remfile.File(url)
+h5_file = h5py.File(remote_file)
+io = pynwb.NWBHDF5IO(file=h5_file)
+nwb = io.read()
+
+nwb # (NWBFile)
+nwb.session_description # (str) Parkinson's Electrophysiological Signal Dataset (PESD) Generated from Simulation
+nwb.identifier # (str) a86b31e3-6c71-416b-bdb9-efbb9d6e66d6
+nwb.session_start_time # (datetime) 2025-04-03T12:30:26.946028-04:00
+nwb.timestamps_reference_time # (datetime) 2025-04-03T12:30:26.946028-04:00
+nwb.file_create_date # (list) [datetime.datetime(2025, 4, 3, 12, 30, 26, 978397, tzinfo=tzoffset(None, -14400))]
+nwb.experimenter # (tuple) ['Ananna Biswas']
+nwb.related_publications # (tuple) ['https://arxiv.org/abs/2407.17756', 'DOI: 10.3389/fnins.2020.00166']
+nwb.keywords # (StrDataset) shape (4,); dtype object
+# nwb.keywords[:] # Access all data
+# nwb.keywords[0:10] # Access first 10 elements
+# First few values of nwb.keywords: ['ecephys' 'LFP' "Parkinson's Disease" 'Beta Band']
+nwb.processing # (LabelledDict)
+nwb.processing["ecephys"] # (ProcessingModule)
+nwb.processing["ecephys"].description # (str) Processed electrophysiology data
+nwb.processing["ecephys"].data_interfaces # (LabelledDict)
+nwb.processing["ecephys"].data_interfaces["LFP"] # (LFP)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series # (LabelledDict)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"] # (ElectricalSeries)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].resolution # (float64) -1.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].comments # (str) no comments
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].description # (str) no description
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].conversion # (float64) 1.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].offset # (float64) 0.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].unit # (str) volts
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data # (Dataset) shape (1400,); dtype float64
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data[:] # Access all data
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data[0:10] # Access first 10 elements
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps # (Dataset) shape (1400,); dtype float64
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps[:] # Access all data
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps[0:10] # Access first 10 elements
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps_unit # (str) seconds
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].interval # (int) 1
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes # (DynamicTableRegion)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.description # (str) all electrodes
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table # (DynamicTable)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.description # (str) metadata about extracellular electrodes
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.columns # (tuple)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.id # (ElementIdentifiers)
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+# Number of rows: 12
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.label # (VectorData) label of electrode
+nwb.electrode_groups # (LabelledDict)
+nwb.electrode_groups["shank0"] # (ElectrodeGroup)
+nwb.electrode_groups["shank0"].description # (str) Simulated electrode group for shank 0
+nwb.electrode_groups["shank0"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank0"].device # (Device)
+nwb.electrode_groups["shank0"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank0"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank1"] # (ElectrodeGroup)
+nwb.electrode_groups["shank1"].description # (str) Simulated electrode group for shank 1
+nwb.electrode_groups["shank1"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank1"].device # (Device)
+nwb.electrode_groups["shank1"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank1"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank2"] # (ElectrodeGroup)
+nwb.electrode_groups["shank2"].description # (str) Simulated electrode group for shank 2
+nwb.electrode_groups["shank2"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank2"].device # (Device)
+nwb.electrode_groups["shank2"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank2"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank3"] # (ElectrodeGroup)
+nwb.electrode_groups["shank3"].description # (str) Simulated electrode group for shank 3
+nwb.electrode_groups["shank3"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank3"].device # (Device)
+nwb.electrode_groups["shank3"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank3"].device.manufacturer # (str) N/A
+nwb.devices # (LabelledDict)
+nwb.devices["NEURON_Simulator"] # (Device)
+nwb.devices["NEURON_Simulator"].description # (str) Virtual probe used in NEURON simulation
+nwb.devices["NEURON_Simulator"].manufacturer # (str) N/A
+nwb.experiment_description # (str) The PESD dataset is generated from a cortico-basal-ganglia network for a Parkinsonian computation...
+nwb.lab # (str) BrainX Lab
+nwb.institution # (str) Michigan Technological University
+nwb.electrodes # (DynamicTable)
+nwb.electrodes.description # (str) metadata about extracellular electrodes
+nwb.electrodes.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.electrodes.columns # (tuple)
+nwb.electrodes.id # (ElementIdentifiers)
+# nwb.electrodes.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# nwb.electrodes.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+# Number of rows: 12
+nwb.electrodes.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.electrodes.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.electrodes.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.electrodes.label # (VectorData) label of electrode
+nwb.subject # (Subject)
+nwb.subject.age # (str) P0D
+nwb.subject.age__reference # (str) birth
+nwb.subject.description # (str) This is a simulated dataset generated from a computational model.
+nwb.subject.sex # (str) U
+nwb.subject.species # (str) Homo sapiens
+nwb.subject.subject_id # (str) healthy-simulated-beta
+Total prompt tokens: 316318 + 3137
+Total completion tokens: 6243 + 607
+
+=========================================
+
+execute_command 'python tools_cli.py nwb-file-info 001333 https://api.dandiarchive.org/api/assets/e0fa57b2-02a4-4c20-92df-d7eb64b60170/download/' (requires approval):
+Command executed successfully
+STDOUT:
+# This script shows how to load the NWB file at https://api.dandiarchive.org/api/assets/e0fa57b2-02a4-4c20-92df-d7eb64b60170/download/ in Python using PyNWB
+
+import pynwb
+import h5py
+import remfile
+
+# Load
+url = "https://api.dandiarchive.org/api/assets/e0fa57b2-02a4-4c20-92df-d7eb64b60170/download/"
+remote_file = remfile.File(url)
+h5_file = h5py.File(remote_file)
+io = pynwb.NWBHDF5IO(file=h5_file)
+nwb = io.read()
+
+nwb # (NWBFile)
+nwb.session_description # (str) Parkinson's Electrophysiological Signal Dataset (PESD) Generated from Simulation
+nwb.identifier # (str) a86b31e3-6c71-416b-bdb9-efbb9d6e66d6
+nwb.session_start_time # (datetime) 2025-04-03T12:30:26.946028-04:00
+nwb.timestamps_reference_time # (datetime) 2025-04-03T12:30:26.946028-04:00
+nwb.file_create_date # (list) [datetime.datetime(2025, 4, 3, 12, 30, 26, 978397, tzinfo=tzoffset(None, -14400))]
+nwb.experimenter # (tuple) ['Ananna Biswas']
+nwb.related_publications # (tuple) ['https://arxiv.org/abs/2407.17756', 'DOI: 10.3389/fnins.2020.00166']
+nwb.keywords # (StrDataset) shape (4,); dtype object
+# nwb.keywords[:] # Access all data
+# nwb.keywords[0:10] # Access first 10 elements
+# First few values of nwb.keywords: ['ecephys' 'LFP' "Parkinson's Disease" 'Beta Band']
+nwb.processing # (LabelledDict)
+nwb.processing["ecephys"] # (ProcessingModule)
+nwb.processing["ecephys"].description # (str) Processed electrophysiology data
+nwb.processing["ecephys"].data_interfaces # (LabelledDict)
+nwb.processing["ecephys"].data_interfaces["LFP"] # (LFP)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series # (LabelledDict)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"] # (ElectricalSeries)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].resolution # (float64) -1.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].comments # (str) no comments
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].description # (str) no description
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].conversion # (float64) 1.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].offset # (float64) 0.0
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].unit # (str) volts
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data # (Dataset) shape (1400,); dtype float64
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data[:] # Access all data
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data[0:10] # Access first 10 elements
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps # (Dataset) shape (1400,); dtype float64
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps[:] # Access all data
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps[0:10] # Access first 10 elements
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps_unit # (str) seconds
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].interval # (int) 1
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes # (DynamicTableRegion)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.description # (str) all electrodes
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table # (DynamicTable)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.description # (str) metadata about extracellular electrodes
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.columns # (tuple)
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.id # (ElementIdentifiers)
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+# Number of rows: 12
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].electrodes.table.label # (VectorData) label of electrode
+nwb.electrode_groups # (LabelledDict)
+nwb.electrode_groups["shank0"] # (ElectrodeGroup)
+nwb.electrode_groups["shank0"].description # (str) Simulated electrode group for shank 0
+nwb.electrode_groups["shank0"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank0"].device # (Device)
+nwb.electrode_groups["shank0"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank0"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank1"] # (ElectrodeGroup)
+nwb.electrode_groups["shank1"].description # (str) Simulated electrode group for shank 1
+nwb.electrode_groups["shank1"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank1"].device # (Device)
+nwb.electrode_groups["shank1"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank1"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank2"] # (ElectrodeGroup)
+nwb.electrode_groups["shank2"].description # (str) Simulated electrode group for shank 2
+nwb.electrode_groups["shank2"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank2"].device # (Device)
+nwb.electrode_groups["shank2"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank2"].device.manufacturer # (str) N/A
+nwb.electrode_groups["shank3"] # (ElectrodeGroup)
+nwb.electrode_groups["shank3"].description # (str) Simulated electrode group for shank 3
+nwb.electrode_groups["shank3"].location # (str) Simulated Cortico-basal-ganglia network of brain
+nwb.electrode_groups["shank3"].device # (Device)
+nwb.electrode_groups["shank3"].device.description # (str) Virtual probe used in NEURON simulation
+nwb.electrode_groups["shank3"].device.manufacturer # (str) N/A
+nwb.devices # (LabelledDict)
+nwb.devices["NEURON_Simulator"] # (Device)
+nwb.devices["NEURON_Simulator"].description # (str) Virtual probe used in NEURON simulation
+nwb.devices["NEURON_Simulator"].manufacturer # (str) N/A
+nwb.experiment_description # (str) The PESD dataset is generated from a cortico-basal-ganglia network for a Parkinsonian computation...
+nwb.lab # (str) BrainX Lab
+nwb.institution # (str) Michigan Technological University
+nwb.electrodes # (DynamicTable)
+nwb.electrodes.description # (str) metadata about extracellular electrodes
+nwb.electrodes.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.electrodes.columns # (tuple)
+nwb.electrodes.id # (ElementIdentifiers)
+# nwb.electrodes.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# nwb.electrodes.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+# Number of rows: 12
+nwb.electrodes.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.electrodes.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.electrodes.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.electrodes.label # (VectorData) label of electrode
+nwb.subject # (Subject)
+nwb.subject.age # (str) P0D
+nwb.subject.age__reference # (str) birth
+nwb.subject.description # (str) This is a simulated dataset generated from a computational model.
+nwb.subject.sex # (str) U
+nwb.subject.species # (str) Homo sapiens
+nwb.subject.subject_id # (str) healthy-simulated-beta
+
+STDERR:
+/opt/conda/lib/python3.11/site-packages/hdmf/spec/namespace.py:535: UserWarning: Ignoring cached namespace 'core' version 2.8.0 because version 2.7.0 is already loaded.
+  warn("Ignoring cached namespace '%s' version %s because version %s is already loaded."
+/home/jovyan/dandi-ai-notebooks-3/packages/get-nwbfile-info/src/get_nwbfile_info/core.py:319: UserWarning: Warning: Duplicate entries found in the results.
+  warnings.warn("Warning: Duplicate entries found in the results.")
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 36
+Submitting completion request...
+Processing response...
+I'll create a script to compare the data between the two NWB files we've examined so far:
+1. The first file with asset_id "1d94c7ad-dbaf-43ea-89f2-1b2518fab158"
+2. The second file with asset_id "e0fa57b2-02a4-4c20-92df-d7eb64b60170"
+
+The files appear to have the same structure but might have different data within the same subject type (healthy-simulated-beta). Let's create visualizations to compare them.
+
+Tool: write_to_file
+Params: {'path': 'explore/compare_nwb_files.py', 'content': '"""\nThis script compares the data between two NWB files from the same subject type\nto see if there are differences between sessions.\n"""\n\nimport pynwb\nimport h5py\nimport remfile\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# URLs of the NWB files to compare\nURL1 = "https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/"\nURL2 = "https://api.dandiarchive.org/api/assets/e0fa57b2-02a4-4c20-92df-d7eb64b60170/download/"\n\ndef load_nwb(url):\n    """Load an NWB file from a URL."""\n    print(f"Loading NWB file from {url}...")\n    remote_file = remfile.File(url)\n    h5_file = h5py.File(remote_file)\n    io = pynwb.NWBHDF5IO(file=h5_file)\n    nwb = io.read()\n    print(f"NWB file loaded successfully: {nwb.identifier}")\n    return nwb, h5_file\n\ndef extract_data(nwb):\n    """Extract the LFP data from the NWB file."""\n    lfp_data = nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data[:]\n    timestamps = nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps[:]\n    subject_id = nwb.subject.subject_id\n    session_id = nwb.identifier\n    \n    return {\n        "data": lfp_data,\n        "timestamps": timestamps,\n        "subject_id": subject_id,\n        "session_id": session_id\n    }\n\ndef compare_time_series(data1, data2):\n    """Compare the time series data between two NWB files."""\n    fig, axes = plt.subplots(3, 1, figsize=(12, 15))\n    \n    # Plot the first time series\n    axes[0].plot(data1["timestamps"], data1["data"], label=f"Session: {data1[\'session_id\'][:8]}...")\n    axes[0].set_title(f"Time Series - {data1[\'subject_id\']} - Session 1")\n    axes[0].set_xlabel("Time (seconds)")\n    axes[0].set_ylabel("Voltage (volts)")\n    axes[0].grid(True)\n    axes[0].legend()\n    \n    # Plot the second time series\n    axes[1].plot(data2["timestamps"], data2["data"], label=f"Session: {data2[\'session_id\'][:8]}...")\n    axes[1].set_title(f"Time Series - {data2[\'subject_id\']} - Session 2")\n    axes[1].set_xlabel("Time (seconds)")\n    axes[1].set_ylabel("Voltage (volts)")\n    axes[1].grid(True)\n    axes[1].legend()\n    \n    # Plot both time series for direct comparison\n    axes[2].plot(data1["timestamps"], data1["data"], label=f"Session 1", alpha=0.7)\n    axes[2].plot(data2["timestamps"], data2["data"], label=f"Session 2", alpha=0.7)\n    axes[2].set_title("Direct Comparison of Time Series")\n    axes[2].set_xlabel("Time (seconds)")\n    axes[2].set_ylabel("Voltage (volts)")\n    axes[2].grid(True)\n    axes[2].legend()\n    \n    plt.tight_layout()\n    plt.savefig("time_series_comparison.png")\n    plt.close()\n    \n    print("Time series comparison plot saved to time_series_comparison.png")\n\ndef compare_frequency_domain(data1, data2):\n    """Compare the frequency domain data between two NWB files."""\n    fig, axes = plt.subplots(3, 1, figsize=(12, 15))\n    \n    # Calculate sampling frequency\n    fs1 = 1.0 / (data1["timestamps"][1] - data1["timestamps"][0])\n    fs2 = 1.0 / (data2["timestamps"][1] - data2["timestamps"][0])\n    \n    # Calculate the FFTs\n    freqs1 = np.fft.rfftfreq(len(data1["data"]), d=1/fs1)\n    fft_vals1 = np.abs(np.fft.rfft(data1["data"]))\n    \n    freqs2 = np.fft.rfftfreq(len(data2["data"]), d=1/fs2)\n    fft_vals2 = np.abs(np.fft.rfft(data2["data"]))\n    \n    # Plot the first frequency domain\n    axes[0].semilogy(freqs1, fft_vals1, label=f"Session: {data1[\'session_id\'][:8]}...")\n    axes[0].set_title(f"Frequency Domain - {data1[\'subject_id\']} - Session 1")\n    axes[0].set_xlabel("Frequency (Hz)")\n    axes[0].set_ylabel("Amplitude")\n    axes[0].grid(True)\n    axes[0].legend()\n    \n    # Plot the second frequency domain\n    axes[1].semilogy(freqs2, fft_vals2, label=f"Session: {data2[\'session_id\'][:8]}...")\n    axes[1].set_title(f"Frequency Domain - {data2[\'subject_id\']} - Session 2")\n    axes[1].set_xlabel("Frequency (Hz)")\n    axes[1].set_ylabel("Amplitude")\n    axes[1].grid(True)\n    axes[1].legend()\n    \n    # Plot both frequency domains for direct comparison\n    axes[2].semilogy(freqs1, fft_vals1, label=f"Session 1", alpha=0.7)\n    axes[2].semilogy(freqs2, fft_vals2, label=f"Session 2", alpha=0.7)\n    axes[2].set_title("Direct Comparison of Frequency Domains")\n    axes[2].set_xlabel("Frequency (Hz)")\n    axes[2].set_ylabel("Amplitude")\n    axes[2].grid(True)\n    axes[2].legend()\n    \n    plt.tight_layout()\n    plt.savefig("frequency_domain_comparison.png")\n    plt.close()\n    \n    print("Frequency domain comparison plot saved to frequency_domain_comparison.png")\n\ndef compare_spectrograms(data1, data2):\n    """Compare the spectrograms between two NWB files."""\n    fig, axes = plt.subplots(2, 1, figsize=(12, 12))\n    \n    # Calculate sampling frequency\n    fs1 = 1.0 / (data1["timestamps"][1] - data1["timestamps"][0])\n    fs2 = 1.0 / (data2["timestamps"][1] - data2["timestamps"][0])\n    \n    # Plot the first spectrogram\n    axes[0].set_title(f"Spectrogram - {data1[\'subject_id\']} - Session 1")\n    axes[0].specgram(data1["data"], Fs=fs1, cmap=\'viridis\')\n    axes[0].set_xlabel("Time (seconds)")\n    axes[0].set_ylabel("Frequency (Hz)")\n    \n    # Plot the second spectrogram\n    axes[1].set_title(f"Spectrogram - {data2[\'subject_id\']} - Session 2")\n    axes[1].specgram(data2["data"], Fs=fs2, cmap=\'viridis\')\n    axes[1].set_xlabel("Time (seconds)")\n    axes[1].set_ylabel("Frequency (Hz)")\n    \n    plt.colorbar(axes[0].images[0], ax=axes[0], label="Power/Frequency (dB/Hz)")\n    plt.colorbar(axes[1].images[0], ax=axes[1], label="Power/Frequency (dB/Hz)")\n    \n    plt.tight_layout()\n    plt.savefig("spectrogram_comparison.png")\n    plt.close()\n    \n    print("Spectrogram comparison plot saved to spectrogram_comparison.png")\n\ndef calculate_statistics(data1, data2):\n    """Calculate statistics to quantitatively compare the datasets."""\n    stats1 = {\n        "min": np.min(data1["data"]),\n        "max": np.max(data1["data"]),\n        "mean": np.mean(data1["data"]),\n        "std": np.std(data1["data"]),\n        "median": np.median(data1["data"]),\n        "duration": data1["timestamps"][-1] - data1["timestamps"][0]\n    }\n    \n    stats2 = {\n        "min": np.min(data2["data"]),\n        "max": np.max(data2["data"]),\n        "mean": np.mean(data2["data"]),\n        "std": np.std(data2["data"]),\n        "median": np.median(data2["data"]),\n        "duration": data2["timestamps"][-1] - data2["timestamps"][0]\n    }\n    \n    print("\\n=== Statistical Comparison ===")\n    print(f"Session 1 ({data1[\'session_id\'][:8]}...):")\n    for key, value in stats1.items():\n        print(f"  {key}: {value:.6f}")\n    \n    print(f"\\nSession 2 ({data2[\'session_id\'][:8]}...):")\n    for key, value in stats2.items():\n        print(f"  {key}: {value:.6f}")\n    \n    print("\\nRelative differences (Session2/Session1 - 1):")\n    for key in stats1.keys():\n        if stats1[key] != 0:  # Avoid division by zero\n            diff = (stats2[key] / stats1[key] - 1) * 100\n            print(f"  {key}: {diff:.2f}%")\n\ndef main():\n    try:\n        # Load the NWB files\n        nwb1, h5_file1 = load_nwb(URL1)\n        nwb2, h5_file2 = load_nwb(URL2)\n        \n        # Extract the data\n        data1 = extract_data(nwb1)\n        data2 = extract_data(nwb2)\n        \n        # Compare the data\n        compare_time_series(data1, data2)\n        compare_frequency_domain(data1, data2)\n        compare_spectrograms(data1, data2)\n        calculate_statistics(data1, data2)\n        \n        # Close the files\n        h5_file1.close()\n        h5_file2.close()\n        \n        print("\\nComparison complete!")\n        \n    except Exception as e:\n        print(f"Error: {e}")\n\nif __name__ == "__main__":\n    main()'}
+================================
+Content to be written to explore/compare_nwb_files.py:
+"""
+This script compares the data between two NWB files from the same subject type
+to see if there are differences between sessions.
+"""
+
+import pynwb
+import h5py
+import remfile
+import numpy as np
+import matplotlib.pyplot as plt
+
+# URLs of the NWB files to compare
+URL1 = "https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/"
+URL2 = "https://api.dandiarchive.org/api/assets/e0fa57b2-02a4-4c20-92df-d7eb64b60170/download/"
+
+def load_nwb(url):
+    """Load an NWB file from a URL."""
+    print(f"Loading NWB file from {url}...")
+    remote_file = remfile.File(url)
+    h5_file = h5py.File(remote_file)
+    io = pynwb.NWBHDF5IO(file=h5_file)
+    nwb = io.read()
+    print(f"NWB file loaded successfully: {nwb.identifier}")
+    return nwb, h5_file
+
+def extract_data(nwb):
+    """Extract the LFP data from the NWB file."""
+    lfp_data = nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data[:]
+    timestamps = nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps[:]
+    subject_id = nwb.subject.subject_id
+    session_id = nwb.identifier
+    
+    return {
+        "data": lfp_data,
+        "timestamps": timestamps,
+        "subject_id": subject_id,
+        "session_id": session_id
+    }
+
+def compare_time_series(data1, data2):
+    """Compare the time series data between two NWB files."""
+    fig, axes = plt.subplots(3, 1, figsize=(12, 15))
+    
+    # Plot the first time series
+    axes[0].plot(data1["timestamps"], data1["data"], label=f"Session: {data1['session_id'][:8]}...")
+    axes[0].set_title(f"Time Series - {data1['subject_id']} - Session 1")
+    axes[0].set_xlabel("Time (seconds)")
+    axes[0].set_ylabel("Voltage (volts)")
+    axes[0].grid(True)
+    axes[0].legend()
+    
+    # Plot the second time series
+    axes[1].plot(data2["timestamps"], data2["data"], label=f"Session: {data2['session_id'][:8]}...")
+    axes[1].set_title(f"Time Series - {data2['subject_id']} - Session 2")
+    axes[1].set_xlabel("Time (seconds)")
+    axes[1].set_ylabel("Voltage (volts)")
+    axes[1].grid(True)
+    axes[1].legend()
+    
+    # Plot both time series for direct comparison
+    axes[2].plot(data1["timestamps"], data1["data"], label=f"Session 1", alpha=0.7)
+    axes[2].plot(data2["timestamps"], data2["data"], label=f"Session 2", alpha=0.7)
+    axes[2].set_title("Direct Comparison of Time Series")
+    axes[2].set_xlabel("Time (seconds)")
+    axes[2].set_ylabel("Voltage (volts)")
+    axes[2].grid(True)
+    axes[2].legend()
+    
+    plt.tight_layout()
+    plt.savefig("time_series_comparison.png")
+    plt.close()
+    
+    print("Time series comparison plot saved to time_series_comparison.png")
+
+def compare_frequency_domain(data1, data2):
+    """Compare the frequency domain data between two NWB files."""
+    fig, axes = plt.subplots(3, 1, figsize=(12, 15))
+    
+    # Calculate sampling frequency
+    fs1 = 1.0 / (data1["timestamps"][1] - data1["timestamps"][0])
+    fs2 = 1.0 / (data2["timestamps"][1] - data2["timestamps"][0])
+    
+    # Calculate the FFTs
+    freqs1 = np.fft.rfftfreq(len(data1["data"]), d=1/fs1)
+    fft_vals1 = np.abs(np.fft.rfft(data1["data"]))
+    
+    freqs2 = np.fft.rfftfreq(len(data2["data"]), d=1/fs2)
+    fft_vals2 = np.abs(np.fft.rfft(data2["data"]))
+    
+    # Plot the first frequency domain
+    axes[0].semilogy(freqs1, fft_vals1, label=f"Session: {data1['session_id'][:8]}...")
+    axes[0].set_title(f"Frequency Domain - {data1['subject_id']} - Session 1")
+    axes[0].set_xlabel("Frequency (Hz)")
+    axes[0].set_ylabel("Amplitude")
+    axes[0].grid(True)
+    axes[0].legend()
+    
+    # Plot the second frequency domain
+    axes[1].semilogy(freqs2, fft_vals2, label=f"Session: {data2['session_id'][:8]}...")
+    axes[1].set_title(f"Frequency Domain - {data2['subject_id']} - Session 2")
+    axes[1].set_xlabel("Frequency (Hz)")
+    axes[1].set_ylabel("Amplitude")
+    axes[1].grid(True)
+    axes[1].legend()
+    
+    # Plot both frequency domains for direct comparison
+    axes[2].semilogy(freqs1, fft_vals1, label=f"Session 1", alpha=0.7)
+    axes[2].semilogy(freqs2, fft_vals2, label=f"Session 2", alpha=0.7)
+    axes[2].set_title("Direct Comparison of Frequency Domains")
+    axes[2].set_xlabel("Frequency (Hz)")
+    axes[2].set_ylabel("Amplitude")
+    axes[2].grid(True)
+    axes[2].legend()
+    
+    plt.tight_layout()
+    plt.savefig("frequency_domain_comparison.png")
+    plt.close()
+    
+    print("Frequency domain comparison plot saved to frequency_domain_comparison.png")
+
+def compare_spectrograms(data1, data2):
+    """Compare the spectrograms between two NWB files."""
+    fig, axes = plt.subplots(2, 1, figsize=(12, 12))
+    
+    # Calculate sampling frequency
+    fs1 = 1.0 / (data1["timestamps"][1] - data1["timestamps"][0])
+    fs2 = 1.0 / (data2["timestamps"][1] - data2["timestamps"][0])
+    
+    # Plot the first spectrogram
+    axes[0].set_title(f"Spectrogram - {data1['subject_id']} - Session 1")
+    axes[0].specgram(data1["data"], Fs=fs1, cmap='viridis')
+    axes[0].set_xlabel("Time (seconds)")
+    axes[0].set_ylabel("Frequency (Hz)")
+    
+    # Plot the second spectrogram
+    axes[1].set_title(f"Spectrogram - {data2['subject_id']} - Session 2")
+    axes[1].specgram(data2["data"], Fs=fs2, cmap='viridis')
+    axes[1].set_xlabel("Time (seconds)")
+    axes[1].set_ylabel("Frequency (Hz)")
+    
+    plt.colorbar(axes[0].images[0], ax=axes[0], label="Power/Frequency (dB/Hz)")
+    plt.colorbar(axes[1].images[0], ax=axes[1], label="Power/Frequency (dB/Hz)")
+    
+    plt.tight_layout()
+    plt.savefig("spectrogram_comparison.png")
+    plt.close()
+    
+    print("Spectrogram comparison plot saved to spectrogram_comparison.png")
+
+def calculate_statistics(data1, data2):
+    """Calculate statistics to quantitatively compare the datasets."""
+    stats1 = {
+        "min": np.min(data1["data"]),
+        "max": np.max(data1["data"]),
+        "mean": np.mean(data1["data"]),
+        "std": np.std(data1["data"]),
+        "median": np.median(data1["data"]),
+        "duration": data1["timestamps"][-1] - data1["timestamps"][0]
+    }
+    
+    stats2 = {
+        "min": np.min(data2["data"]),
+        "max": np.max(data2["data"]),
+        "mean": np.mean(data2["data"]),
+        "std": np.std(data2["data"]),
+        "median": np.median(data2["data"]),
+        "duration": data2["timestamps"][-1] - data2["timestamps"][0]
+    }
+    
+    print("\n=== Statistical Comparison ===")
+    print(f"Session 1 ({data1['session_id'][:8]}...):")
+    for key, value in stats1.items():
+        print(f"  {key}: {value:.6f}")
+    
+    print(f"\nSession 2 ({data2['session_id'][:8]}...):")
+    for key, value in stats2.items():
+        print(f"  {key}: {value:.6f}")
+    
+    print("\nRelative differences (Session2/Session1 - 1):")
+    for key in stats1.keys():
+        if stats1[key] != 0:  # Avoid division by zero
+            diff = (stats2[key] / stats1[key] - 1) * 100
+            print(f"  {key}: {diff:.2f}%")
+
+def main():
+    try:
+        # Load the NWB files
+        nwb1, h5_file1 = load_nwb(URL1)
+        nwb2, h5_file2 = load_nwb(URL2)
+        
+        # Extract the data
+        data1 = extract_data(nwb1)
+        data2 = extract_data(nwb2)
+        
+        # Compare the data
+        compare_time_series(data1, data2)
+        compare_frequency_domain(data1, data2)
+        compare_spectrograms(data1, data2)
+        calculate_statistics(data1, data2)
+        
+        # Close the files
+        h5_file1.close()
+        h5_file2.close()
+        
+        print("\nComparison complete!")
+        
+    except Exception as e:
+        print(f"Error: {e}")
+
+if __name__ == "__main__":
+    main()
+================================
+Total prompt tokens: 347348 + 3137
+Total completion tokens: 9239 + 607
+
+=========================================
+
+write_to_file for 'explore/compare_nwb_files.py':
+Successfully wrote 7674 characters to explore/compare_nwb_files.py
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 38
+Submitting completion request...
+Processing response...
+This script will load and compare the two NWB files (from different sessions but the same subject type) to see if there are significant differences in the data. This will help us understand the variability within the dataset for the same subject type.
+
+Tool: execute_command
+Params: {'command': 'cd explore && python compare_nwb_files.py', 'requires_approval': 'false', 'timeout': '90'}
+================================
+Command to be executed
+cd explore && python compare_nwb_files.py
+================================
+/opt/conda/lib/python3.11/site-packages/hdmf/spec/namespace.py:535: UserWarning: Ignoring cached namespace 'core' version 2.8.0 because version 2.7.0 is already loaded.
+  warn("Ignoring cached namespace '%s' version %s because version %s is already loaded."
+Loading NWB file from https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/...
+NWB file loaded successfully: 84828db4-a3a3-4b2e-abff-6db2b404dd68
+Loading NWB file from https://api.dandiarchive.org/api/assets/e0fa57b2-02a4-4c20-92df-d7eb64b60170/download/...
+NWB file loaded successfully: a86b31e3-6c71-416b-bdb9-efbb9d6e66d6
+Time series comparison plot saved to time_series_comparison.png
+Frequency domain comparison plot saved to frequency_domain_comparison.png
+Spectrogram comparison plot saved to spectrogram_comparison.png
+
+=== Statistical Comparison ===
+Session 1 (84828db4...):
+  min: 0.000004
+  max: 0.000141
+  mean: 0.000048
+  std: 0.000025
+  median: 0.000044
+  duration: 27.980010
+
+Session 2 (a86b31e3...):
+  min: 0.000004
+  max: 0.000141
+  mean: 0.000048
+  std: 0.000025
+  median: 0.000044
+  duration: 27.980010
+
+Relative differences (Session2/Session1 - 1):
+  min: 0.00%
+  max: 0.00%
+  mean: 0.00%
+  std: 0.00%
+  median: 0.00%
+  duration: 0.00%
+
+Comparison complete!
+Total prompt tokens: 381563 + 3137
+Total completion tokens: 9373 + 607
+
+=========================================
+
+execute_command 'cd explore && python compare_nwb_files.py' (requires approval):
+Command executed successfully
+STDOUT:
+Loading NWB file from https://api.dandiarchive.org/api/assets/1d94c7ad-dbaf-43ea-89f2-1b2518fab158/download/...
+NWB file loaded successfully: 84828db4-a3a3-4b2e-abff-6db2b404dd68
+Loading NWB file from https://api.dandiarchive.org/api/assets/e0fa57b2-02a4-4c20-92df-d7eb64b60170/download/...
+NWB file loaded successfully: a86b31e3-6c71-416b-bdb9-efbb9d6e66d6
+Time series comparison plot saved to time_series_comparison.png
+Frequency domain comparison plot saved to frequency_domain_comparison.png
+Spectrogram comparison plot saved to spectrogram_comparison.png
+
+=== Statistical Comparison ===
+Session 1 (84828db4...):
+  min: 0.000004
+  max: 0.000141
+  mean: 0.000048
+  std: 0.000025
+  median: 0.000044
+  duration: 27.980010
+
+Session 2 (a86b31e3...):
+  min: 0.000004
+  max: 0.000141
+  mean: 0.000048
+  std: 0.000025
+  median: 0.000044
+  duration: 27.980010
+
+Relative differences (Session2/Session1 - 1):
+  min: 0.00%
+  max: 0.00%
+  mean: 0.00%
+  std: 0.00%
+  median: 0.00%
+  duration: 0.00%
+
+Comparison complete!
+
+STDERR:
+/opt/conda/lib/python3.11/site-packages/hdmf/spec/namespace.py:535: UserWarning: Ignoring cached namespace 'core' version 2.8.0 because version 2.7.0 is already loaded.
+  warn("Ignoring cached namespace '%s' version %s because version %s is already loaded."
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 40
+Submitting completion request...
+Processing response...
+The statistical comparison shows that the two sessions have identical statistics (min, max, mean, std, median, duration), which is quite surprising. Let's examine the plots to see if there are any visual differences between the two sessions.
+
+Tool: read_image
+Params: {'path': 'explore/time_series_comparison.png', 'instructions': 'Analyze the time series comparison plots. Are the signals from both sessions identical or do they show any differences? Focus on any patterns, amplitudes, or temporal features that might differ between the two sessions.'}
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 2
+Submitting completion request...
+Processing response...
+Total prompt tokens: 416642 + 4758
+Total completion tokens: 9526 + 760
+
+=========================================
+
+read_image for 'explore/time_series_comparison.png':
+The image for explore/time_series_comparison.png is attached. AI description: The time series comparison shows remarkably similar signals between Session 1 and Session 2. The signals display nearly identical:
+
+- Peak amplitudes (maximum around 0.00014 volts in both sessions)
+- Temporal pattern of peaks and troughs
+- Overall waveform structure throughout the 10-37 second time range
+- Key prominent peaks at approximately 13, 18, 28, and 32 seconds
+
+The direct comparison plot (bottom) confirms this high similarity, with the Session 1 and Session 2 signals almost perfectly overlapping. The data suggests these are essentially identical simulated beta signals with minimal differences between sessions, indicating high reproducibility of the measured phenomenon.
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 42
+Submitting completion request...
+Processing response...
+The time series plots showed that the signals from both sessions are almost identical. Let's check the frequency domain comparison to confirm this and see if there are any differences in the spectral characteristics.
+
+Tool: read_image
+Params: {'path': 'explore/frequency_domain_comparison.png', 'instructions': 'Analyze the frequency domain comparison plots. Do both sessions show the same spectral content? Look for any differences in the distribution of power across frequencies, particularly in the beta band (13-30 Hz).'}
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 2
+Submitting completion request...
+Processing response...
+Total prompt tokens: 453781 + 6381
+Total completion tokens: 9674 + 885
+
+=========================================
+
+read_image for 'explore/frequency_domain_comparison.png':
+The image for explore/frequency_domain_comparison.png is attached. AI description: The frequency domain comparison plots show remarkably similar spectral content across both sessions. Both display a characteristic power decrease as frequency increases, with the highest amplitude at the lowest frequencies. In the beta band (13-30 Hz), the spectral power distributions appear nearly identical between sessions, with both showing similar amplitude patterns and fluctuations in this range. The direct comparison plot (bottom) confirms this high degree of similarity, with the two sessions' spectral signatures overlapping almost perfectly throughout the entire frequency range, including the beta band. No significant differences in power distribution are observable between the two sessions.
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 44
+Submitting completion request...
+Processing response...
+The frequency domain plots confirm that both sessions have nearly identical spectral content. Let's also check the spectrogram comparison to see if the time-frequency distributions match between the two sessions.
+
+Tool: read_image
+Params: {'path': 'explore/spectrogram_comparison.png', 'instructions': 'Analyze the spectrogram comparison between the two sessions. Look for any differences in the time-frequency patterns, particularly how the beta band (13-30 Hz) power varies over time. Does the temporal pattern of frequency content match between sessions?'}
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 2
+Submitting completion request...
+Processing response...
+Total prompt tokens: 492947 + 7994
+Total completion tokens: 9830 + 1107
+
+=========================================
+
+read_image for 'explore/spectrogram_comparison.png':
+The image for explore/spectrogram_comparison.png is attached. AI description: # Spectrogram Comparison Analysis
+
+The comparison of the "healthy-simulated-beta" spectrograms from Sessions 1 and 2 reveals:
+
+- Both sessions show remarkably similar time-frequency patterns, particularly in the beta band (13-30 Hz).
+- The temporal pattern of frequency content is highly consistent between sessions, with matching oscillatory patterns throughout the 23-second recording period.
+- Beta band power shows nearly identical variations over time in both sessions, with similar power fluctuations occurring at the same timepoints (around 5, 10, 15, and 20 seconds).
+- Lower frequencies (0-5 Hz) consistently display higher power (yellow-green) in both sessions, while higher frequencies show progressively lower power (blue-purple).
+- Minor differences in power intensity exist but the overall spectral pattern and temporal dynamics are well-preserved between sessions, indicating good reproducibility.
+
+The high degree of similarity suggests excellent session-to-session reliability in the recorded beta activity.
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 46
+Submitting completion request...
+Processing response...
+Our analysis has revealed the following key points about Dandiset 001333:
+
+1. It contains LFP (Local Field Potential) data focused on beta band activity in healthy simulated brains.
+2. The data appears to be from simulated recordings rather than actual human patients.
+3. We saw signals in the beta frequency range (13-30 Hz) as mentioned in the dataset description.
+4. Multiple sessions for the same "healthy-simulated-beta" subject show nearly identical data, suggesting these are from the same simulated model with only minor variations.
+
+Now I'll create a comprehensive Jupytext notebook that:
+- Explains the Dandiset and its context
+- Shows how to load and access the NWB files
+- Visualizes and analyzes the LFP data
+- Explores the beta band oscillation characteristics
+
+The notebook will use the knowledge we've gained from our exploration.
+
+Tool: write_to_file
+Params: {'path': 'notebook.py', 'content': '# %% [markdown]\n# # Exploring Dandiset 001333: Parkinson\'s Electrophysiological Signal Dataset (PESD)\n\n# %% [markdown]\n# > **Note**: This notebook was AI-generated using dandi-notebook-gen and has not been fully verified. Please be cautious when interpreting the code or results and verify key findings independently.\n\n# %% [markdown]\n# ## Overview\n\n# %% [markdown]\n# This notebook explores the Parkinson\'s Electrophysiological Signal Dataset (PESD), a collection of electrophysiological signals from both healthy and parkinsonian simulated subjects. The dataset is publicly available on the DANDI Archive.\n#\n# You can view the dataset online at: https://neurosift.app/dandiset/001333\n#\n# According to the dataset description, the PESD contains two types of signals:\n# 1. Beta Average Rectified Voltage (ARV) - in the frequency domain\n# 2. Local Field Potential (LFP) from the Subthalamic Nucleus (STN) - in the time domain\n#\n# The parkinsonian signals are expected to show a relatively high power density at the beta frequency (13 to 30 Hz), which is typically used as a pathological biomarker for Parkinson\'s Disease symptoms.\n\n# %% [markdown]\n# ## Required Packages\n\n# %%\n# Import necessary libraries\nimport pynwb\nimport h5py\nimport remfile\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom dandi.dandiapi import DandiAPIClient\n\n# Set up matplotlib\nsns.set_theme()\nplt.rcParams[\'figure.figsize\'] = (15, 6)\n\n# %% [markdown]\n# ## Loading the Dandiset\n\n# %% [markdown]\n# Let\'s start by connecting to the DANDI archive and getting information about the Dandiset.\n\n# %%\n# Connect to DANDI archive\nclient = DandiAPIClient()\ndandiset = client.get_dandiset("001333")\n\nprint(f"Dandiset ID: {dandiset.identifier}")\nprint(f"Dandiset Name: {dandiset.get_metadata()[\'name\']}")\nprint(f"Dandiset Description: {dandiset.get_metadata()[\'description\'][:500]}...")\n\n# %% [markdown]\n# Now, let\'s retrieve a list of all the assets (files) in this Dandiset.\n\n# %%\n# Get assets from the Dandiset\nassets = list(dandiset.get_assets())\n\nprint(f"Found {len(assets)} assets in the dataset")\nprint("\\nFirst 5 assets:")\nfor asset in assets[:5]:\n    print(f"- {asset.path}")\n\n# %% [markdown]\n# Let\'s analyze the types of files in this dataset to better understand its structure.\n\n# %%\n# Analyze the asset paths\nimport re\nfrom collections import Counter\n\n# Extract subject types\nsubject_patterns = set()\nfor asset in assets:\n    match = re.match(r\'(sub-[^/]+)\', asset.path)\n    if match:\n        subject_patterns.add(match.group(1))\n\n# Count by subject type\nsubject_counts = {}\nfor pattern in subject_patterns:\n    subject_counts[pattern] = sum(1 for asset in assets if asset.path.startswith(pattern))\n\n# Print summary\nprint(f"Subject categories found ({len(subject_patterns)}):")\nfor pattern, count in sorted(subject_counts.items(), key=lambda x: x[1], reverse=True):\n    print(f"- {pattern}: {count} assets")\n\n# Analyze file types\nextensions = Counter([asset.path.split(\'.\')[-1] for asset in assets])\nprint(f"\\nFile extensions: {dict(extensions)}")\n\n# %% [markdown]\n# ## Loading and Exploring an NWB File\n\n# %% [markdown]\n# Let\'s select one NWB file to explore in detail. We\'ll first need to set up the functions to load an NWB file from a remote URL.\n\n# %%\ndef load_nwb_from_url(url):\n    """Load an NWB file from a URL."""\n    print(f"Loading NWB file from URL: {url}")\n    remote_file = remfile.File(url)\n    h5_file = h5py.File(remote_file)\n    io = pynwb.NWBHDF5IO(file=h5_file)\n    nwb = io.read()\n    return nwb, h5_file\n\n# %% [markdown]\n# Now let\'s select and load one of the NWB files from the Dandiset. We\'ll choose a file from the \'healthy-simulated-beta\' subject.\n\n# %%\n# Select an asset to explore\nselected_asset = None\nfor asset in assets:\n    if \'sub-healthy-simulated-beta\' in asset.path:\n        selected_asset = asset\n        break\n\nif selected_asset:\n    print(f"Selected asset: {selected_asset.path}")\n    asset_url = selected_asset.get_content_url()\n    print(f"Asset URL: {asset_url}")\n    \n    # Load the NWB file\n    nwb, h5_file = load_nwb_from_url(asset_url)\nelse:\n    print("No suitable asset found")\n\n# %% [markdown]\n# Let\'s examine the basic metadata from this NWB file.\n\n# %%\n# Examine NWB file metadata\nprint(f"Session description: {nwb.session_description}")\nprint(f"Session start time: {nwb.session_start_time}")\nprint(f"Lab: {nwb.lab}")\nprint(f"Institution: {nwb.institution}")\nprint(f"Experiment description: {nwb.experiment_description[:200]}...")\nprint(f"Keywords: {nwb.keywords[:]}")\n\n# Subject information\nprint("\\nSubject Information:")\nprint(f"Subject ID: {nwb.subject.subject_id}")\nprint(f"Species: {nwb.subject.species}")\nprint(f"Sex: {nwb.subject.sex}")\nprint(f"Age: {nwb.subject.age}")\nprint(f"Description: {nwb.subject.description}")\n\n# %% [markdown]\n# ## Exploring LFP Data\n\n# %% [markdown]\n# Now, let\'s look at what data is available in this NWB file. The dataset description mentioned Local Field Potential (LFP) data, so let\'s check if our file contains this type of data.\n\n# %%\n# Check what processing modules are available\nprint("Available processing modules:")\nfor module_name, module in nwb.processing.items():\n    print(f"- {module_name}: {module.description}")\n    \n    # Check what data interfaces are available in each module\n    print("  Data interfaces:")\n    for interface_name, interface in module.data_interfaces.items():\n        print(f"  - {interface_name}: {type(interface).__name__}")\n        \n        # If it\'s an LFP interface, show available electrical series\n        if isinstance(interface, pynwb.ecephys.LFP):\n            print("    Electrical series:")\n            for series_name, series in interface.electrical_series.items():\n                print(f"    - {series_name}: shape {series.data.shape}, unit: {series.unit}")\n\n# %% [markdown]\n# Let\'s examine the electrode information from the NWB file to understand the recording setup.\n\n# %%\n# Get electrode information\nif hasattr(nwb, \'electrodes\') and nwb.electrodes is not None:\n    electrode_df = nwb.electrodes.to_dataframe()\n    print(f"Number of electrodes: {len(electrode_df)}")\n    \n    # Display the first few rows\n    print("\\nElectrode information:")\n    display(electrode_df.head())\n    \n    # Show unique locations\n    print("\\nElectrode locations:")\n    for loc in electrode_df[\'location\'].unique():\n        count = len(electrode_df[electrode_df[\'location\'] == loc])\n        print(f"- {loc}: {count} electrodes")\n    \n    # Show electrode groups\n    print("\\nElectrode groups:")\n    for group_name in electrode_df[\'group_name\'].unique():\n        count = len(electrode_df[electrode_df[\'group_name\'] == group_name])\n        print(f"- {group_name}: {count} electrodes")\nelse:\n    print("No electrode information available")\n\n# %% [markdown]\n# ## Visualizing Beta Band LFP Data\n\n# %% [markdown]\n# Now that we understand the structure of the data, let\'s extract and visualize the Beta Band Voltage data from the LFP electrical series.\n\n# %%\n# Extract the LFP data\nlfp_data = nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data[:]\ntimestamps = nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps[:]\n\nprint(f"LFP data shape: {lfp_data.shape}")\nprint(f"Timestamps shape: {timestamps.shape}")\nprint(f"Duration: {timestamps[-1] - timestamps[0]:.2f} seconds")\n\n# Calculate basic statistics\nprint("\\nBasic statistics of LFP data:")\nprint(f"Min: {np.min(lfp_data):.6f} {nwb.processing[\'ecephys\'].data_interfaces[\'LFP\'].electrical_series[\'Beta_Band_Voltage\'].unit}")\nprint(f"Max: {np.max(lfp_data):.6f} {nwb.processing[\'ecephys\'].data_interfaces[\'LFP\'].electrical_series[\'Beta_Band_Voltage\'].unit}")\nprint(f"Mean: {np.mean(lfp_data):.6f} {nwb.processing[\'ecephys\'].data_interfaces[\'LFP\'].electrical_series[\'Beta_Band_Voltage\'].unit}")\nprint(f"Std: {np.std(lfp_data):.6f} {nwb.processing[\'ecephys\'].data_interfaces[\'LFP\'].electrical_series[\'Beta_Band_Voltage\'].unit}")\n\n# %% [markdown]\n# Let\'s visualize this data in the time domain.\n\n# %%\n# Plot the time series data\nplt.figure(figsize=(15, 6))\nplt.plot(timestamps, lfp_data)\nplt.title("LFP Beta Band Voltage Time Series")\nplt.xlabel("Time (seconds)")\nplt.ylabel(f"Voltage ({nwb.processing[\'ecephys\'].data_interfaces[\'LFP\'].electrical_series[\'Beta_Band_Voltage\'].unit})")\nplt.grid(True)\nplt.show()\n\n# %% [markdown]\n# We can also look at the frequency content of this signal using a Fourier transform to see the presence of beta oscillations (13-30 Hz).\n\n# %%\n# Calculate the sampling frequency\nfs = 1.0 / (timestamps[1] - timestamps[0])\nprint(f"Sampling frequency: {fs:.2f} Hz")\n\n# Calculate the FFT\nfreqs = np.fft.rfftfreq(len(lfp_data), d=1/fs)\nfft_vals = np.abs(np.fft.rfft(lfp_data))\n\n# Plot the frequency spectrum\nplt.figure(figsize=(15, 6))\nplt.semilogy(freqs, fft_vals)\nplt.title("LFP Beta Band Voltage - Frequency Domain")\nplt.xlabel("Frequency (Hz)")\nplt.ylabel("Amplitude")\nplt.grid(True)\n\n# Highlight the beta band (13-30 Hz)\nplt.axvspan(13, 30, alpha=0.2, color=\'red\')\nplt.text(21.5, np.max(fft_vals)/10, "Beta Band (13-30 Hz)", ha=\'center\')\n\nplt.show()\n\n# %% [markdown]\n# We can also visualize how the frequency content changes over time using a spectrogram.\n\n# %%\n# Create a spectrogram\nplt.figure(figsize=(15, 8))\nplt.specgram(lfp_data, Fs=fs, cmap=\'viridis\')\nplt.title("LFP Beta Band Voltage - Spectrogram")\nplt.xlabel("Time (seconds)")\nplt.ylabel("Frequency (Hz)")\nplt.colorbar(label="Power/Frequency (dB/Hz)")\n\n# Highlight the beta band\nplt.axhline(y=13, color=\'r\', linestyle=\'--\', alpha=0.5)\nplt.axhline(y=30, color=\'r\', linestyle=\'--\', alpha=0.5)\nplt.text(timestamps[-1]*1.01, 21.5, "Beta Band", color=\'r\', rotation=90, va=\'center\')\n\nplt.ylim(0, 50)  # Focus on frequencies up to 50 Hz\nplt.show()\n\n# %% [markdown]\n# ## Analyzing Beta Band Activity\n\n# %% [markdown]\n# We can quantify the beta band activity by filtering the signal to the beta frequency range (13-30 Hz) and calculating the power in that band.\n\n# %%\n# Define a function to calculate band power\ndef band_power(data, fs, low, high, window=\'hann\'):\n    """Calculate the average power of a signal in a specific frequency band."""\n    # Apply windowing\n    if window == \'hann\':\n        win = np.hanning(len(data))\n        data_windowed = data * win\n    else:\n        data_windowed = data\n    \n    # Calculate FFT\n    fft_data = np.abs(np.fft.rfft(data_windowed))\n    freqs = np.fft.rfftfreq(len(data), 1/fs)\n    \n    # Find indices corresponding to the frequency band\n    low_idx = np.argmax(freqs >= low)\n    high_idx = np.argmax(freqs >= high) if np.any(freqs >= high) else len(freqs)\n    \n    # Calculate average power in the band\n    band_power = np.mean(fft_data[low_idx:high_idx]**2)\n    \n    return band_power, fft_data, freqs\n\n# Calculate beta band power\nbeta_power, fft_data, freqs = band_power(lfp_data, fs, 13, 30)\ntheta_power, _, _ = band_power(lfp_data, fs, 4, 8)\nalpha_power, _, _ = band_power(lfp_data, fs, 8, 13)\nlow_gamma_power, _, _ = band_power(lfp_data, fs, 30, 50)\n\nprint(f"Beta band (13-30 Hz) power: {beta_power:.6e}")\nprint(f"Theta band (4-8 Hz) power: {theta_power:.6e}")\nprint(f"Alpha band (8-13 Hz) power: {alpha_power:.6e}")\nprint(f"Low Gamma band (30-50 Hz) power: {low_gamma_power:.6e}")\n\n# %% [markdown]\n# Let\'s compare the power in different frequency bands.\n\n# %%\n# Create a bar chart of band powers\nbands = [\'Theta (4-8 Hz)\', \'Alpha (8-13 Hz)\', \'Beta (13-30 Hz)\', \'Low Gamma (30-50 Hz)\']\npowers = [theta_power, alpha_power, beta_power, low_gamma_power]\n\nplt.figure(figsize=(10, 6))\nplt.bar(bands, powers)\nplt.title("Power in Different Frequency Bands")\nplt.ylabel("Power")\nplt.yscale(\'log\')\nplt.grid(True, alpha=0.3)\nplt.show()\n\n# %% [markdown]\n# We can also examine how the beta band power changes over time by using a sliding window approach.\n\n# %%\n# Define a function to calculate band power in sliding windows\ndef sliding_band_power(data, timestamps, fs, low, high, window_size=1.0, step=0.5):\n    """Calculate band power over sliding windows."""\n    window_samples = int(window_size * fs)\n    step_samples = int(step * fs)\n    \n    times = []\n    powers = []\n    \n    for i in range(0, len(data) - window_samples, step_samples):\n        window_data = data[i:i + window_samples]\n        window_time = timestamps[i:i + window_samples].mean()\n        \n        power, _, _ = band_power(window_data, fs, low, high)\n        \n        times.append(window_time)\n        powers.append(power)\n    \n    return np.array(times), np.array(powers)\n\n# Calculate sliding beta band power\nwindow_size = 1.0  # 1 second window\nstep = 0.5  # 0.5 second step\nbeta_times, beta_powers = sliding_band_power(lfp_data, timestamps, fs, 13, 30, \n                                             window_size=window_size, step=step)\ntheta_times, theta_powers = sliding_band_power(lfp_data, timestamps, fs, 4, 8,\n                                              window_size=window_size, step=step)\n\n# Plot the sliding band power\nplt.figure(figsize=(15, 6))\nplt.semilogy(beta_times, beta_powers, label=\'Beta (13-30 Hz)\')\nplt.semilogy(theta_times, theta_powers, label=\'Theta (4-8 Hz)\')\nplt.title("Sliding Window Band Power")\nplt.xlabel("Time (seconds)")\nplt.ylabel("Band Power (log scale)")\nplt.grid(True)\nplt.legend()\nplt.show()\n\n# %% [markdown]\n# ## Comparing Multiple Sessions\n\n# %% [markdown]\n# Let\'s load another NWB file from a different session to compare the beta band activity between sessions.\n\n# %%\n# Find another NWB file from the same subject type but a different session\nsecond_asset = None\nfor asset in assets:\n    if \'sub-healthy-simulated-beta\' in asset.path and asset.path != selected_asset.path:\n        second_asset = asset\n        break\n\nif second_asset:\n    print(f"Selected second asset: {second_asset.path}")\n    second_asset_url = second_asset.get_content_url()\n    \n    # Load the second NWB file\n    second_nwb, second_h5_file = load_nwb_from_url(second_asset_url)\n    \n    # Extract LFP data from second file\n    second_lfp_data = second_nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data[:]\n    second_timestamps = second_nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps[:]\n    \n    # Calculate statistics for comparison\n    print("\\nComparison of LFP data statistics between sessions:")\n    print(f"Session 1 - Min: {np.min(lfp_data):.6f}, Max: {np.max(lfp_data):.6f}, Mean: {np.mean(lfp_data):.6f}")\n    print(f"Session 2 - Min: {np.min(second_lfp_data):.6f}, Max: {np.max(second_lfp_data):.6f}, Mean: {np.mean(second_lfp_data):.6f}")\n    \n    # Calculate beta power for both sessions\n    beta_power1, _, _ = band_power(lfp_data, fs, 13, 30)\n    beta_power2, _, _ = band_power(second_lfp_data, fs, 13, 30)\n    \n    print(f"\\nSession 1 - Beta Power: {beta_power1:.6e}")\n    print(f"Session 2 - Beta Power: {beta_power2:.6e}")\n    print(f"Percent Difference: {(beta_power2/beta_power1 - 1) * 100:.2f}%")\nelse:\n    print("No second asset found")\n\n# %% [markdown]\n# Let\'s visualize the comparison between the two sessions.\n\n# %%\nif second_asset:\n    # Plot time series comparison\n    plt.figure(figsize=(15, 10))\n    \n    # First session\n    plt.subplot(2, 1, 1)\n    plt.plot(timestamps, lfp_data)\n    plt.title(f"Session 1: {selected_asset.path.split(\'/\')[-1]}")\n    plt.xlabel("Time (seconds)")\n    plt.ylabel("Voltage (V)")\n    plt.grid(True)\n    \n    # Second session\n    plt.subplot(2, 1, 2)\n    plt.plot(second_timestamps, second_lfp_data)\n    plt.title(f"Session 2: {second_asset.path.split(\'/\')[-1]}")\n    plt.xlabel("Time (seconds)")\n    plt.ylabel("Voltage (V)")\n    plt.grid(True)\n    \n    plt.tight_layout()\n    plt.show()\n    \n    # Calculate FFT for second session\n    second_fs = 1.0 / (second_timestamps[1] - second_timestamps[0])\n    second_freqs = np.fft.rfftfreq(len(second_lfp_data), d=1/second_fs)\n    second_fft_vals = np.abs(np.fft.rfft(second_lfp_data))\n    \n    # Plot frequency domain comparison\n    plt.figure(figsize=(15, 10))\n    \n    # First session FFT\n    plt.subplot(2, 1, 1)\n    plt.semilogy(freqs, fft_vals)\n    plt.title(f"Frequency Domain - Session 1: {selected_asset.path.split(\'/\')[-1]}")\n    plt.xlabel("Frequency (Hz)")\n    plt.ylabel("Amplitude")\n    plt.grid(True)\n    plt.axvspan(13, 30, alpha=0.2, color=\'red\')\n    plt.text(21.5, np.max(fft_vals)/10, "Beta Band", ha=\'center\')\n    \n    # Second session FFT\n    plt.subplot(2, 1, 2)\n    plt.semilogy(second_freqs, second_fft_vals)\n    plt.title(f"Frequency Domain - Session 2: {second_asset.path.split(\'/\')[-1]}")\n    plt.xlabel("Frequency (Hz)")\n    plt.ylabel("Amplitude")\n    plt.grid(True)\n    plt.axvspan(13, 30, alpha=0.2, color=\'red\')\n    plt.text(21.5, np.max(second_fft_vals)/10, "Beta Band", ha=\'center\')\n    \n    plt.tight_layout()\n    plt.show()\n    \n    # Calculate sliding beta band power for second session\n    second_beta_times, second_beta_powers = sliding_band_power(\n        second_lfp_data, second_timestamps, second_fs, 13, 30, \n        window_size=window_size, step=step\n    )\n    \n    # Plot sliding window beta power comparison\n    plt.figure(figsize=(15, 6))\n    plt.semilogy(beta_times, beta_powers, label=\'Session 1\', alpha=0.7)\n    plt.semilogy(second_beta_times, second_beta_powers, label=\'Session 2\', alpha=0.7)\n    plt.title("Beta Band Power Over Time - Session Comparison")\n    plt.xlabel("Time (seconds)")\n    plt.ylabel("Beta Band Power (13-30 Hz)")\n    plt.grid(True)\n    plt.legend()\n    plt.show()\n\n# %% [markdown]\n# ## Summary and Conclusions\n\n# %% [markdown]\n# In this notebook, we\'ve explored the Parkinson\'s Electrophysiological Signal Dataset (PESD), focusing on the Local Field Potential (LFP) data from the subthalamic nucleus in simulated healthy subjects with beta oscillations.\n#\n# Key findings:\n#\n# 1. The dataset contains simulated LFP recordings with beta band activity, which is a key biomarker for Parkinson\'s Disease.\n#\n# 2. The LFP signals show oscillatory patterns in the beta frequency range (13-30 Hz), although the lower frequencies (delta, theta, alpha) have higher power.\n#\n# 3. The beta band power shows temporal fluctuations, which could represent variations in the underlying neural activity.\n#\n# 4. When comparing different sessions from the same subject type, we observed remarkably similar patterns in both the time and frequency domains, suggesting high consistency in the simulation models.\n#\n# ### Future Directions\n#\n# Based on our exploration, several potential directions for further analysis emerge:\n#\n# - Compare the beta band activity between healthy and parkinsonian subjects to identify key differences.\n# - Apply more advanced signal processing techniques to isolate and characterize beta oscillations.\n# - Investigate the relationship between beta oscillations and other frequency bands.\n# - Explore the potential of using these signals for closed-loop deep brain stimulation algorithms as mentioned in the dataset description.\n#\n# This dataset provides a valuable resource for researchers interested in understanding beta oscillations in Parkinson\'s Disease and developing new approaches for treatment.'}
+================================
+Content to be written to notebook.py:
+# %% [markdown]
+# # Exploring Dandiset 001333: Parkinson's Electrophysiological Signal Dataset (PESD)
+
+# %% [markdown]
+# > **Note**: This notebook was AI-generated using dandi-notebook-gen and has not been fully verified. Please be cautious when interpreting the code or results and verify key findings independently.
+
+# %% [markdown]
+# ## Overview
+
+# %% [markdown]
+# This notebook explores the Parkinson's Electrophysiological Signal Dataset (PESD), a collection of electrophysiological signals from both healthy and parkinsonian simulated subjects. The dataset is publicly available on the DANDI Archive.
+#
+# You can view the dataset online at: https://neurosift.app/dandiset/001333
+#
+# According to the dataset description, the PESD contains two types of signals:
+# 1. Beta Average Rectified Voltage (ARV) - in the frequency domain
+# 2. Local Field Potential (LFP) from the Subthalamic Nucleus (STN) - in the time domain
+#
+# The parkinsonian signals are expected to show a relatively high power density at the beta frequency (13 to 30 Hz), which is typically used as a pathological biomarker for Parkinson's Disease symptoms.
+
+# %% [markdown]
+# ## Required Packages
+
+# %%
+# Import necessary libraries
+import pynwb
+import h5py
+import remfile
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from dandi.dandiapi import DandiAPIClient
+
+# Set up matplotlib
+sns.set_theme()
+plt.rcParams['figure.figsize'] = (15, 6)
+
+# %% [markdown]
+# ## Loading the Dandiset
+
+# %% [markdown]
+# Let's start by connecting to the DANDI archive and getting information about the Dandiset.
+
+# %%
+# Connect to DANDI archive
+client = DandiAPIClient()
+dandiset = client.get_dandiset("001333")
+
+print(f"Dandiset ID: {dandiset.identifier}")
+print(f"Dandiset Name: {dandiset.get_metadata()['name']}")
+print(f"Dandiset Description: {dandiset.get_metadata()['description'][:500]}...")
+
+# %% [markdown]
+# Now, let's retrieve a list of all the assets (files) in this Dandiset.
+
+# %%
+# Get assets from the Dandiset
+assets = list(dandiset.get_assets())
+
+print(f"Found {len(assets)} assets in the dataset")
+print("\nFirst 5 assets:")
+for asset in assets[:5]:
+    print(f"- {asset.path}")
+
+# %% [markdown]
+# Let's analyze the types of files in this dataset to better understand its structure.
+
+# %%
+# Analyze the asset paths
+import re
+from collections import Counter
+
+# Extract subject types
+subject_patterns = set()
+for asset in assets:
+    match = re.match(r'(sub-[^/]+)', asset.path)
+    if match:
+        subject_patterns.add(match.group(1))
+
+# Count by subject type
+subject_counts = {}
+for pattern in subject_patterns:
+    subject_counts[pattern] = sum(1 for asset in assets if asset.path.startswith(pattern))
+
+# Print summary
+print(f"Subject categories found ({len(subject_patterns)}):")
+for pattern, count in sorted(subject_counts.items(), key=lambda x: x[1], reverse=True):
+    print(f"- {pattern}: {count} assets")
+
+# Analyze file types
+extensions = Counter([asset.path.split('.')[-1] for asset in assets])
+print(f"\nFile extensions: {dict(extensions)}")
+
+# %% [markdown]
+# ## Loading and Exploring an NWB File
+
+# %% [markdown]
+# Let's select one NWB file to explore in detail. We'll first need to set up the functions to load an NWB file from a remote URL.
+
+# %%
+def load_nwb_from_url(url):
+    """Load an NWB file from a URL."""
+    print(f"Loading NWB file from URL: {url}")
+    remote_file = remfile.File(url)
+    h5_file = h5py.File(remote_file)
+    io = pynwb.NWBHDF5IO(file=h5_file)
+    nwb = io.read()
+    return nwb, h5_file
+
+# %% [markdown]
+# Now let's select and load one of the NWB files from the Dandiset. We'll choose a file from the 'healthy-simulated-beta' subject.
+
+# %%
+# Select an asset to explore
+selected_asset = None
+for asset in assets:
+    if 'sub-healthy-simulated-beta' in asset.path:
+        selected_asset = asset
+        break
+
+if selected_asset:
+    print(f"Selected asset: {selected_asset.path}")
+    asset_url = selected_asset.get_content_url()
+    print(f"Asset URL: {asset_url}")
+    
+    # Load the NWB file
+    nwb, h5_file = load_nwb_from_url(asset_url)
+else:
+    print("No suitable asset found")
+
+# %% [markdown]
+# Let's examine the basic metadata from this NWB file.
+
+# %%
+# Examine NWB file metadata
+print(f"Session description: {nwb.session_description}")
+print(f"Session start time: {nwb.session_start_time}")
+print(f"Lab: {nwb.lab}")
+print(f"Institution: {nwb.institution}")
+print(f"Experiment description: {nwb.experiment_description[:200]}...")
+print(f"Keywords: {nwb.keywords[:]}")
+
+# Subject information
+print("\nSubject Information:")
+print(f"Subject ID: {nwb.subject.subject_id}")
+print(f"Species: {nwb.subject.species}")
+print(f"Sex: {nwb.subject.sex}")
+print(f"Age: {nwb.subject.age}")
+print(f"Description: {nwb.subject.description}")
+
+# %% [markdown]
+# ## Exploring LFP Data
+
+# %% [markdown]
+# Now, let's look at what data is available in this NWB file. The dataset description mentioned Local Field Potential (LFP) data, so let's check if our file contains this type of data.
+
+# %%
+# Check what processing modules are available
+print("Available processing modules:")
+for module_name, module in nwb.processing.items():
+    print(f"- {module_name}: {module.description}")
+    
+    # Check what data interfaces are available in each module
+    print("  Data interfaces:")
+    for interface_name, interface in module.data_interfaces.items():
+        print(f"  - {interface_name}: {type(interface).__name__}")
+        
+        # If it's an LFP interface, show available electrical series
+        if isinstance(interface, pynwb.ecephys.LFP):
+            print("    Electrical series:")
+            for series_name, series in interface.electrical_series.items():
+                print(f"    - {series_name}: shape {series.data.shape}, unit: {series.unit}")
+
+# %% [markdown]
+# Let's examine the electrode information from the NWB file to understand the recording setup.
+
+# %%
+# Get electrode information
+if hasattr(nwb, 'electrodes') and nwb.electrodes is not None:
+    electrode_df = nwb.electrodes.to_dataframe()
+    print(f"Number of electrodes: {len(electrode_df)}")
+    
+    # Display the first few rows
+    print("\nElectrode information:")
+    display(electrode_df.head())
+    
+    # Show unique locations
+    print("\nElectrode locations:")
+    for loc in electrode_df['location'].unique():
+        count = len(electrode_df[electrode_df['location'] == loc])
+        print(f"- {loc}: {count} electrodes")
+    
+    # Show electrode groups
+    print("\nElectrode groups:")
+    for group_name in electrode_df['group_name'].unique():
+        count = len(electrode_df[electrode_df['group_name'] == group_name])
+        print(f"- {group_name}: {count} electrodes")
+else:
+    print("No electrode information available")
+
+# %% [markdown]
+# ## Visualizing Beta Band LFP Data
+
+# %% [markdown]
+# Now that we understand the structure of the data, let's extract and visualize the Beta Band Voltage data from the LFP electrical series.
+
+# %%
+# Extract the LFP data
+lfp_data = nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data[:]
+timestamps = nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps[:]
+
+print(f"LFP data shape: {lfp_data.shape}")
+print(f"Timestamps shape: {timestamps.shape}")
+print(f"Duration: {timestamps[-1] - timestamps[0]:.2f} seconds")
+
+# Calculate basic statistics
+print("\nBasic statistics of LFP data:")
+print(f"Min: {np.min(lfp_data):.6f} {nwb.processing['ecephys'].data_interfaces['LFP'].electrical_series['Beta_Band_Voltage'].unit}")
+print(f"Max: {np.max(lfp_data):.6f} {nwb.processing['ecephys'].data_interfaces['LFP'].electrical_series['Beta_Band_Voltage'].unit}")
+print(f"Mean: {np.mean(lfp_data):.6f} {nwb.processing['ecephys'].data_interfaces['LFP'].electrical_series['Beta_Band_Voltage'].unit}")
+print(f"Std: {np.std(lfp_data):.6f} {nwb.processing['ecephys'].data_interfaces['LFP'].electrical_series['Beta_Band_Voltage'].unit}")
+
+# %% [markdown]
+# Let's visualize this data in the time domain.
+
+# %%
+# Plot the time series data
+plt.figure(figsize=(15, 6))
+plt.plot(timestamps, lfp_data)
+plt.title("LFP Beta Band Voltage Time Series")
+plt.xlabel("Time (seconds)")
+plt.ylabel(f"Voltage ({nwb.processing['ecephys'].data_interfaces['LFP'].electrical_series['Beta_Band_Voltage'].unit})")
+plt.grid(True)
+plt.show()
+
+# %% [markdown]
+# We can also look at the frequency content of this signal using a Fourier transform to see the presence of beta oscillations (13-30 Hz).
+
+# %%
+# Calculate the sampling frequency
+fs = 1.0 / (timestamps[1] - timestamps[0])
+print(f"Sampling frequency: {fs:.2f} Hz")
+
+# Calculate the FFT
+freqs = np.fft.rfftfreq(len(lfp_data), d=1/fs)
+fft_vals = np.abs(np.fft.rfft(lfp_data))
+
+# Plot the frequency spectrum
+plt.figure(figsize=(15, 6))
+plt.semilogy(freqs, fft_vals)
+plt.title("LFP Beta Band Voltage - Frequency Domain")
+plt.xlabel("Frequency (Hz)")
+plt.ylabel("Amplitude")
+plt.grid(True)
+
+# Highlight the beta band (13-30 Hz)
+plt.axvspan(13, 30, alpha=0.2, color='red')
+plt.text(21.5, np.max(fft_vals)/10, "Beta Band (13-30 Hz)", ha='center')
+
+plt.show()
+
+# %% [markdown]
+# We can also visualize how the frequency content changes over time using a spectrogram.
+
+# %%
+# Create a spectrogram
+plt.figure(figsize=(15, 8))
+plt.specgram(lfp_data, Fs=fs, cmap='viridis')
+plt.title("LFP Beta Band Voltage - Spectrogram")
+plt.xlabel("Time (seconds)")
+plt.ylabel("Frequency (Hz)")
+plt.colorbar(label="Power/Frequency (dB/Hz)")
+
+# Highlight the beta band
+plt.axhline(y=13, color='r', linestyle='--', alpha=0.5)
+plt.axhline(y=30, color='r', linestyle='--', alpha=0.5)
+plt.text(timestamps[-1]*1.01, 21.5, "Beta Band", color='r', rotation=90, va='center')
+
+plt.ylim(0, 50)  # Focus on frequencies up to 50 Hz
+plt.show()
+
+# %% [markdown]
+# ## Analyzing Beta Band Activity
+
+# %% [markdown]
+# We can quantify the beta band activity by filtering the signal to the beta frequency range (13-30 Hz) and calculating the power in that band.
+
+# %%
+# Define a function to calculate band power
+def band_power(data, fs, low, high, window='hann'):
+    """Calculate the average power of a signal in a specific frequency band."""
+    # Apply windowing
+    if window == 'hann':
+        win = np.hanning(len(data))
+        data_windowed = data * win
+    else:
+        data_windowed = data
+    
+    # Calculate FFT
+    fft_data = np.abs(np.fft.rfft(data_windowed))
+    freqs = np.fft.rfftfreq(len(data), 1/fs)
+    
+    # Find indices corresponding to the frequency band
+    low_idx = np.argmax(freqs >= low)
+    high_idx = np.argmax(freqs >= high) if np.any(freqs >= high) else len(freqs)
+    
+    # Calculate average power in the band
+    band_power = np.mean(fft_data[low_idx:high_idx]**2)
+    
+    return band_power, fft_data, freqs
+
+# Calculate beta band power
+beta_power, fft_data, freqs = band_power(lfp_data, fs, 13, 30)
+theta_power, _, _ = band_power(lfp_data, fs, 4, 8)
+alpha_power, _, _ = band_power(lfp_data, fs, 8, 13)
+low_gamma_power, _, _ = band_power(lfp_data, fs, 30, 50)
+
+print(f"Beta band (13-30 Hz) power: {beta_power:.6e}")
+print(f"Theta band (4-8 Hz) power: {theta_power:.6e}")
+print(f"Alpha band (8-13 Hz) power: {alpha_power:.6e}")
+print(f"Low Gamma band (30-50 Hz) power: {low_gamma_power:.6e}")
+
+# %% [markdown]
+# Let's compare the power in different frequency bands.
+
+# %%
+# Create a bar chart of band powers
+bands = ['Theta (4-8 Hz)', 'Alpha (8-13 Hz)', 'Beta (13-30 Hz)', 'Low Gamma (30-50 Hz)']
+powers = [theta_power, alpha_power, beta_power, low_gamma_power]
+
+plt.figure(figsize=(10, 6))
+plt.bar(bands, powers)
+plt.title("Power in Different Frequency Bands")
+plt.ylabel("Power")
+plt.yscale('log')
+plt.grid(True, alpha=0.3)
+plt.show()
+
+# %% [markdown]
+# We can also examine how the beta band power changes over time by using a sliding window approach.
+
+# %%
+# Define a function to calculate band power in sliding windows
+def sliding_band_power(data, timestamps, fs, low, high, window_size=1.0, step=0.5):
+    """Calculate band power over sliding windows."""
+    window_samples = int(window_size * fs)
+    step_samples = int(step * fs)
+    
+    times = []
+    powers = []
+    
+    for i in range(0, len(data) - window_samples, step_samples):
+        window_data = data[i:i + window_samples]
+        window_time = timestamps[i:i + window_samples].mean()
+        
+        power, _, _ = band_power(window_data, fs, low, high)
+        
+        times.append(window_time)
+        powers.append(power)
+    
+    return np.array(times), np.array(powers)
+
+# Calculate sliding beta band power
+window_size = 1.0  # 1 second window
+step = 0.5  # 0.5 second step
+beta_times, beta_powers = sliding_band_power(lfp_data, timestamps, fs, 13, 30, 
+                                             window_size=window_size, step=step)
+theta_times, theta_powers = sliding_band_power(lfp_data, timestamps, fs, 4, 8,
+                                              window_size=window_size, step=step)
+
+# Plot the sliding band power
+plt.figure(figsize=(15, 6))
+plt.semilogy(beta_times, beta_powers, label='Beta (13-30 Hz)')
+plt.semilogy(theta_times, theta_powers, label='Theta (4-8 Hz)')
+plt.title("Sliding Window Band Power")
+plt.xlabel("Time (seconds)")
+plt.ylabel("Band Power (log scale)")
+plt.grid(True)
+plt.legend()
+plt.show()
+
+# %% [markdown]
+# ## Comparing Multiple Sessions
+
+# %% [markdown]
+# Let's load another NWB file from a different session to compare the beta band activity between sessions.
+
+# %%
+# Find another NWB file from the same subject type but a different session
+second_asset = None
+for asset in assets:
+    if 'sub-healthy-simulated-beta' in asset.path and asset.path != selected_asset.path:
+        second_asset = asset
+        break
+
+if second_asset:
+    print(f"Selected second asset: {second_asset.path}")
+    second_asset_url = second_asset.get_content_url()
+    
+    # Load the second NWB file
+    second_nwb, second_h5_file = load_nwb_from_url(second_asset_url)
+    
+    # Extract LFP data from second file
+    second_lfp_data = second_nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].data[:]
+    second_timestamps = second_nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["Beta_Band_Voltage"].timestamps[:]
+    
+    # Calculate statistics for comparison
+    print("\nComparison of LFP data statistics between sessions:")
+    print(f"Session 1 - Min: {np.min(lfp_data):.6f}, Max: {np.max(lfp_data):.6f}, Mean: {np.mean(lfp_data):.6f}")
+    print(f"Session 2 - Min: {np.min(second_lfp_data):.6f}, Max: {np.max(second_lfp_data):.6f}, Mean: {np.mean(second_lfp_data):.6f}")
+    
+    # Calculate beta power for both sessions
+    beta_power1, _, _ = band_power(lfp_data, fs, 13, 30)
+    beta_power2, _, _ = band_power(second_lfp_data, fs, 13, 30)
+    
+    print(f"\nSession 1 - Beta Power: {beta_power1:.6e}")
+    print(f"Session 2 - Beta Power: {beta_power2:.6e}")
+    print(f"Percent Difference: {(beta_power2/beta_power1 - 1) * 100:.2f}%")
+else:
+    print("No second asset found")
+
+# %% [markdown]
+# Let's visualize the comparison between the two sessions.
+
+# %%
+if second_asset:
+    # Plot time series comparison
+    plt.figure(figsize=(15, 10))
+    
+    # First session
+    plt.subplot(2, 1, 1)
+    plt.plot(timestamps, lfp_data)
+    plt.title(f"Session 1: {selected_asset.path.split('/')[-1]}")
+    plt.xlabel("Time (seconds)")
+    plt.ylabel("Voltage (V)")
+    plt.grid(True)
+    
+    # Second session
+    plt.subplot(2, 1, 2)
+    plt.plot(second_timestamps, second_lfp_data)
+    plt.title(f"Session 2: {second_asset.path.split('/')[-1]}")
+    plt.xlabel("Time (seconds)")
+    plt.ylabel("Voltage (V)")
+    plt.grid(True)
+    
+    plt.tight_layout()
+    plt.show()
+    
+    # Calculate FFT for second session
+    second_fs = 1.0 / (second_timestamps[1] - second_timestamps[0])
+    second_freqs = np.fft.rfftfreq(len(second_lfp_data), d=1/second_fs)
+    second_fft_vals = np.abs(np.fft.rfft(second_lfp_data))
+    
+    # Plot frequency domain comparison
+    plt.figure(figsize=(15, 10))
+    
+    # First session FFT
+    plt.subplot(2, 1, 1)
+    plt.semilogy(freqs, fft_vals)
+    plt.title(f"Frequency Domain - Session 1: {selected_asset.path.split('/')[-1]}")
+    plt.xlabel("Frequency (Hz)")
+    plt.ylabel("Amplitude")
+    plt.grid(True)
+    plt.axvspan(13, 30, alpha=0.2, color='red')
+    plt.text(21.5, np.max(fft_vals)/10, "Beta Band", ha='center')
+    
+    # Second session FFT
+    plt.subplot(2, 1, 2)
+    plt.semilogy(second_freqs, second_fft_vals)
+    plt.title(f"Frequency Domain - Session 2: {second_asset.path.split('/')[-1]}")
+    plt.xlabel("Frequency (Hz)")
+    plt.ylabel("Amplitude")
+    plt.grid(True)
+    plt.axvspan(13, 30, alpha=0.2, color='red')
+    plt.text(21.5, np.max(second_fft_vals)/10, "Beta Band", ha='center')
+    
+    plt.tight_layout()
+    plt.show()
+    
+    # Calculate sliding beta band power for second session
+    second_beta_times, second_beta_powers = sliding_band_power(
+        second_lfp_data, second_timestamps, second_fs, 13, 30, 
+        window_size=window_size, step=step
+    )
+    
+    # Plot sliding window beta power comparison
+    plt.figure(figsize=(15, 6))
+    plt.semilogy(beta_times, beta_powers, label='Session 1', alpha=0.7)
+    plt.semilogy(second_beta_times, second_beta_powers, label='Session 2', alpha=0.7)
+    plt.title("Beta Band Power Over Time - Session Comparison")
+    plt.xlabel("Time (seconds)")
+    plt.ylabel("Beta Band Power (13-30 Hz)")
+    plt.grid(True)
+    plt.legend()
+    plt.show()
+
+# %% [markdown]
+# ## Summary and Conclusions
+
+# %% [markdown]
+# In this notebook, we've explored the Parkinson's Electrophysiological Signal Dataset (PESD), focusing on the Local Field Potential (LFP) data from the subthalamic nucleus in simulated healthy subjects with beta oscillations.
+#
+# Key findings:
+#
+# 1. The dataset contains simulated LFP recordings with beta band activity, which is a key biomarker for Parkinson's Disease.
+#
+# 2. The LFP signals show oscillatory patterns in the beta frequency range (13-30 Hz), although the lower frequencies (delta, theta, alpha) have higher power.
+#
+# 3. The beta band power shows temporal fluctuations, which could represent variations in the underlying neural activity.
+#
+# 4. When comparing different sessions from the same subject type, we observed remarkably similar patterns in both the time and frequency domains, suggesting high consistency in the simulation models.
+#
+# ### Future Directions
+#
+# Based on our exploration, several potential directions for further analysis emerge:
+#
+# - Compare the beta band activity between healthy and parkinsonian subjects to identify key differences.
+# - Apply more advanced signal processing techniques to isolate and characterize beta oscillations.
+# - Investigate the relationship between beta oscillations and other frequency bands.
+# - Explore the potential of using these signals for closed-loop deep brain stimulation algorithms as mentioned in the dataset description.
+#
+# This dataset provides a valuable resource for researchers interested in understanding beta oscillations in Parkinson's Disease and developing new approaches for treatment.
+================================
+Total prompt tokens: 534226 + 7994
+Total completion tokens: 16441 + 1107
+
+=========================================
+
+write_to_file for 'notebook.py':
+Successfully wrote 19155 characters to notebook.py
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 48
+Submitting completion request...
+Processing response...
+I'll use the jupytext command to convert the Python file to a Jupyter notebook, and then use the jupyter execute command to run the notebook. This will help ensure that all the cells run correctly and produce the expected output.
+
+Tool: execute_command
+Params: {'command': 'jupytext --to notebook notebook.py && jupyter execute --inplace notebook.ipynb', 'requires_approval': 'false', 'timeout': '600'}
+================================
+Command to be executed
+jupytext --to notebook notebook.py && jupyter execute --inplace notebook.ipynb
+================================
+[jupytext] Reading notebook.py in format py
+[jupytext] Writing notebook.ipynb
+[NbClientApp] Executing notebook.ipynb
+[NbClientApp] Executing notebook with kernel: 
+Traceback (most recent call last):
+  File "/opt/conda/bin/jupyter-execute", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/jupyter_core/application.py", line 283, in launch_instance
+    super().launch_instance(argv=argv, **kwargs)
+  File "/opt/conda/lib/python3.11/site-packages/traitlets/config/application.py", line 1074, in launch_instance
+    app.initialize(argv)
+  File "/opt/conda/lib/python3.11/site-packages/traitlets/config/application.py", line 118, in inner
+    return method(app, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/nbclient/cli.py", line 161, in initialize
+    self.run_notebook(path)
+  File "/opt/conda/lib/python3.11/site-packages/nbclient/cli.py", line 215, in run_notebook
+    client.execute()
+  File "/opt/conda/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/opt/conda/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/conda/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Connect to DANDI archive
+client = DandiAPIClient()
+dandiset = client.get_dandiset("001333")
+
+print(f"Dandiset ID: {dandiset.identifier}")
+print(f"Dandiset Name: {dandiset.get_metadata()['name']}")
+print(f"Dandiset Description: {dandiset.get_metadata()['description'][:500]}...")
+------------------
+
+----- stdout -----
+Dandiset ID: 001333
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[2], line 6[0m
+[1;32m      3[0m dandiset [38;5;241m=[39m client[38;5;241m.[39mget_dandiset([38;5;124m"[39m[38;5;124m001333[39m[38;5;124m"[39m)
+[1;32m      5[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mDandiset ID: [39m[38;5;132;01m{[39;00mdandiset[38;5;241m.[39midentifier[38;5;132;01m}[39;00m[38;5;124m"[39m)
+[0;32m----> 6[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mDandiset Name: [39m[38;5;132;01m{[39;00m[43mdandiset[49m[38;5;241;43m.[39;49m[43mget_metadata[49m[43m([49m[43m)[49m[43m[[49m[38;5;124;43m'[39;49m[38;5;124;43mname[39;49m[38;5;124;43m'[39;49m[43m][49m[38;5;132;01m}[39;00m[38;5;124m"[39m)
+[1;32m      7[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mDandiset Description: [39m[38;5;132;01m{[39;00mdandiset[38;5;241m.[39mget_metadata()[[38;5;124m'[39m[38;5;124mdescription[39m[38;5;124m'[39m][:[38;5;241m500[39m][38;5;132;01m}[39;00m[38;5;124m...[39m[38;5;124m"[39m)
+
+[0;31mTypeError[0m: 'Dandiset' object is not subscriptable
+
+Total prompt tokens: 582323 + 7994
+Total completion tokens: 16585 + 1107
+
+=========================================
+
+execute_command 'jupytext --to notebook notebook.py && jupyter execute --inplace notebook.ipynb' (requires approval):
+Command failed with exit code 1
+STDOUT:
+[jupytext] Reading notebook.py in format py
+[jupytext] Writing notebook.ipynb
+
+STDERR:
+[NbClientApp] Executing notebook.ipynb
+[NbClientApp] Executing notebook with kernel: 
+Traceback (most recent call last):
+  File "/opt/conda/bin/jupyter-execute", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/jupyter_core/application.py", line 283, in launch_instance
+    super().launch_instance(argv=argv, **kwargs)
+  File "/opt/conda/lib/python3.11/site-packages/traitlets/config/application.py", line 1074, in launch_instance
+    app.initialize(argv)
+  File "/opt/conda/lib/python3.11/site-packages/traitlets/config/application.py", line 118, in inner
+    return method(app, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/nbclient/cli.py", line 161, in initialize
+    self.run_notebook(path)
+  File "/opt/conda/lib/python3.11/site-packages/nbclient/cli.py", line 215, in run_notebook
+    client.execute()
+  File "/opt/conda/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/opt/conda/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/conda/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Connect to DANDI archive
+client = DandiAPIClient()
+dandiset = client.get_dandiset("001333")
+
+print(f"Dandiset ID: {dandiset.identifier}")
+print(f"Dandiset Name: {dandiset.get_metadata()['name']}")
+print(f"Dandiset Description: {dandiset.get_metadata()['description'][:500]}...")
+------------------
+
+----- stdout -----
+Dandiset ID: 001333
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[2], line 6[0m
+[1;32m      3[0m dandiset [38;5;241m=[39m client[38;5;241m.[39mget_dandiset([38;5;124m"[39m[38;5;124m001333[39m[38;5;124m"[39m)
+[1;32m      5[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mDandiset ID: [39m[38;5;132;01m{[39;00mdandiset[38;5;241m.[39midentifier[38;5;132;01m}[39;00m[38;5;124m"[39m)
+[0;32m----> 6[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mDandiset Name: [39m[38;5;132;01m{[39;00m[43mdandiset[49m[38;5;241;43m.[39;49m[43mget_metadata[49m[43m([49m[43m)[49m[43m[[49m[38;5;124;43m'[39;49m[38;5;124;43mname[39;49m[38;5;124;43m'[39;49m[43m][49m[38;5;132;01m}[39;00m[38;5;124m"[39m)
+[1;32m      7[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mDandiset Description: [39m[38;5;132;01m{[39;00mdandiset[38;5;241m.[39mget_metadata()[[38;5;124m'[39m[38;5;124mdescription[39m[38;5;124m'[39m][:[38;5;241m500[39m][38;5;132;01m}[39;00m[38;5;124m...[39m[38;5;124m"[39m)
+
+[0;31mTypeError[0m: 'Dandiset' object is not subscriptable
+
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 50
+Submitting completion request...
+Processing response...
+The error occurred because we're trying to access the metadata from the Dandiset object in a way that's not compatible with the current API. Let me update the notebook to handle the Dandiset metadata correctly.
+
+Tool: replace_in_file
+Params: {'path': 'notebook.py', 'diff': '<<<<<<< SEARCH\n# Connect to DANDI archive\nclient = DandiAPIClient()\ndandiset = client.get_dandiset("001333")\n\nprint(f"Dandiset ID: {dandiset.identifier}")\nprint(f"Dandiset Name: {dandiset.get_metadata()[\'name\']}")\nprint(f"Dandiset Description: {dandiset.get_metadata()[\'description\'][:500]}...")\n=======\n# Connect to DANDI archive\nclient = DandiAPIClient()\ndandiset = client.get_dandiset("001333")\nmetadata = dandiset.get_metadata()\n\nprint(f"Dandiset ID: {dandiset.identifier}")\nprint(f"Dandiset Name: {metadata.name}")\nprint(f"Dandiset Description: {metadata.description[:500]}...")\n>>>>>>> REPLACE'}
+================================
+Proposed replacement in notebook.py:
+<<<<<<< SEARCH
+# Connect to DANDI archive
+client = DandiAPIClient()
+dandiset = client.get_dandiset("001333")
+
+print(f"Dandiset ID: {dandiset.identifier}")
+print(f"Dandiset Name: {dandiset.get_metadata()['name']}")
+print(f"Dandiset Description: {dandiset.get_metadata()['description'][:500]}...")
+=======
+# Connect to DANDI archive
+client = DandiAPIClient()
+dandiset = client.get_dandiset("001333")
+metadata = dandiset.get_metadata()
+
+print(f"Dandiset ID: {dandiset.identifier}")
+print(f"Dandiset Name: {metadata.name}")
+print(f"Dandiset Description: {metadata.description[:500]}...")
+>>>>>>> REPLACE
+================================
+Total prompt tokens: 632199 + 7994
+Total completion tokens: 16915 + 1107
+
+=========================================
+
+replace_in_file for 'notebook.py':
+Successfully made 1 replacements in notebook.py
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 52
+Submitting completion request...
+Processing response...
+Now that I've fixed the issue with accessing the Dandiset metadata, let's convert the Jupytext file to a notebook and execute it again.
+
+Tool: execute_command
+Params: {'command': 'jupytext --to notebook notebook.py && jupyter execute --inplace notebook.ipynb', 'requires_approval': 'false', 'timeout': '600'}
+================================
+Command to be executed
+jupytext --to notebook notebook.py && jupyter execute --inplace notebook.ipynb
+================================
+[jupytext] Reading notebook.py in format py
+[jupytext] Writing notebook.ipynb (destination file replaced [use --update to preserve cell outputs and ids])
+[NbClientApp] Executing notebook.ipynb
+[NbClientApp] Executing notebook with kernel: 
+[NbClientApp] Save executed results to notebook.ipynb
+Total prompt tokens: 682617 + 7994
+Total completion tokens: 17033 + 1107
+
+=========================================
+
+execute_command 'jupytext --to notebook notebook.py && jupyter execute --inplace notebook.ipynb' (requires approval):
+Command executed successfully
+STDOUT:
+[jupytext] Reading notebook.py in format py
+[jupytext] Writing notebook.ipynb (destination file replaced [use --update to preserve cell outputs and ids])
+
+STDERR:
+[NbClientApp] Executing notebook.ipynb
+[NbClientApp] Executing notebook with kernel: 
+[NbClientApp] Save executed results to notebook.ipynb
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 54
+Submitting completion request...
+Processing response...
+Now I should check if the notebook is complete and working as expected. Let me examine the notebook file to confirm it contains all the expected content, visualizations, and analysis.
+
+Tool: execute_command
+Params: {'command': 'head -n 20 notebook.ipynb', 'requires_approval': 'false'}
+================================
+Command to be executed
+head -n 20 notebook.ipynb
+================================
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "48796081",
+   "metadata": {},
+   "source": [
+    "# Exploring Dandiset 001333: Parkinson's Electrophysiological Signal Dataset (PESD)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0c0dd287",
+   "metadata": {},
+   "source": [
+    "> **Note**: This notebook was AI-generated using dandi-notebook-gen and has not been fully verified. Please be cautious when interpreting the code or results and verify key findings independently."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+Total prompt tokens: 733463 + 7994
+Total completion tokens: 17145 + 1107
+
+=========================================
+
+execute_command 'head -n 20 notebook.ipynb' (requires approval):
+Command executed successfully
+STDOUT:
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "48796081",
+   "metadata": {},
+   "source": [
+    "# Exploring Dandiset 001333: Parkinson's Electrophysiological Signal Dataset (PESD)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0c0dd287",
+   "metadata": {},
+   "source": [
+    "> **Note**: This notebook was AI-generated using dandi-notebook-gen and has not been fully verified. Please be cautious when interpreting the code or results and verify key findings independently."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 56
+Submitting completion request...
+Processing response...
+The notebook seems to have been converted correctly. Now I should create a final summary of what we've accomplished, including the key features of the notebook we've created.
+
+Tool: attempt_completion
+Params: {'result': "I've created a Jupytext notebook for exploring and analyzing Dandiset 001333 (Parkinson's Electrophysiological Signal Dataset) and successfully converted it to a Jupyter notebook format.\n\nThe notebook provides a comprehensive exploration of the dataset with the following features:\n\n1. **Overview and Context**: The notebook begins with an introduction to the Parkinson's Electrophysiological Signal Dataset (PESD), including its purpose and a link to view it on Neurosift.\n\n2. **Dandiset Exploration**: It shows how to load the dataset using the DANDI API and explore its structure, assets, and subject types.\n\n3. **NWB File Analysis**: The notebook demonstrates how to load and examine NWB file metadata, electrode information, and the overall data structure.\n\n4. **LFP Data Visualization**: It includes time domain visualization of the Local Field Potential data, specifically focusing on beta band voltage signals.\n\n5. **Frequency Analysis**: The notebook performs frequency domain analysis, including Fourier transforms and spectrograms, highlighting the beta frequency band (13-30 Hz) which is relevant to Parkinson's Disease.\n\n6. **Band Power Analysis**: It demonstrates quantitative analysis of power in different frequency bands and how beta band power changes over time.\n\n7. **Session Comparison**: The notebook compares data from multiple recording sessions to examine consistency in the simulated data.\n\n8. **Summary and Future Directions**: It concludes with key findings and suggests potential directions for further research.\n\nThe notebook is fully functional, has been successfully executed, and provides researchers with the tools they need to understand and analyze this dataset. It follows best practices for neurophysiology data analysis and includes explanatory text that guides users through each step of the process."}
+I've created a Jupytext notebook for exploring and analyzing Dandiset 001333 (Parkinson's Electrophysiological Signal Dataset) and successfully converted it to a Jupyter notebook format.
+
+The notebook provides a comprehensive exploration of the dataset with the following features:
+
+1. **Overview and Context**: The notebook begins with an introduction to the Parkinson's Electrophysiological Signal Dataset (PESD), including its purpose and a link to view it on Neurosift.
+
+2. **Dandiset Exploration**: It shows how to load the dataset using the DANDI API and explore its structure, assets, and subject types.
+
+3. **NWB File Analysis**: The notebook demonstrates how to load and examine NWB file metadata, electrode information, and the overall data structure.
+
+4. **LFP Data Visualization**: It includes time domain visualization of the Local Field Potential data, specifically focusing on beta band voltage signals.
+
+5. **Frequency Analysis**: The notebook performs frequency domain analysis, including Fourier transforms and spectrograms, highlighting the beta frequency band (13-30 Hz) which is relevant to Parkinson's Disease.
+
+6. **Band Power Analysis**: It demonstrates quantitative analysis of power in different frequency bands and how beta band power changes over time.
+
+7. **Session Comparison**: The notebook compares data from multiple recording sessions to examine consistency in the simulated data.
+
+8. **Summary and Future Directions**: It concludes with key findings and suggests potential directions for further research.
+
+The notebook is fully functional, has been successfully executed, and provides researchers with the tools they need to understand and analyze this dataset. It follows best practices for neurophysiology data analysis and includes explanatory text that guides users through each step of the process.
+Total prompt tokens: 784817 + 7994
+Total completion tokens: 17597 + 1107
+
