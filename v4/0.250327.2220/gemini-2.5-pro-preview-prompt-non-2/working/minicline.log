@@ -1,0 +1,1014 @@
+Using model: google/gemini-2.5-pro-preview
+Num. messages in conversation: 2
+Submitting completion request...
+Processing response...
+The first step is to get the Dandiset metadata using the provided command: `python tools_cli.py dandiset-info 001333 --version 0.250327.2220`. This will give me information about the Dandiset like its name and description, which I'll need for the notebook.
+
+Tool: execute_command
+Params: {'command': 'python tools_cli.py dandiset-info 001333 --version 0.250327.2220', 'requires_approval': 'false'}
+================================
+Command to be executed
+python tools_cli.py dandiset-info 001333 --version 0.250327.2220
+================================
+{
+  "results": {
+    "id": "DANDI:001333/0.250327.2220",
+    "name": "Parkinson's Electrophysiological Signal Dataset (PESD)",
+    "access": [
+      {
+        "status": "dandi:OpenAccess",
+        "schemaKey": "AccessRequirements"
+      }
+    ],
+    "license": [
+      "spdx:CC-BY-4.0"
+    ],
+    "version": "0.250327.2220",
+    "citation": "Biswas, Ananna (2025) Parkinson's Electrophysiological Signal Dataset (PESD) (Version 0.250327.2220) [Data set]. DANDI Archive. https://doi.org/10.48324/dandi.001333/0.250327.2220",
+    "identifier": "DANDI:001333",
+    "contributor": [
+      "Biswas, Ananna"
+    ],
+    "dateCreated": "2025-02-08T10:15:43.847350+00:00",
+    "description": "The dataset contains electrophysiological signals from both healthy and parkinsonian subjects. We generated two types of samples from each group. The parkinsonian signals show a relatively high power density at the beta frequency (13 to 30 Hz). Thus, the beta oscillations (13 to 30 Hz) in the subthalamic nucleus (STN) are typically used as the pathological biomarkers for PD symptoms. Each sample includes two types of signals: Beta Average Rectified Voltage (ARV) and Local Field Potential (LFP) from the Subthalamic Nucleus (STN). The ARV signals are in the frequency domain and LFP signals are in the time domain.\n\nBeta ARV Signal: The controller beta values are determined by calculating the Average Rectified Value (ARV) of the beta band. This is achieved by fully rectifying the filtered LFP signal using a fourth-order Chebyshev band-pass filter with an 8 Hz bandwidth, centered around the peak of the LFP power spectrum. Local Field Potential (LFP) - STN: Local Field Potentials are derived from the synchronized activity of neuron populations between the cortex, STN, and thalamus.\n\nMore details can be found in our article named, \u201cPreliminary Results of Neuromorphic Controller Design and a Parkinson's Disease Dataset Building for Closed-Loop Deep Brain Stimulation\u201d, available at https://arxiv.org/abs/2407.17756",
+    "variableMeasured": [
+      "ElectricalSeries",
+      "LFP",
+      "ElectrodeGroup",
+      "ProcessingModule"
+    ],
+    "measurementTechnique": [
+      {
+        "name": "analytical technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "signal filtering technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "surgical technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "multi electrode extracellular electrophysiology recording technique",
+        "schemaKey": "MeasurementTechniqueType"
+      }
+    ]
+  }
+}
+Total prompt tokens: 8913 + 0
+Total completion tokens: 800 + 0
+
+=========================================
+
+execute_command 'python tools_cli.py dandiset-info 001333 --version 0.250327.2220' (requires approval):
+Command executed successfully
+STDOUT:
+{
+  "results": {
+    "id": "DANDI:001333/0.250327.2220",
+    "name": "Parkinson's Electrophysiological Signal Dataset (PESD)",
+    "access": [
+      {
+        "status": "dandi:OpenAccess",
+        "schemaKey": "AccessRequirements"
+      }
+    ],
+    "license": [
+      "spdx:CC-BY-4.0"
+    ],
+    "version": "0.250327.2220",
+    "citation": "Biswas, Ananna (2025) Parkinson's Electrophysiological Signal Dataset (PESD) (Version 0.250327.2220) [Data set]. DANDI Archive. https://doi.org/10.48324/dandi.001333/0.250327.2220",
+    "identifier": "DANDI:001333",
+    "contributor": [
+      "Biswas, Ananna"
+    ],
+    "dateCreated": "2025-02-08T10:15:43.847350+00:00",
+    "description": "The dataset contains electrophysiological signals from both healthy and parkinsonian subjects. We generated two types of samples from each group. The parkinsonian signals show a relatively high power density at the beta frequency (13 to 30 Hz). Thus, the beta oscillations (13 to 30 Hz) in the subthalamic nucleus (STN) are typically used as the pathological biomarkers for PD symptoms. Each sample includes two types of signals: Beta Average Rectified Voltage (ARV) and Local Field Potential (LFP) from the Subthalamic Nucleus (STN). The ARV signals are in the frequency domain and LFP signals are in the time domain.\n\nBeta ARV Signal: The controller beta values are determined by calculating the Average Rectified Value (ARV) of the beta band. This is achieved by fully rectifying the filtered LFP signal using a fourth-order Chebyshev band-pass filter with an 8 Hz bandwidth, centered around the peak of the LFP power spectrum. Local Field Potential (LFP) - STN: Local Field Potentials are derived from the synchronized activity of neuron populations between the cortex, STN, and thalamus.\n\nMore details can be found in our article named, \u201cPreliminary Results of Neuromorphic Controller Design and a Parkinson's Disease Dataset Building for Closed-Loop Deep Brain Stimulation\u201d, available at https://arxiv.org/abs/2407.17756",
+    "variableMeasured": [
+      "ElectricalSeries",
+      "LFP",
+      "ElectrodeGroup",
+      "ProcessingModule"
+    ],
+    "measurementTechnique": [
+      {
+        "name": "analytical technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "signal filtering technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "surgical technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "multi electrode extracellular electrophysiology recording technique",
+        "schemaKey": "MeasurementTechniqueType"
+      }
+    ]
+  }
+}
+
+=========================================
+
+Using model: google/gemini-2.5-pro-preview
+Num. messages in conversation: 4
+Submitting completion request...
+Processing response...
+I have the Dandiset metadata. The next step is to get the list of assets (files) in the Dandiset. I'll use the command `python tools_cli.py dandiset-assets 001333 --version 0.250327.2220`. This will give me a list of files, including NWB files, and their asset IDs. I'll need this to select an NWB file for further analysis.
+
+Tool: execute_command
+Params: {'command': 'python tools_cli.py dandiset-assets 001333 --version 0.250327.2220', 'requires_approval': 'false'}
+================================
+Command to be executed
+python tools_cli.py dandiset-assets 001333 --version 0.250327.2220
+================================
+{
+  "results": {
+    "count": 52,
+    "results": [
+      {
+        "asset_id": "b344c8b7-422f-46bb-b016-b47dc1e87c65",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-162_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "da77917e-655c-4eeb-a0a6-7529a8a35901",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-218_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "aa743a96-e79b-40b1-a0df-55ef3460e856",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-279_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "d0e8beef-ee7a-44a9-bebc-e0865b4c8f42",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-345_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "068afe41-3b8e-402f-91d4-9f297df677a2",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-423_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "1800fb0a-1e60-459f-9631-878fbc7438ed",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-452_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "4f2100fa-9767-4612-9914-8cf7195e4421",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-516_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "73214862-df4b-452b-a35c-d1f3bdb68180",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-54_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "3e725ab6-1770-4b9c-a615-488e5e6b38e1",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-646_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "f0bbde56-41b8-4d8d-82ea-f1860dd863fb",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-78_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "5409700b-e080-44e6-a6db-1d3e8890cd6c",
+        "path": "sub-healthy-simulated-data/sub-healthy-simulated-data_ses-001_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "00df5264-001b-4bb0-a987-0ddfb6058961",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-162_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "d92648ad-a2f8-4ec6-a125-363f45aa7f35",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-218_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "b29a7d22-0d2c-4067-9436-73599e70b112",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-279_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "5625d510-89eb-458c-b4b1-d9466bfcac47",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-345_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "d55db7c7-9957-4c1a-8855-3a7568dc14df",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-423_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "d3d17629-3cad-4d94-a69a-431e761747d8",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-452_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "0ed8b387-7062-4ed3-b9da-8bf11973fe00",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-516_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "3cf468a1-4933-4aa6-b1c3-4a261b3ee6db",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-54_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "2a94cac8-920a-464d-a466-e54082e682c3",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-646_ecephys.nwb",
+        "size": 822640
+      }
+    ]
+  }
+}
+Total prompt tokens: 18874 + 0
+Total completion tokens: 988 + 0
+
+=========================================
+
+execute_command 'python tools_cli.py dandiset-assets 001333 --version 0.250327.2220' (requires approval):
+Command executed successfully
+STDOUT:
+{
+  "results": {
+    "count": 52,
+    "results": [
+      {
+        "asset_id": "b344c8b7-422f-46bb-b016-b47dc1e87c65",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-162_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "da77917e-655c-4eeb-a0a6-7529a8a35901",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-218_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "aa743a96-e79b-40b1-a0df-55ef3460e856",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-279_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "d0e8beef-ee7a-44a9-bebc-e0865b4c8f42",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-345_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "068afe41-3b8e-402f-91d4-9f297df677a2",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-423_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "1800fb0a-1e60-459f-9631-878fbc7438ed",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-452_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "4f2100fa-9767-4612-9914-8cf7195e4421",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-516_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "73214862-df4b-452b-a35c-d1f3bdb68180",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-54_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "3e725ab6-1770-4b9c-a615-488e5e6b38e1",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-646_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "f0bbde56-41b8-4d8d-82ea-f1860dd863fb",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-78_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "5409700b-e080-44e6-a6db-1d3e8890cd6c",
+        "path": "sub-healthy-simulated-data/sub-healthy-simulated-data_ses-001_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "00df5264-001b-4bb0-a987-0ddfb6058961",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-162_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "d92648ad-a2f8-4ec6-a125-363f45aa7f35",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-218_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "b29a7d22-0d2c-4067-9436-73599e70b112",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-279_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "5625d510-89eb-458c-b4b1-d9466bfcac47",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-345_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "d55db7c7-9957-4c1a-8855-3a7568dc14df",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-423_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "d3d17629-3cad-4d94-a69a-431e761747d8",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-452_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "0ed8b387-7062-4ed3-b9da-8bf11973fe00",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-516_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "3cf468a1-4933-4aa6-b1c3-4a261b3ee6db",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-54_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "2a94cac8-920a-464d-a466-e54082e682c3",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-646_ecephys.nwb",
+        "size": 822640
+      }
+    ]
+  }
+}
+
+=========================================
+
+Using model: google/gemini-2.5-pro-preview
+Num. messages in conversation: 6
+Submitting completion request...
+Processing response...
+I have the list of assets. Now I need to choose an NWB file and get its information. I'll pick `sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-162_ecephys.nwb` with asset ID `00df5264-001b-4bb0-a987-0ddfb6058961`.
+The URL for this asset will be `https://api.dandiarchive.org/api/assets/00df5264-001b-4bb0-a987-0ddfb6058961/download/`.
+I'll use the command `python tools_cli.py nwb-file-info 001333 https://api.dandiarchive.org/api/assets/00df5264-001b-4bb0-a987-0ddfb6058961/download/ --version 0.250327.2220` to get information on how to load data from this file.
+
+Tool: execute_command
+Params: {'command': 'python tools_cli.py nwb-file-info 001333 https://api.dandiarchive.org/api/assets/00df5264-001b-4bb0-a987-0ddfb6058961/download/ --version 0.250327.2220', 'requires_approval': 'false'}
+================================
+Command to be executed
+python tools_cli.py nwb-file-info 001333 https://api.dandiarchive.org/api/assets/00df5264-001b-4bb0-a987-0ddfb6058961/download/ --version 0.250327.2220
+================================
+/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/hdmf/spec/namespace.py:535: UserWarning: Ignoring cached namespace 'core' version 2.8.0 because version 2.7.0 is already loaded.
+  warn("Ignoring cached namespace '%s' version %s because version %s is already loaded."
+# This script shows how to load the NWB file at https://api.dandiarchive.org/api/assets/00df5264-001b-4bb0-a987-0ddfb6058961/download/ in Python using PyNWB
+
+import pynwb
+import h5py
+import remfile
+
+# Load
+url = "https://api.dandiarchive.org/api/assets/00df5264-001b-4bb0-a987-0ddfb6058961/download/"
+remote_file = remfile.File(url)
+h5_file = h5py.File(remote_file)
+io = pynwb.NWBHDF5IO(file=h5_file)
+nwb = io.read()
+
+nwb # (NWBFile)
+nwb.session_description # (str) Parkinson's Electrophysiological Signal Dataset (PESD) Generated from Simulation
+nwb.identifier # (str) 2feb8ac9-a70f-49f0-894b-7420f0d803cb
+nwb.session_start_time # (datetime) 2025-03-27T16:53:27.603558-04:00
+nwb.timestamps_reference_time # (datetime) 2025-03-27T16:53:27.603558-04:00
+nwb.file_create_date # (list) [datetime.datetime(2025, 3, 27, 16, 53, 27, 630470, tzinfo=tzoffset(None, -14400))]
+nwb.experimenter # (tuple) ['Ananna Biswas']
+nwb.related_publications # (tuple) ['https://arxiv.org/abs/2407.17756', 'DOI: 10.3389/fnins.2020.00166']
+nwb.keywords # (StrDataset) shape (4,); dtype object
+# nwb.keywords[:] # Access all data
+# nwb.keywords[0:n] # Access first n elements
+# First few values of nwb.keywords: ['ecephys' 'LFP' "Parkinson's Disease" 'Beta Band']
+nwb.processing # (LabelledDict)
+processing = nwb.processing
+ecephys = processing["ecephys"]
+ecephys # (ProcessingModule)
+ecephys.description # (str) Processed electrophysiology data
+ecephys.data_interfaces # (LabelledDict)
+data_interfaces = ecephys.data_interfaces
+LFP = data_interfaces["LFP"]
+LFP # (LFP)
+LFP.electrical_series # (LabelledDict)
+electrical_series = LFP.electrical_series
+LFP_1 = electrical_series["LFP"]
+LFP_1 # (ElectricalSeries)
+LFP_1.starting_time # (float64) 0.0
+LFP_1.rate # (float64) 2000.0
+LFP_1.resolution # (float64) -1.0
+LFP_1.comments # (str) no comments
+LFP_1.description # (str) no description
+LFP_1.conversion # (float64) 1.0
+LFP_1.offset # (float64) 0.0
+LFP_1.unit # (str) volts
+LFP_1.data # (Dataset) shape (77400,); dtype float64
+# LFP_1.data[:] # Access all data
+# LFP_1.data[0:n] # Access first n elements
+LFP_1.starting_time_unit # (str) seconds
+LFP_1.electrodes # (DynamicTableRegion)
+LFP_1.electrodes.description # (str) all electrodes
+LFP_1.electrodes.table # (DynamicTable)
+LFP_1.electrodes.table.description # (str) metadata about extracellular electrodes
+LFP_1.electrodes.table.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+LFP_1.electrodes.table.columns # (tuple)
+LFP_1.electrodes.table.id # (ElementIdentifiers)
+# LFP_1.electrodes.table.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# LFP_1.electrodes.table.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+LFP_1.electrodes.table.location # (VectorData) the location of channel within the subject e.g. brain region
+LFP_1.electrodes.table.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+LFP_1.electrodes.table.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+LFP_1.electrodes.table.label # (VectorData) label of electrode
+nwb.electrode_groups # (LabelledDict)
+electrode_groups = nwb.electrode_groups
+shank0 = electrode_groups["shank0"]
+shank0 # (ElectrodeGroup)
+shank0.description # (str) Simulated electrode group for shank 0
+shank0.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank0.device # (Device)
+shank0.device.description # (str) Virtual probe used in NEURON simulation
+shank0.device.manufacturer # (str) N/A
+shank1 = electrode_groups["shank1"]
+shank1 # (ElectrodeGroup)
+shank1.description # (str) Simulated electrode group for shank 1
+shank1.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank1.device # (Device)
+shank1.device.description # (str) Virtual probe used in NEURON simulation
+shank1.device.manufacturer # (str) N/A
+shank2 = electrode_groups["shank2"]
+shank2 # (ElectrodeGroup)
+shank2.description # (str) Simulated electrode group for shank 2
+shank2.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank2.device # (Device)
+shank2.device.description # (str) Virtual probe used in NEURON simulation
+shank2.device.manufacturer # (str) N/A
+shank3 = electrode_groups["shank3"]
+shank3 # (ElectrodeGroup)
+shank3.description # (str) Simulated electrode group for shank 3
+shank3.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank3.device # (Device)
+shank3.device.description # (str) Virtual probe used in NEURON simulation
+shank3.device.manufacturer # (str) N/A
+nwb.devices # (LabelledDict)
+devices = nwb.devices
+NEURON_Simulator = devices["NEURON_Simulator"]
+NEURON_Simulator # (Device)
+NEURON_Simulator.description # (str) Virtual probe used in NEURON simulation
+NEURON_Simulator.manufacturer # (str) N/A
+nwb.experiment_description # (str) The PESD dataset is generated from a cortico-basal-ganglia network for a Parkinsonian computation...
+nwb.lab # (str) BrainX Lab
+nwb.institution # (str) Michigan Technological University
+nwb.electrodes # (DynamicTable)
+nwb.electrodes.description # (str) metadata about extracellular electrodes
+nwb.electrodes.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.electrodes.columns # (tuple)
+nwb.electrodes.id # (ElementIdentifiers)
+# nwb.electrodes.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# nwb.electrodes.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+nwb.electrodes.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.electrodes.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.electrodes.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.electrodes.label # (VectorData) label of electrode
+nwb.subject # (Subject)
+nwb.subject.age # (str) P0D
+nwb.subject.age__reference # (str) birth
+nwb.subject.description # (str) This is a simulated dataset generated from a computational model.
+nwb.subject.sex # (str) U
+nwb.subject.species # (str) Homo sapiens
+nwb.subject.subject_id # (str) healthy-simulated-lfp
+Total prompt tokens: 31083 + 0
+Total completion tokens: 1478 + 0
+
+=========================================
+
+execute_command 'python tools_cli.py nwb-file-info 001333 https://api.dandiarchive.org/api/assets/00df5264-001b-4bb0-a987-0ddfb6058961/download/ --version 0.250327.2220' (requires approval):
+Command executed successfully
+STDOUT:
+# This script shows how to load the NWB file at https://api.dandiarchive.org/api/assets/00df5264-001b-4bb0-a987-0ddfb6058961/download/ in Python using PyNWB
+
+import pynwb
+import h5py
+import remfile
+
+# Load
+url = "https://api.dandiarchive.org/api/assets/00df5264-001b-4bb0-a987-0ddfb6058961/download/"
+remote_file = remfile.File(url)
+h5_file = h5py.File(remote_file)
+io = pynwb.NWBHDF5IO(file=h5_file)
+nwb = io.read()
+
+nwb # (NWBFile)
+nwb.session_description # (str) Parkinson's Electrophysiological Signal Dataset (PESD) Generated from Simulation
+nwb.identifier # (str) 2feb8ac9-a70f-49f0-894b-7420f0d803cb
+nwb.session_start_time # (datetime) 2025-03-27T16:53:27.603558-04:00
+nwb.timestamps_reference_time # (datetime) 2025-03-27T16:53:27.603558-04:00
+nwb.file_create_date # (list) [datetime.datetime(2025, 3, 27, 16, 53, 27, 630470, tzinfo=tzoffset(None, -14400))]
+nwb.experimenter # (tuple) ['Ananna Biswas']
+nwb.related_publications # (tuple) ['https://arxiv.org/abs/2407.17756', 'DOI: 10.3389/fnins.2020.00166']
+nwb.keywords # (StrDataset) shape (4,); dtype object
+# nwb.keywords[:] # Access all data
+# nwb.keywords[0:n] # Access first n elements
+# First few values of nwb.keywords: ['ecephys' 'LFP' "Parkinson's Disease" 'Beta Band']
+nwb.processing # (LabelledDict)
+processing = nwb.processing
+ecephys = processing["ecephys"]
+ecephys # (ProcessingModule)
+ecephys.description # (str) Processed electrophysiology data
+ecephys.data_interfaces # (LabelledDict)
+data_interfaces = ecephys.data_interfaces
+LFP = data_interfaces["LFP"]
+LFP # (LFP)
+LFP.electrical_series # (LabelledDict)
+electrical_series = LFP.electrical_series
+LFP_1 = electrical_series["LFP"]
+LFP_1 # (ElectricalSeries)
+LFP_1.starting_time # (float64) 0.0
+LFP_1.rate # (float64) 2000.0
+LFP_1.resolution # (float64) -1.0
+LFP_1.comments # (str) no comments
+LFP_1.description # (str) no description
+LFP_1.conversion # (float64) 1.0
+LFP_1.offset # (float64) 0.0
+LFP_1.unit # (str) volts
+LFP_1.data # (Dataset) shape (77400,); dtype float64
+# LFP_1.data[:] # Access all data
+# LFP_1.data[0:n] # Access first n elements
+LFP_1.starting_time_unit # (str) seconds
+LFP_1.electrodes # (DynamicTableRegion)
+LFP_1.electrodes.description # (str) all electrodes
+LFP_1.electrodes.table # (DynamicTable)
+LFP_1.electrodes.table.description # (str) metadata about extracellular electrodes
+LFP_1.electrodes.table.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+LFP_1.electrodes.table.columns # (tuple)
+LFP_1.electrodes.table.id # (ElementIdentifiers)
+# LFP_1.electrodes.table.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# LFP_1.electrodes.table.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+LFP_1.electrodes.table.location # (VectorData) the location of channel within the subject e.g. brain region
+LFP_1.electrodes.table.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+LFP_1.electrodes.table.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+LFP_1.electrodes.table.label # (VectorData) label of electrode
+nwb.electrode_groups # (LabelledDict)
+electrode_groups = nwb.electrode_groups
+shank0 = electrode_groups["shank0"]
+shank0 # (ElectrodeGroup)
+shank0.description # (str) Simulated electrode group for shank 0
+shank0.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank0.device # (Device)
+shank0.device.description # (str) Virtual probe used in NEURON simulation
+shank0.device.manufacturer # (str) N/A
+shank1 = electrode_groups["shank1"]
+shank1 # (ElectrodeGroup)
+shank1.description # (str) Simulated electrode group for shank 1
+shank1.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank1.device # (Device)
+shank1.device.description # (str) Virtual probe used in NEURON simulation
+shank1.device.manufacturer # (str) N/A
+shank2 = electrode_groups["shank2"]
+shank2 # (ElectrodeGroup)
+shank2.description # (str) Simulated electrode group for shank 2
+shank2.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank2.device # (Device)
+shank2.device.description # (str) Virtual probe used in NEURON simulation
+shank2.device.manufacturer # (str) N/A
+shank3 = electrode_groups["shank3"]
+shank3 # (ElectrodeGroup)
+shank3.description # (str) Simulated electrode group for shank 3
+shank3.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank3.device # (Device)
+shank3.device.description # (str) Virtual probe used in NEURON simulation
+shank3.device.manufacturer # (str) N/A
+nwb.devices # (LabelledDict)
+devices = nwb.devices
+NEURON_Simulator = devices["NEURON_Simulator"]
+NEURON_Simulator # (Device)
+NEURON_Simulator.description # (str) Virtual probe used in NEURON simulation
+NEURON_Simulator.manufacturer # (str) N/A
+nwb.experiment_description # (str) The PESD dataset is generated from a cortico-basal-ganglia network for a Parkinsonian computation...
+nwb.lab # (str) BrainX Lab
+nwb.institution # (str) Michigan Technological University
+nwb.electrodes # (DynamicTable)
+nwb.electrodes.description # (str) metadata about extracellular electrodes
+nwb.electrodes.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.electrodes.columns # (tuple)
+nwb.electrodes.id # (ElementIdentifiers)
+# nwb.electrodes.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# nwb.electrodes.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+nwb.electrodes.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.electrodes.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.electrodes.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.electrodes.label # (VectorData) label of electrode
+nwb.subject # (Subject)
+nwb.subject.age # (str) P0D
+nwb.subject.age__reference # (str) birth
+nwb.subject.description # (str) This is a simulated dataset generated from a computational model.
+nwb.subject.sex # (str) U
+nwb.subject.species # (str) Homo sapiens
+nwb.subject.subject_id # (str) healthy-simulated-lfp
+
+STDERR:
+/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/hdmf/spec/namespace.py:535: UserWarning: Ignoring cached namespace 'core' version 2.8.0 because version 2.7.0 is already loaded.
+  warn("Ignoring cached namespace '%s' version %s because version %s is already loaded."
+
+=========================================
+
+Using model: google/gemini-2.5-pro-preview
+Num. messages in conversation: 8
+Submitting completion request...
+Processing response...
+I have gathered the Dandiset metadata, the list of assets, and information on how to load a specific NWB file. Now I can proceed to create the `notebook.py` file. I will structure the notebook according to the user's instructions, including:
+- A title.
+- A disclaimer about AI generation.
+- An overview of the Dandiset with a link.
+- A summary of the notebook's content.
+- A list of required packages.
+- Code to load the Dandiset using the DANDI API.
+- Code to load a specific NWB file (using the hardcoded URL and asset ID as instructed).
+- Explanation of the chosen NWB file and how its URL is obtained.
+- A summary of the NWB file's contents (e.g., metadata, available data series).
+- A link to the NWB file on Neurosift.
+- Code to load and visualize some data from the NWB file (e.g., LFP data).
+- A summary of findings and future directions.
+- Explanatory markdown cells throughout.
+
+I will use the information from `tools_cli.py nwb-file-info` to guide the NWB data loading and exploration parts, specifically for the LFP data in `LFP_1`. I'll make sure to show a small subset of the LFP data for visualization to avoid loading too much data over the network.
+
+Tool: write_to_file
+Params: {'path': 'notebook.py', 'content': '# %% [markdown]\n# # Exploring Dandiset 001333: Parkinson\'s Electrophysiological Signal Dataset (PESD)\n#\n# **Disclaimer:** This notebook was AI-generated and has not been fully verified. Please be cautious when interpreting the code or results.\n\n# %% [markdown]\n# ## Overview of the Dandiset\n#\n# This notebook explores Dandiset [001333/0.250327.2220](https://dandiarchive.org/dandiset/001333/0.250327.2220), titled "Parkinson\'s Electrophysiological Signal Dataset (PESD)".\n#\n# The dataset contains electrophysiological signals from both healthy and parkinsonian subjects. The parkinsonian signals show a relatively high power density at the beta frequency (13 to 30 Hz). Each sample includes two types of signals: Beta Average Rectified Voltage (ARV) and Local Field Potential (LFP) from the Subthalamic Nucleus (STN). The ARV signals are in the frequency domain and LFP signals are in the time domain.\n#\n# More details can be found in the article: ["Preliminary Results of Neuromorphic Controller Design and a Parkinson\'s Disease Dataset Building for Closed-Loop Deep Brain Stimulation"](https://arxiv.org/abs/2407.17756).\n\n# %% [markdown]\n# ## What this notebook covers\n#\n# This notebook will guide you through:\n# 1. Listing required packages.\n# 2. Connecting to the DANDI archive and loading basic information about the Dandiset.\n# 3. Listing some assets (files) within the Dandiset.\n# 4. Selecting and loading an NWB (Neurodata Without Borders) file from the Dandiset.\n# 5. Exploring the metadata of the selected NWB file.\n# 6. Visualizing a segment of the Local Field Potential (LFP) data from the NWB file.\n# 7. Summarizing findings and suggesting potential future directions for analysis.\n\n# %% [markdown]\n# ## Required Packages\n#\n# To run this notebook, you\'ll need the following Python packages installed:\n# - `dandi` (for interacting with the DANDI Archive)\n# - `pynwb` (for working with NWB files)\n# - `h5py` (for HDF5 file access, a dependency of pynwb)\n# - `remfile` (for streaming remote files)\n# - `numpy` (for numerical operations)\n# - `matplotlib` (for plotting)\n# - `pandas` (for data manipulation, especially with NWB table data)\n#\n# It is assumed that these packages are already installed on your system.\n\n# %%\n# Import necessary libraries\nfrom itertools import islice\nfrom dandi.dandiapi import DandiAPIClient\nimport pynwb\nimport h5py\nimport remfile\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport pandas as pd\n\n# %% [markdown]\n# ## Loading the Dandiset using the DANDI API\n\n# %%\n# Connect to DANDI archive\nclient = DandiAPIClient()\ndandiset_id = "001333"\ndandiset_version = "0.250327.2220"\ndandiset = client.get_dandiset(dandiset_id, dandiset_version)\n\n# Print basic information about the Dandiset\nmetadata = dandiset.get_raw_metadata()\nprint(f"Dandiset name: {metadata[\'name\']}")\nprint(f"Dandiset URL: {metadata[\'url\']}")\nprint(f"Dandiset description: {metadata.get(\'description\', \'No description available.\')}")\n\n# List some assets in the Dandiset\nassets = dandiset.get_assets()\nprint("\\nFirst 5 assets:")\nfor asset in islice(assets, 5):\n    print(f"- {asset.path} (ID: {asset.asset_id})") # Use asset_id as identifier\n\n# %% [markdown]\n# ## Loading an NWB file\n#\n# We will now load one of the NWB files from the Dandiset. For this demonstration, we\'ll use the file `sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-162_ecephys.nwb`.\n#\n# The asset ID for this file is `00df5264-001b-4bb0-a987-0ddfb6058961`. We construct the download URL for this asset as follows:\n# `https://api.dandiarchive.org/api/assets/&lt;ASSET_ID&gt;/download/`\n\n# %%\n# Define the URL for the NWB file\n# This URL was obtained from the output of `python tools_cli.py dandiset-assets ...` and then\n# `python tools_cli.py nwb-file-info ...`\nnwb_asset_id = "00df5264-001b-4bb0-a987-0ddfb6058961"\nnwb_file_url = f"https://api.dandiarchive.org/api/assets/{nwb_asset_id}/download/"\nprint(f"Loading NWB file from: {nwb_file_url}")\n\n# Load the NWB file\nremote_file = remfile.File(nwb_file_url)\nh5_file = h5py.File(remote_file, \'r\') # Ensure read-only mode\nio = pynwb.NWBHDF5IO(file=h5_file, mode=\'r\') # Ensure read-only mode for pynwb\nnwb = io.read()\n\nprint("\\nNWB file loaded successfully.")\nprint(f"Session Description: {nwb.session_description}")\nprint(f"Identifier: {nwb.identifier}")\nprint(f"Session Start Time: {nwb.session_start_time}")\n\n# %% [markdown]\n# Explore this NWB file further on Neurosift:\n# [https://neurosift.app/nwb?url={nwb_file_url}&amp;dandisetId={dandiset_id}&amp;dandisetVersion={dandiset_version}](https://neurosift.app/nwb?url={nwb_file_url}&amp;dandisetId={dandiset_id}&amp;dandisetVersion={dandiset_version})\n\n# %% [markdown]\n# ## Exploring NWB File Contents\n#\n# Let\'s look at some of the metadata and data structures within the loaded NWB file.\n\n# %%\nprint("Experimenter(s):", nwb.experimenter)\nprint("Keywords:", list(nwb.keywords[:])) # Convert to list for printing\nprint("Lab:", nwb.lab)\nprint("Institution:", nwb.institution)\nprint("Experiment Description:", nwb.experiment_description)\nprint("\\nAvailable processing modules:", list(nwb.processing.keys()))\n\nif "ecephys" in nwb.processing:\n    ecephys_module = nwb.processing["ecephys"]\n    print("\\n\'ecephys\' processing module found.")\n    print("Data interfaces in \'ecephys\':", list(ecephys_module.data_interfaces.keys()))\n\n    if "LFP" in ecephys_module.data_interfaces:\n        lfp_interface = ecephys_module.data_interfaces["LFP"]\n        print("\\n\'LFP\' data interface found.")\n        print("Electrical series in \'LFP\':", list(lfp_interface.electrical_series.keys()))\n\n        if "LFP" in lfp_interface.electrical_series: # The example output shows \'LFP\' as the key again\n            lfp_electrical_series = lfp_interface.electrical_series["LFP"]\n            print("\\n\'LFP\' electrical series found (referred to as LFP_1 in tools_cli output).")\n            print(f"  Description: {lfp_electrical_series.description}")\n            print(f"  Rate (Hz): {lfp_electrical_series.rate}")\n            print(f"  Unit: {lfp_electrical_series.unit}")\n            print(f"  Data shape: {lfp_electrical_series.data.shape}")\n            print(f"  Data dtype: {lfp_electrical_series.data.dtype}")\n            print(f"  Starting time (s): {lfp_electrical_series.starting_time}")\n\n            # Display electrode information as a table\n            print("\\nElectrodes associated with this LFP series:")\n            # The ElectricalSeries.electrodes is a DynamicTableRegion pointing to rows in nwb.electrodes\n            # We can convert the nwb.electrodes table to a pandas DataFrame for easier viewing\n            electrodes_df = nwb.electrodes.to_dataframe()\n            # The lfp_electrical_series.electrodes DynamicTableRegion directly selects rows from nwb.electrodes\n            # So we can use its \'data\' attribute (which contains the indices) to select the relevant rows\n            # from the main electrodes table.\n            # However, the DynamicTableRegion directly provides the view of the selected rows.\n            # Let\'s get the dataframe for the selected electrodes region\n            selected_electrodes_df = lfp_electrical_series.electrodes.to_dataframe()\n            print(selected_electrodes_df.head())\n\n\n# %% [markdown]\n# ## Visualizing LFP Data\n#\n# Now, let\'s load and visualize a segment of the LFP data. We will plot the first 2 seconds of data from the first channel referenced by this LFP series.\n#\n# **Note:** We are loading a subset of the data to keep the example quick and to minimize data transfer.\n\n# %%\nif "ecephys" in nwb.processing and \\\n   "LFP" in nwb.processing["ecephys"].data_interfaces and \\\n   "LFP" in nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series:\n\n    lfp_es = nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["LFP"]\n\n    # Determine the number of samples for 2 seconds\n    sampling_rate = lfp_es.rate\n    num_samples_2_sec = int(2 * sampling_rate)\n\n    # Check if the data has more than one dimension (i.e., multiple channels)\n    # The tools_cli output showed LFP_1.data as shape (77400,), implying single channel data for this specific series object\n    # However, ElectricalSeries can store multichannel data. If it were multichannel, it would be (num_samples, num_channels).\n    # For this specific file, based on tools_cli output `LFP_1.data # (Dataset) shape (77400,); dtype float64`\n    # it seems LFP_1.data is a 1D array, suggesting it might represent a single channel,\n    # or channels are stored differently (e.g. multiple ElectricalSeries objects).\n    # Let\'s assume it\'s a single trace for now as per the shape.\n\n    if lfp_es.data.ndim == 1:\n        # Single channel data\n        lfp_data_subset = lfp_es.data[:num_samples_2_sec]\n        num_channels_to_plot = 1\n    elif lfp_es.data.ndim == 2:\n        # Multi-channel data, take the first channel\n        lfp_data_subset = lfp_es.data[:num_samples_2_sec, 0]\n        num_channels_to_plot = 1 # We are plotting only the first channel\n    else:\n        print("LFP data has an unexpected number of dimensions. Skipping plot.")\n        lfp_data_subset = None\n\n    if lfp_data_subset is not None:\n        # Create a time vector\n        time_vector = np.arange(len(lfp_data_subset)) / sampling_rate\n\n        plt.figure(figsize=(12, 6))\n        plt.plot(time_vector, lfp_data_subset)\n        plt.title(f"LFP Data (First {num_channels_to_plot} channel(s) - First 2 seconds)")\n        plt.xlabel("Time (s)")\n        plt.ylabel(f"Amplitude ({lfp_es.unit})")\n        plt.grid(True)\n        plt.show()\nelse:\n    print("LFP data not found in the expected location. Skipping visualization.")\n\n# %% [markdown]\n# ## Further Exploration of NWB Electrodes Table\n#\n# The NWB file contains a table of all electrodes (`nwb.electrodes`). Let\'s display the first few rows of this table to understand what information is available. This table provides metadata for each electrode used in the recording. The `LFP` electrical series we plotted references a subset of these electrodes via its `electrodes` attribute (a `DynamicTableRegion`).\n\n# %%\nif nwb.electrodes is not None:\n    print("Full electrodes table (nwb.electrodes):")\n    electrodes_df = nwb.electrodes.to_dataframe()\n    print(electrodes_df.head())\n\n    print("\\nColumns in the electrodes table:", list(nwb.electrodes.colnames))\n\n    # Example: Accessing location of the first few electrodes\n    print("\\nLocation of the first 3 electrodes:")\n    for i in range(min(3, len(electrodes_df))):\n        print(f"  Electrode {electrodes_df.index[i]}: {electrodes_df[\'location\'].iloc[i]}, Group: {electrodes_df[\'group_name\'].iloc[i]}, Label: {electrodes_df[\'label\'].iloc[i]}")\nelse:\n    print("nwb.electrodes table is not available.")\n\n# %% [markdown]\n# ## Summary and Future Directions\n#\n# This notebook demonstrated how to:\n# - Connect to a DANDI Dandiset and retrieve its metadata.\n# - List assets within the Dandiset.\n# - Load a specific NWB file by its URL, using `remfile` for remote access.\n# - Explore basic metadata and structure of the NWB file, including processing modules, data interfaces, and electrical series for LFP data.\n# - Visualize a short segment of LFP data.\n# - Inspect the `nwb.electrodes` table which provides metadata for all recording electrodes.\n#\n# ### Possible Future Directions:\n# 1.  **Analyze ARV (Average Rectified Voltage) Data:** This Dandiset also contains Beta ARV signals. One could load these signals (which are in the frequency domain) and compare them between healthy and parkinsonian subject simulations.\n# 2.  **Detailed LFP Analysis:**\n#     *   Perform spectral analysis (e.g., Power Spectral Density) on LFP signals to identify characteristic oscillations, particularly in the beta band (13-30 Hz) which is a biomarker for Parkinson\'s Disease.\n#     *   Compare LFP features across different experimental conditions or subject groups if data from multiple subjects/conditions are analyzed.\n# 3.  **Explore other NWB files:** This notebook focused on one NWB file. Similar analyses can be performed on other files in the Dandiset, especially those from the "parkinsonian-simulated" groups, to compare with the "healthy-simulated" data.\n# 4.  **Correlate with Electrode Information:** Investigate if LFP characteristics vary systematically based on electrode location or group, using the information from the `nwb.electrodes` table.\n# 5.  **Advanced Visualizations:** Create more sophisticated visualizations, such as spectrograms for time-frequency analysis of LFP data.\n#\n# Remember to consult the Dandiset\'s description and related publications for more context on the data and experimental design.'}
+================================
+Content to be written to notebook.py:
+# %% [markdown]
+# # Exploring Dandiset 001333: Parkinson's Electrophysiological Signal Dataset (PESD)
+#
+# **Disclaimer:** This notebook was AI-generated and has not been fully verified. Please be cautious when interpreting the code or results.
+
+# %% [markdown]
+# ## Overview of the Dandiset
+#
+# This notebook explores Dandiset [001333/0.250327.2220](https://dandiarchive.org/dandiset/001333/0.250327.2220), titled "Parkinson's Electrophysiological Signal Dataset (PESD)".
+#
+# The dataset contains electrophysiological signals from both healthy and parkinsonian subjects. The parkinsonian signals show a relatively high power density at the beta frequency (13 to 30 Hz). Each sample includes two types of signals: Beta Average Rectified Voltage (ARV) and Local Field Potential (LFP) from the Subthalamic Nucleus (STN). The ARV signals are in the frequency domain and LFP signals are in the time domain.
+#
+# More details can be found in the article: ["Preliminary Results of Neuromorphic Controller Design and a Parkinson's Disease Dataset Building for Closed-Loop Deep Brain Stimulation"](https://arxiv.org/abs/2407.17756).
+
+# %% [markdown]
+# ## What this notebook covers
+#
+# This notebook will guide you through:
+# 1. Listing required packages.
+# 2. Connecting to the DANDI archive and loading basic information about the Dandiset.
+# 3. Listing some assets (files) within the Dandiset.
+# 4. Selecting and loading an NWB (Neurodata Without Borders) file from the Dandiset.
+# 5. Exploring the metadata of the selected NWB file.
+# 6. Visualizing a segment of the Local Field Potential (LFP) data from the NWB file.
+# 7. Summarizing findings and suggesting potential future directions for analysis.
+
+# %% [markdown]
+# ## Required Packages
+#
+# To run this notebook, you'll need the following Python packages installed:
+# - `dandi` (for interacting with the DANDI Archive)
+# - `pynwb` (for working with NWB files)
+# - `h5py` (for HDF5 file access, a dependency of pynwb)
+# - `remfile` (for streaming remote files)
+# - `numpy` (for numerical operations)
+# - `matplotlib` (for plotting)
+# - `pandas` (for data manipulation, especially with NWB table data)
+#
+# It is assumed that these packages are already installed on your system.
+
+# %%
+# Import necessary libraries
+from itertools import islice
+from dandi.dandiapi import DandiAPIClient
+import pynwb
+import h5py
+import remfile
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# %% [markdown]
+# ## Loading the Dandiset using the DANDI API
+
+# %%
+# Connect to DANDI archive
+client = DandiAPIClient()
+dandiset_id = "001333"
+dandiset_version = "0.250327.2220"
+dandiset = client.get_dandiset(dandiset_id, dandiset_version)
+
+# Print basic information about the Dandiset
+metadata = dandiset.get_raw_metadata()
+print(f"Dandiset name: {metadata['name']}")
+print(f"Dandiset URL: {metadata['url']}")
+print(f"Dandiset description: {metadata.get('description', 'No description available.')}")
+
+# List some assets in the Dandiset
+assets = dandiset.get_assets()
+print("\nFirst 5 assets:")
+for asset in islice(assets, 5):
+    print(f"- {asset.path} (ID: {asset.asset_id})") # Use asset_id as identifier
+
+# %% [markdown]
+# ## Loading an NWB file
+#
+# We will now load one of the NWB files from the Dandiset. For this demonstration, we'll use the file `sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-162_ecephys.nwb`.
+#
+# The asset ID for this file is `00df5264-001b-4bb0-a987-0ddfb6058961`. We construct the download URL for this asset as follows:
+# `https://api.dandiarchive.org/api/assets/&lt;ASSET_ID&gt;/download/`
+
+# %%
+# Define the URL for the NWB file
+# This URL was obtained from the output of `python tools_cli.py dandiset-assets ...` and then
+# `python tools_cli.py nwb-file-info ...`
+nwb_asset_id = "00df5264-001b-4bb0-a987-0ddfb6058961"
+nwb_file_url = f"https://api.dandiarchive.org/api/assets/{nwb_asset_id}/download/"
+print(f"Loading NWB file from: {nwb_file_url}")
+
+# Load the NWB file
+remote_file = remfile.File(nwb_file_url)
+h5_file = h5py.File(remote_file, 'r') # Ensure read-only mode
+io = pynwb.NWBHDF5IO(file=h5_file, mode='r') # Ensure read-only mode for pynwb
+nwb = io.read()
+
+print("\nNWB file loaded successfully.")
+print(f"Session Description: {nwb.session_description}")
+print(f"Identifier: {nwb.identifier}")
+print(f"Session Start Time: {nwb.session_start_time}")
+
+# %% [markdown]
+# Explore this NWB file further on Neurosift:
+# [https://neurosift.app/nwb?url={nwb_file_url}&amp;dandisetId={dandiset_id}&amp;dandisetVersion={dandiset_version}](https://neurosift.app/nwb?url={nwb_file_url}&amp;dandisetId={dandiset_id}&amp;dandisetVersion={dandiset_version})
+
+# %% [markdown]
+# ## Exploring NWB File Contents
+#
+# Let's look at some of the metadata and data structures within the loaded NWB file.
+
+# %%
+print("Experimenter(s):", nwb.experimenter)
+print("Keywords:", list(nwb.keywords[:])) # Convert to list for printing
+print("Lab:", nwb.lab)
+print("Institution:", nwb.institution)
+print("Experiment Description:", nwb.experiment_description)
+print("\nAvailable processing modules:", list(nwb.processing.keys()))
+
+if "ecephys" in nwb.processing:
+    ecephys_module = nwb.processing["ecephys"]
+    print("\n'ecephys' processing module found.")
+    print("Data interfaces in 'ecephys':", list(ecephys_module.data_interfaces.keys()))
+
+    if "LFP" in ecephys_module.data_interfaces:
+        lfp_interface = ecephys_module.data_interfaces["LFP"]
+        print("\n'LFP' data interface found.")
+        print("Electrical series in 'LFP':", list(lfp_interface.electrical_series.keys()))
+
+        if "LFP" in lfp_interface.electrical_series: # The example output shows 'LFP' as the key again
+            lfp_electrical_series = lfp_interface.electrical_series["LFP"]
+            print("\n'LFP' electrical series found (referred to as LFP_1 in tools_cli output).")
+            print(f"  Description: {lfp_electrical_series.description}")
+            print(f"  Rate (Hz): {lfp_electrical_series.rate}")
+            print(f"  Unit: {lfp_electrical_series.unit}")
+            print(f"  Data shape: {lfp_electrical_series.data.shape}")
+            print(f"  Data dtype: {lfp_electrical_series.data.dtype}")
+            print(f"  Starting time (s): {lfp_electrical_series.starting_time}")
+
+            # Display electrode information as a table
+            print("\nElectrodes associated with this LFP series:")
+            # The ElectricalSeries.electrodes is a DynamicTableRegion pointing to rows in nwb.electrodes
+            # We can convert the nwb.electrodes table to a pandas DataFrame for easier viewing
+            electrodes_df = nwb.electrodes.to_dataframe()
+            # The lfp_electrical_series.electrodes DynamicTableRegion directly selects rows from nwb.electrodes
+            # So we can use its 'data' attribute (which contains the indices) to select the relevant rows
+            # from the main electrodes table.
+            # However, the DynamicTableRegion directly provides the view of the selected rows.
+            # Let's get the dataframe for the selected electrodes region
+            selected_electrodes_df = lfp_electrical_series.electrodes.to_dataframe()
+            print(selected_electrodes_df.head())
+
+
+# %% [markdown]
+# ## Visualizing LFP Data
+#
+# Now, let's load and visualize a segment of the LFP data. We will plot the first 2 seconds of data from the first channel referenced by this LFP series.
+#
+# **Note:** We are loading a subset of the data to keep the example quick and to minimize data transfer.
+
+# %%
+if "ecephys" in nwb.processing and \
+   "LFP" in nwb.processing["ecephys"].data_interfaces and \
+   "LFP" in nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series:
+
+    lfp_es = nwb.processing["ecephys"].data_interfaces["LFP"].electrical_series["LFP"]
+
+    # Determine the number of samples for 2 seconds
+    sampling_rate = lfp_es.rate
+    num_samples_2_sec = int(2 * sampling_rate)
+
+    # Check if the data has more than one dimension (i.e., multiple channels)
+    # The tools_cli output showed LFP_1.data as shape (77400,), implying single channel data for this specific series object
+    # However, ElectricalSeries can store multichannel data. If it were multichannel, it would be (num_samples, num_channels).
+    # For this specific file, based on tools_cli output `LFP_1.data # (Dataset) shape (77400,); dtype float64`
+    # it seems LFP_1.data is a 1D array, suggesting it might represent a single channel,
+    # or channels are stored differently (e.g. multiple ElectricalSeries objects).
+    # Let's assume it's a single trace for now as per the shape.
+
+    if lfp_es.data.ndim == 1:
+        # Single channel data
+        lfp_data_subset = lfp_es.data[:num_samples_2_sec]
+        num_channels_to_plot = 1
+    elif lfp_es.data.ndim == 2:
+        # Multi-channel data, take the first channel
+        lfp_data_subset = lfp_es.data[:num_samples_2_sec, 0]
+        num_channels_to_plot = 1 # We are plotting only the first channel
+    else:
+        print("LFP data has an unexpected number of dimensions. Skipping plot.")
+        lfp_data_subset = None
+
+    if lfp_data_subset is not None:
+        # Create a time vector
+        time_vector = np.arange(len(lfp_data_subset)) / sampling_rate
+
+        plt.figure(figsize=(12, 6))
+        plt.plot(time_vector, lfp_data_subset)
+        plt.title(f"LFP Data (First {num_channels_to_plot} channel(s) - First 2 seconds)")
+        plt.xlabel("Time (s)")
+        plt.ylabel(f"Amplitude ({lfp_es.unit})")
+        plt.grid(True)
+        plt.show()
+else:
+    print("LFP data not found in the expected location. Skipping visualization.")
+
+# %% [markdown]
+# ## Further Exploration of NWB Electrodes Table
+#
+# The NWB file contains a table of all electrodes (`nwb.electrodes`). Let's display the first few rows of this table to understand what information is available. This table provides metadata for each electrode used in the recording. The `LFP` electrical series we plotted references a subset of these electrodes via its `electrodes` attribute (a `DynamicTableRegion`).
+
+# %%
+if nwb.electrodes is not None:
+    print("Full electrodes table (nwb.electrodes):")
+    electrodes_df = nwb.electrodes.to_dataframe()
+    print(electrodes_df.head())
+
+    print("\nColumns in the electrodes table:", list(nwb.electrodes.colnames))
+
+    # Example: Accessing location of the first few electrodes
+    print("\nLocation of the first 3 electrodes:")
+    for i in range(min(3, len(electrodes_df))):
+        print(f"  Electrode {electrodes_df.index[i]}: {electrodes_df['location'].iloc[i]}, Group: {electrodes_df['group_name'].iloc[i]}, Label: {electrodes_df['label'].iloc[i]}")
+else:
+    print("nwb.electrodes table is not available.")
+
+# %% [markdown]
+# ## Summary and Future Directions
+#
+# This notebook demonstrated how to:
+# - Connect to a DANDI Dandiset and retrieve its metadata.
+# - List assets within the Dandiset.
+# - Load a specific NWB file by its URL, using `remfile` for remote access.
+# - Explore basic metadata and structure of the NWB file, including processing modules, data interfaces, and electrical series for LFP data.
+# - Visualize a short segment of LFP data.
+# - Inspect the `nwb.electrodes` table which provides metadata for all recording electrodes.
+#
+# ### Possible Future Directions:
+# 1.  **Analyze ARV (Average Rectified Voltage) Data:** This Dandiset also contains Beta ARV signals. One could load these signals (which are in the frequency domain) and compare them between healthy and parkinsonian subject simulations.
+# 2.  **Detailed LFP Analysis:**
+#     *   Perform spectral analysis (e.g., Power Spectral Density) on LFP signals to identify characteristic oscillations, particularly in the beta band (13-30 Hz) which is a biomarker for Parkinson's Disease.
+#     *   Compare LFP features across different experimental conditions or subject groups if data from multiple subjects/conditions are analyzed.
+# 3.  **Explore other NWB files:** This notebook focused on one NWB file. Similar analyses can be performed on other files in the Dandiset, especially those from the "parkinsonian-simulated" groups, to compare with the "healthy-simulated" data.
+# 4.  **Correlate with Electrode Information:** Investigate if LFP characteristics vary systematically based on electrode location or group, using the information from the `nwb.electrodes` table.
+# 5.  **Advanced Visualizations:** Create more sophisticated visualizations, such as spectrograms for time-frequency analysis of LFP data.
+#
+# Remember to consult the Dandiset's description and related publications for more context on the data and experimental design.
+================================
+Total prompt tokens: 46127 + 0
+Total completion tokens: 5457 + 0
+
+=========================================
+
+write_to_file for 'notebook.py':
+Successfully wrote 12610 characters to notebook.py
+=========================================
+
+Using model: google/gemini-2.5-pro-preview
+Num. messages in conversation: 10
+Submitting completion request...
+Processing response...
+The `notebook.py` file has been successfully created. The next step is to convert it to `notebook.ipynb` and execute it. I will use the command `jupytext --to notebook notebook.py && jupyter execute --inplace --allow-errors notebook.ipynb` with a timeout of 600 seconds, as specified.
+
+Tool: execute_command
+Params: {'command': 'jupytext --to notebook notebook.py &amp;&amp; jupyter execute --inplace --allow-errors notebook.ipynb', 'requires_approval': 'false', 'timeout': '600'}
+================================
+Command to be executed
+jupytext --to notebook notebook.py &amp;&amp; jupyter execute --inplace --allow-errors notebook.ipynb
+================================
+/bin/sh: 1: Syntax error: "&" unexpected
+Total prompt tokens: 65262 + 0
+Total completion tokens: 5636 + 0
+
+=========================================
+
+execute_command 'jupytext --to notebook notebook.py &amp;&amp; jupyter execute --inplace --allow-errors notebook.ipynb' (requires approval):
+Command failed with exit code 2
+STDERR:
+/bin/sh: 1: Syntax error: "&" unexpected
+
+=========================================
+
+Using model: google/gemini-2.5-pro-preview
+Num. messages in conversation: 12
+Submitting completion request...
+Processing response...
+The previous command failed due to a syntax error with `&&`. I need to split the command into two separate `execute_command` calls.
+First, I'll convert `notebook.py` to `notebook.ipynb` using `jupytext --to notebook notebook.py`.
+
+Tool: execute_command
+Params: {'command': 'jupytext --to notebook notebook.py', 'requires_approval': 'false'}
+================================
+Command to be executed
+jupytext --to notebook notebook.py
+================================
+/home/magland/.local/lib/python3.12/site-packages/jupytext/cell_reader.py:20: UserWarning: Sphinx Gallery in version 0.19.0 is not supported by Jupytext. Please use sphinx-gallery<=0.7.0 instead. If that is an issue, feel free to report it at https://github.com/mwouts/jupytext/issues, or even better, prepare a PR to handle the new signature of sphinx_gallery.notebook.rst2md.
+  warnings.warn(
+[jupytext] Reading notebook.py in format py
+[jupytext] Writing notebook.ipynb
+Total prompt tokens: 84686 + 0
+Total completion tokens: 5782 + 0
+
+=========================================
+
+execute_command 'jupytext --to notebook notebook.py' (requires approval):
+Command executed successfully
+STDOUT:
+[jupytext] Reading notebook.py in format py
+[jupytext] Writing notebook.ipynb
+
+STDERR:
+/home/magland/.local/lib/python3.12/site-packages/jupytext/cell_reader.py:20: UserWarning: Sphinx Gallery in version 0.19.0 is not supported by Jupytext. Please use sphinx-gallery<=0.7.0 instead. If that is an issue, feel free to report it at https://github.com/mwouts/jupytext/issues, or even better, prepare a PR to handle the new signature of sphinx_gallery.notebook.rst2md.
+  warnings.warn(
+
+=========================================
+
+Using model: google/gemini-2.5-pro-preview
+Num. messages in conversation: 14
+Submitting completion request...
+Processing response...
+The `notebook.py` file has been successfully converted to `notebook.ipynb`. Now I need to execute the `notebook.ipynb` file. I'll use the command `jupyter execute --inplace --allow-errors notebook.ipynb` with a timeout of 600 seconds.
+
+Tool: execute_command
+Params: {'command': 'jupyter execute --inplace --allow-errors notebook.ipynb', 'requires_approval': 'false', 'timeout': '600'}
+================================
+Command to be executed
+jupyter execute --inplace --allow-errors notebook.ipynb
+================================
+[NbClientApp] Executing notebook.ipynb
+[NbClientApp] Executing notebook with kernel: 
+[NbClientApp] Save executed results to notebook.ipynb
+Total prompt tokens: 104487 + 0
+Total completion tokens: 5918 + 0
+
+=========================================
+
+execute_command 'jupyter execute --inplace --allow-errors notebook.ipynb' (requires approval):
+Command executed successfully
+STDERR:
+[NbClientApp] Executing notebook.ipynb
+[NbClientApp] Executing notebook with kernel: 
+[NbClientApp] Save executed results to notebook.ipynb
+
+=========================================
+
+Using model: google/gemini-2.5-pro-preview
+Num. messages in conversation: 16
+Submitting completion request...
+Processing response...
+The notebook `notebook.py` was created, converted to `notebook.ipynb`, and then executed successfully. All requested steps have been completed. I can now attempt completion.
+
+Tool: attempt_completion
+Params: {'result': 'I have created the Jupytext notebook `notebook.py` as requested. This notebook guides researchers through exploring and analyzing Dandiset 001333 version 0.250327.2220. It includes sections for:\n- An overview of the Dandiset and a disclaimer.\n- Listing required packages.\n- Loading the Dandiset using the DANDI API.\n- Loading a specific NWB file (`sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-162_ecephys.nwb`) and exploring its metadata.\n- Providing a Neurosift link for the NWB file.\n- Visualizing a segment of LFP data from the NWB file.\n- Inspecting the `nwb.electrodes` table.\n- Summarizing findings and suggesting future analysis directions.\n\nThe notebook has been converted to `notebook.ipynb` and executed. You can find both `notebook.py` and the executed `notebook.ipynb` in the working directory.', 'command': 'open notebook.ipynb'}
+I have created the Jupytext notebook `notebook.py` as requested. This notebook guides researchers through exploring and analyzing Dandiset 001333 version 0.250327.2220. It includes sections for:
+- An overview of the Dandiset and a disclaimer.
+- Listing required packages.
+- Loading the Dandiset using the DANDI API.
+- Loading a specific NWB file (`sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-162_ecephys.nwb`) and exploring its metadata.
+- Providing a Neurosift link for the NWB file.
+- Visualizing a segment of LFP data from the NWB file.
+- Inspecting the `nwb.electrodes` table.
+- Summarizing findings and suggesting future analysis directions.
+
+The notebook has been converted to `notebook.ipynb` and executed. You can find both `notebook.py` and the executed `notebook.ipynb` in the working directory.
+Total prompt tokens: 124543 + 0
+Total completion tokens: 6215 + 0
+

@@ -1,0 +1,18 @@
+{
+  "dandiset_id": "001333",
+  "version": "0.250327.2220",
+  "model": "google/gemini-2.5-pro-preview",
+  "prompt": "prompt-e-2.txt",
+  "total_prompt_tokens": 231695,
+  "total_completion_tokens": 7365,
+  "total_vision_prompt_tokens": 0,
+  "total_vision_completion_tokens": 0,
+  "elapsed_time_seconds": 102.4284815788269,
+  "timestamp": "2025-05-09 13:24:45",
+  "system_info": {
+    "platform": "Linux-6.8.0-59-generic-x86_64-with-glibc2.35",
+    "hostname": "system76-pc",
+    "processor": "x86_64",
+    "python_version": "3.12.2"
+  }
+}
