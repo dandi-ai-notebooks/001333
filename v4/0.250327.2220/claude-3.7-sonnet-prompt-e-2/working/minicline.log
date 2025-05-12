@@ -1,0 +1,2082 @@
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 2
+Submitting completion request...
+Processing response...
+To create the Jupyter notebook, I need to follow these steps:
+1. Get the Dandiset metadata
+2. Get the Dandiset assets
+3. Choose one NWB file and get its information
+4. Create notebook.py
+5. Convert to notebook.ipynb and execute
+6. Fix any errors if needed
+
+Let's start by gathering information about the Dandiset using the tools_cli.py script.
+
+Tool: execute_command
+Params: {'command': 'python tools_cli.py dandiset-info 001333 --version 0.250327.2220', 'requires_approval': 'false'}
+================================
+Command to be executed
+python tools_cli.py dandiset-info 001333 --version 0.250327.2220
+================================
+{
+  "results": {
+    "id": "DANDI:001333/0.250327.2220",
+    "name": "Parkinson's Electrophysiological Signal Dataset (PESD)",
+    "access": [
+      {
+        "status": "dandi:OpenAccess",
+        "schemaKey": "AccessRequirements"
+      }
+    ],
+    "license": [
+      "spdx:CC-BY-4.0"
+    ],
+    "version": "0.250327.2220",
+    "citation": "Biswas, Ananna (2025) Parkinson's Electrophysiological Signal Dataset (PESD) (Version 0.250327.2220) [Data set]. DANDI Archive. https://doi.org/10.48324/dandi.001333/0.250327.2220",
+    "identifier": "DANDI:001333",
+    "contributor": [
+      "Biswas, Ananna"
+    ],
+    "dateCreated": "2025-02-08T10:15:43.847350+00:00",
+    "description": "The dataset contains electrophysiological signals from both healthy and parkinsonian subjects. We generated two types of samples from each group. The parkinsonian signals show a relatively high power density at the beta frequency (13 to 30 Hz). Thus, the beta oscillations (13 to 30 Hz) in the subthalamic nucleus (STN) are typically used as the pathological biomarkers for PD symptoms. Each sample includes two types of signals: Beta Average Rectified Voltage (ARV) and Local Field Potential (LFP) from the Subthalamic Nucleus (STN). The ARV signals are in the frequency domain and LFP signals are in the time domain.\n\nBeta ARV Signal: The controller beta values are determined by calculating the Average Rectified Value (ARV) of the beta band. This is achieved by fully rectifying the filtered LFP signal using a fourth-order Chebyshev band-pass filter with an 8 Hz bandwidth, centered around the peak of the LFP power spectrum. Local Field Potential (LFP) - STN: Local Field Potentials are derived from the synchronized activity of neuron populations between the cortex, STN, and thalamus.\n\nMore details can be found in our article named, \u201cPreliminary Results of Neuromorphic Controller Design and a Parkinson's Disease Dataset Building for Closed-Loop Deep Brain Stimulation\u201d, available at https://arxiv.org/abs/2407.17756",
+    "variableMeasured": [
+      "ElectricalSeries",
+      "LFP",
+      "ElectrodeGroup",
+      "ProcessingModule"
+    ],
+    "measurementTechnique": [
+      {
+        "name": "analytical technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "signal filtering technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "surgical technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "multi electrode extracellular electrophysiology recording technique",
+        "schemaKey": "MeasurementTechniqueType"
+      }
+    ]
+  }
+}
+Total prompt tokens: 9235 + 0
+Total completion tokens: 215 + 0
+
+=========================================
+
+execute_command 'python tools_cli.py dandiset-info 001333 --version 0.250327.2220' (requires approval):
+Command executed successfully
+STDOUT:
+{
+  "results": {
+    "id": "DANDI:001333/0.250327.2220",
+    "name": "Parkinson's Electrophysiological Signal Dataset (PESD)",
+    "access": [
+      {
+        "status": "dandi:OpenAccess",
+        "schemaKey": "AccessRequirements"
+      }
+    ],
+    "license": [
+      "spdx:CC-BY-4.0"
+    ],
+    "version": "0.250327.2220",
+    "citation": "Biswas, Ananna (2025) Parkinson's Electrophysiological Signal Dataset (PESD) (Version 0.250327.2220) [Data set]. DANDI Archive. https://doi.org/10.48324/dandi.001333/0.250327.2220",
+    "identifier": "DANDI:001333",
+    "contributor": [
+      "Biswas, Ananna"
+    ],
+    "dateCreated": "2025-02-08T10:15:43.847350+00:00",
+    "description": "The dataset contains electrophysiological signals from both healthy and parkinsonian subjects. We generated two types of samples from each group. The parkinsonian signals show a relatively high power density at the beta frequency (13 to 30 Hz). Thus, the beta oscillations (13 to 30 Hz) in the subthalamic nucleus (STN) are typically used as the pathological biomarkers for PD symptoms. Each sample includes two types of signals: Beta Average Rectified Voltage (ARV) and Local Field Potential (LFP) from the Subthalamic Nucleus (STN). The ARV signals are in the frequency domain and LFP signals are in the time domain.\n\nBeta ARV Signal: The controller beta values are determined by calculating the Average Rectified Value (ARV) of the beta band. This is achieved by fully rectifying the filtered LFP signal using a fourth-order Chebyshev band-pass filter with an 8 Hz bandwidth, centered around the peak of the LFP power spectrum. Local Field Potential (LFP) - STN: Local Field Potentials are derived from the synchronized activity of neuron populations between the cortex, STN, and thalamus.\n\nMore details can be found in our article named, \u201cPreliminary Results of Neuromorphic Controller Design and a Parkinson's Disease Dataset Building for Closed-Loop Deep Brain Stimulation\u201d, available at https://arxiv.org/abs/2407.17756",
+    "variableMeasured": [
+      "ElectricalSeries",
+      "LFP",
+      "ElectrodeGroup",
+      "ProcessingModule"
+    ],
+    "measurementTechnique": [
+      {
+        "name": "analytical technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "signal filtering technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "surgical technique",
+        "schemaKey": "MeasurementTechniqueType"
+      },
+      {
+        "name": "multi electrode extracellular electrophysiology recording technique",
+        "schemaKey": "MeasurementTechniqueType"
+      }
+    ]
+  }
+}
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 4
+Submitting completion request...
+Processing response...
+I've obtained the Dandiset metadata, which shows it contains electrophysiological signals from both healthy and parkinsonian subjects. It specifically mentions Beta Average Rectified Voltage (ARV) and Local Field Potential (LFP) from the Subthalamic Nucleus (STN).
+
+Now I need to get the list of assets to see what NWB files are available for analysis.
+
+Tool: execute_command
+Params: {'command': 'python tools_cli.py dandiset-assets 001333 --version 0.250327.2220', 'requires_approval': 'false'}
+================================
+Command to be executed
+python tools_cli.py dandiset-assets 001333 --version 0.250327.2220
+================================
+{
+  "results": {
+    "count": 52,
+    "results": [
+      {
+        "asset_id": "b344c8b7-422f-46bb-b016-b47dc1e87c65",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-162_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "da77917e-655c-4eeb-a0a6-7529a8a35901",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-218_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "aa743a96-e79b-40b1-a0df-55ef3460e856",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-279_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "d0e8beef-ee7a-44a9-bebc-e0865b4c8f42",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-345_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "068afe41-3b8e-402f-91d4-9f297df677a2",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-423_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "1800fb0a-1e60-459f-9631-878fbc7438ed",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-452_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "4f2100fa-9767-4612-9914-8cf7195e4421",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-516_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "73214862-df4b-452b-a35c-d1f3bdb68180",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-54_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "3e725ab6-1770-4b9c-a615-488e5e6b38e1",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-646_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "f0bbde56-41b8-4d8d-82ea-f1860dd863fb",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-78_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "5409700b-e080-44e6-a6db-1d3e8890cd6c",
+        "path": "sub-healthy-simulated-data/sub-healthy-simulated-data_ses-001_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "00df5264-001b-4bb0-a987-0ddfb6058961",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-162_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "d92648ad-a2f8-4ec6-a125-363f45aa7f35",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-218_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "b29a7d22-0d2c-4067-9436-73599e70b112",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-279_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "5625d510-89eb-458c-b4b1-d9466bfcac47",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-345_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "d55db7c7-9957-4c1a-8855-3a7568dc14df",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-423_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "d3d17629-3cad-4d94-a69a-431e761747d8",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-452_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "0ed8b387-7062-4ed3-b9da-8bf11973fe00",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-516_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "3cf468a1-4933-4aa6-b1c3-4a261b3ee6db",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-54_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "2a94cac8-920a-464d-a466-e54082e682c3",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-646_ecephys.nwb",
+        "size": 822640
+      }
+    ]
+  }
+}
+Total prompt tokens: 19600 + 0
+Total completion tokens: 400 + 0
+
+=========================================
+
+execute_command 'python tools_cli.py dandiset-assets 001333 --version 0.250327.2220' (requires approval):
+Command executed successfully
+STDOUT:
+{
+  "results": {
+    "count": 52,
+    "results": [
+      {
+        "asset_id": "b344c8b7-422f-46bb-b016-b47dc1e87c65",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-162_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "da77917e-655c-4eeb-a0a6-7529a8a35901",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-218_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "aa743a96-e79b-40b1-a0df-55ef3460e856",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-279_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "d0e8beef-ee7a-44a9-bebc-e0865b4c8f42",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-345_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "068afe41-3b8e-402f-91d4-9f297df677a2",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-423_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "1800fb0a-1e60-459f-9631-878fbc7438ed",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-452_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "4f2100fa-9767-4612-9914-8cf7195e4421",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-516_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "73214862-df4b-452b-a35c-d1f3bdb68180",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-54_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "3e725ab6-1770-4b9c-a615-488e5e6b38e1",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-646_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "f0bbde56-41b8-4d8d-82ea-f1860dd863fb",
+        "path": "sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-78_ecephys.nwb",
+        "size": 225936
+      },
+      {
+        "asset_id": "5409700b-e080-44e6-a6db-1d3e8890cd6c",
+        "path": "sub-healthy-simulated-data/sub-healthy-simulated-data_ses-001_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "00df5264-001b-4bb0-a987-0ddfb6058961",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-162_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "d92648ad-a2f8-4ec6-a125-363f45aa7f35",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-218_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "b29a7d22-0d2c-4067-9436-73599e70b112",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-279_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "5625d510-89eb-458c-b4b1-d9466bfcac47",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-345_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "d55db7c7-9957-4c1a-8855-3a7568dc14df",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-423_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "d3d17629-3cad-4d94-a69a-431e761747d8",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-452_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "0ed8b387-7062-4ed3-b9da-8bf11973fe00",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-516_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "3cf468a1-4933-4aa6-b1c3-4a261b3ee6db",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-54_ecephys.nwb",
+        "size": 822640
+      },
+      {
+        "asset_id": "2a94cac8-920a-464d-a466-e54082e682c3",
+        "path": "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-646_ecephys.nwb",
+        "size": 822640
+      }
+    ]
+  }
+}
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 6
+Submitting completion request...
+Processing response...
+I only see 20 out of 52 assets right now, which means there are more files that weren't displayed in the first response. Let me run the command again with a parameter to get all files.
+
+Tool: execute_command
+Params: {'command': 'python tools_cli.py dandiset-assets 001333 --version 0.250327.2220 --all', 'requires_approval': 'false'}
+================================
+Command to be executed
+python tools_cli.py dandiset-assets 001333 --version 0.250327.2220 --all
+================================
+Usage: tools_cli.py dandiset-assets [OPTIONS] DANDISET_ID
+Try 'tools_cli.py dandiset-assets --help' for help.
+
+Error: No such option: --all
+Total prompt tokens: 31962 + 0
+Total completion tokens: 549 + 0
+
+=========================================
+
+execute_command 'python tools_cli.py dandiset-assets 001333 --version 0.250327.2220 --all' (requires approval):
+Command failed with exit code 2
+STDERR:
+Usage: tools_cli.py dandiset-assets [OPTIONS] DANDISET_ID
+Try 'tools_cli.py dandiset-assets --help' for help.
+
+Error: No such option: --all
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 8
+Submitting completion request...
+Processing response...
+Let's select an NWB file to examine. Looking at the results, I notice different types of files:
+1. sub-healthy-simulated-beta - which may contain beta ARV data
+2. sub-healthy-simulated-lfp - which may contain LFP data
+3. sub-healthy-simulated-data - which might contain both types
+
+Let's examine one file from the LFP group since those are larger (822KB vs 225KB) and might contain more detailed time series data.
+
+I'll select: "sub-healthy-simulated-lfp/sub-healthy-simulated-lfp_ses-54_ecephys.nwb"
+Asset ID: "3cf468a1-4933-4aa6-b1c3-4a261b3ee6db"
+URL: https://api.dandiarchive.org/api/assets/3cf468a1-4933-4aa6-b1c3-4a261b3ee6db/download/
+
+Tool: execute_command
+Params: {'command': 'python tools_cli.py nwb-file-info 001333 https://api.dandiarchive.org/api/assets/3cf468a1-4933-4aa6-b1c3-4a261b3ee6db/download/ --version 0.250327.2220', 'requires_approval': 'false'}
+================================
+Command to be executed
+python tools_cli.py nwb-file-info 001333 https://api.dandiarchive.org/api/assets/3cf468a1-4933-4aa6-b1c3-4a261b3ee6db/download/ --version 0.250327.2220
+================================
+/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/hdmf/spec/namespace.py:535: UserWarning: Ignoring cached namespace 'core' version 2.8.0 because version 2.7.0 is already loaded.
+  warn("Ignoring cached namespace '%s' version %s because version %s is already loaded."
+# This script shows how to load the NWB file at https://api.dandiarchive.org/api/assets/3cf468a1-4933-4aa6-b1c3-4a261b3ee6db/download/ in Python using PyNWB
+
+import pynwb
+import h5py
+import remfile
+
+# Load
+url = "https://api.dandiarchive.org/api/assets/3cf468a1-4933-4aa6-b1c3-4a261b3ee6db/download/"
+remote_file = remfile.File(url)
+h5_file = h5py.File(remote_file)
+io = pynwb.NWBHDF5IO(file=h5_file)
+nwb = io.read()
+
+nwb # (NWBFile)
+nwb.session_description # (str) Parkinson's Electrophysiological Signal Dataset (PESD) Generated from Simulation
+nwb.identifier # (str) bf19e411-babb-4247-acc1-3bc14e4292fd
+nwb.session_start_time # (datetime) 2025-03-27T16:53:32.931278-04:00
+nwb.timestamps_reference_time # (datetime) 2025-03-27T16:53:32.931278-04:00
+nwb.file_create_date # (list) [datetime.datetime(2025, 3, 27, 16, 53, 32, 961646, tzinfo=tzoffset(None, -14400))]
+nwb.experimenter # (tuple) ['Ananna Biswas']
+nwb.related_publications # (tuple) ['https://arxiv.org/abs/2407.17756', 'DOI: 10.3389/fnins.2020.00166']
+nwb.keywords # (StrDataset) shape (4,); dtype object
+# nwb.keywords[:] # Access all data
+# nwb.keywords[0:n] # Access first n elements
+# First few values of nwb.keywords: ['ecephys' 'LFP' "Parkinson's Disease" 'Beta Band']
+nwb.processing # (LabelledDict)
+processing = nwb.processing
+ecephys = processing["ecephys"]
+ecephys # (ProcessingModule)
+ecephys.description # (str) Processed electrophysiology data
+ecephys.data_interfaces # (LabelledDict)
+data_interfaces = ecephys.data_interfaces
+LFP = data_interfaces["LFP"]
+LFP # (LFP)
+LFP.electrical_series # (LabelledDict)
+electrical_series = LFP.electrical_series
+LFP_1 = electrical_series["LFP"]
+LFP_1 # (ElectricalSeries)
+LFP_1.starting_time # (float64) 0.0
+LFP_1.rate # (float64) 2000.0
+LFP_1.resolution # (float64) -1.0
+LFP_1.comments # (str) no comments
+LFP_1.description # (str) no description
+LFP_1.conversion # (float64) 1.0
+LFP_1.offset # (float64) 0.0
+LFP_1.unit # (str) volts
+LFP_1.data # (Dataset) shape (77400,); dtype float64
+# LFP_1.data[:] # Access all data
+# LFP_1.data[0:n] # Access first n elements
+LFP_1.starting_time_unit # (str) seconds
+LFP_1.electrodes # (DynamicTableRegion)
+LFP_1.electrodes.description # (str) all electrodes
+LFP_1.electrodes.table # (DynamicTable)
+LFP_1.electrodes.table.description # (str) metadata about extracellular electrodes
+LFP_1.electrodes.table.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+LFP_1.electrodes.table.columns # (tuple)
+LFP_1.electrodes.table.id # (ElementIdentifiers)
+# LFP_1.electrodes.table.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# LFP_1.electrodes.table.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+LFP_1.electrodes.table.location # (VectorData) the location of channel within the subject e.g. brain region
+LFP_1.electrodes.table.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+LFP_1.electrodes.table.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+LFP_1.electrodes.table.label # (VectorData) label of electrode
+nwb.electrode_groups # (LabelledDict)
+electrode_groups = nwb.electrode_groups
+shank0 = electrode_groups["shank0"]
+shank0 # (ElectrodeGroup)
+shank0.description # (str) Simulated electrode group for shank 0
+shank0.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank0.device # (Device)
+shank0.device.description # (str) Virtual probe used in NEURON simulation
+shank0.device.manufacturer # (str) N/A
+shank1 = electrode_groups["shank1"]
+shank1 # (ElectrodeGroup)
+shank1.description # (str) Simulated electrode group for shank 1
+shank1.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank1.device # (Device)
+shank1.device.description # (str) Virtual probe used in NEURON simulation
+shank1.device.manufacturer # (str) N/A
+shank2 = electrode_groups["shank2"]
+shank2 # (ElectrodeGroup)
+shank2.description # (str) Simulated electrode group for shank 2
+shank2.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank2.device # (Device)
+shank2.device.description # (str) Virtual probe used in NEURON simulation
+shank2.device.manufacturer # (str) N/A
+shank3 = electrode_groups["shank3"]
+shank3 # (ElectrodeGroup)
+shank3.description # (str) Simulated electrode group for shank 3
+shank3.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank3.device # (Device)
+shank3.device.description # (str) Virtual probe used in NEURON simulation
+shank3.device.manufacturer # (str) N/A
+nwb.devices # (LabelledDict)
+devices = nwb.devices
+NEURON_Simulator = devices["NEURON_Simulator"]
+NEURON_Simulator # (Device)
+NEURON_Simulator.description # (str) Virtual probe used in NEURON simulation
+NEURON_Simulator.manufacturer # (str) N/A
+nwb.experiment_description # (str) The PESD dataset is generated from a cortico-basal-ganglia network for a Parkinsonian computation...
+nwb.lab # (str) BrainX Lab
+nwb.institution # (str) Michigan Technological University
+nwb.electrodes # (DynamicTable)
+nwb.electrodes.description # (str) metadata about extracellular electrodes
+nwb.electrodes.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.electrodes.columns # (tuple)
+nwb.electrodes.id # (ElementIdentifiers)
+# nwb.electrodes.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# nwb.electrodes.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+nwb.electrodes.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.electrodes.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.electrodes.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.electrodes.label # (VectorData) label of electrode
+nwb.subject # (Subject)
+nwb.subject.age # (str) P0D
+nwb.subject.age__reference # (str) birth
+nwb.subject.description # (str) This is a simulated dataset generated from a computational model.
+nwb.subject.sex # (str) U
+nwb.subject.species # (str) Homo sapiens
+nwb.subject.subject_id # (str) healthy-simulated-lfp
+Total prompt tokens: 44619 + 0
+Total completion tokens: 926 + 0
+
+=========================================
+
+execute_command 'python tools_cli.py nwb-file-info 001333 https://api.dandiarchive.org/api/assets/3cf468a1-4933-4aa6-b1c3-4a261b3ee6db/download/ --version 0.250327.2220' (requires approval):
+Command executed successfully
+STDOUT:
+# This script shows how to load the NWB file at https://api.dandiarchive.org/api/assets/3cf468a1-4933-4aa6-b1c3-4a261b3ee6db/download/ in Python using PyNWB
+
+import pynwb
+import h5py
+import remfile
+
+# Load
+url = "https://api.dandiarchive.org/api/assets/3cf468a1-4933-4aa6-b1c3-4a261b3ee6db/download/"
+remote_file = remfile.File(url)
+h5_file = h5py.File(remote_file)
+io = pynwb.NWBHDF5IO(file=h5_file)
+nwb = io.read()
+
+nwb # (NWBFile)
+nwb.session_description # (str) Parkinson's Electrophysiological Signal Dataset (PESD) Generated from Simulation
+nwb.identifier # (str) bf19e411-babb-4247-acc1-3bc14e4292fd
+nwb.session_start_time # (datetime) 2025-03-27T16:53:32.931278-04:00
+nwb.timestamps_reference_time # (datetime) 2025-03-27T16:53:32.931278-04:00
+nwb.file_create_date # (list) [datetime.datetime(2025, 3, 27, 16, 53, 32, 961646, tzinfo=tzoffset(None, -14400))]
+nwb.experimenter # (tuple) ['Ananna Biswas']
+nwb.related_publications # (tuple) ['https://arxiv.org/abs/2407.17756', 'DOI: 10.3389/fnins.2020.00166']
+nwb.keywords # (StrDataset) shape (4,); dtype object
+# nwb.keywords[:] # Access all data
+# nwb.keywords[0:n] # Access first n elements
+# First few values of nwb.keywords: ['ecephys' 'LFP' "Parkinson's Disease" 'Beta Band']
+nwb.processing # (LabelledDict)
+processing = nwb.processing
+ecephys = processing["ecephys"]
+ecephys # (ProcessingModule)
+ecephys.description # (str) Processed electrophysiology data
+ecephys.data_interfaces # (LabelledDict)
+data_interfaces = ecephys.data_interfaces
+LFP = data_interfaces["LFP"]
+LFP # (LFP)
+LFP.electrical_series # (LabelledDict)
+electrical_series = LFP.electrical_series
+LFP_1 = electrical_series["LFP"]
+LFP_1 # (ElectricalSeries)
+LFP_1.starting_time # (float64) 0.0
+LFP_1.rate # (float64) 2000.0
+LFP_1.resolution # (float64) -1.0
+LFP_1.comments # (str) no comments
+LFP_1.description # (str) no description
+LFP_1.conversion # (float64) 1.0
+LFP_1.offset # (float64) 0.0
+LFP_1.unit # (str) volts
+LFP_1.data # (Dataset) shape (77400,); dtype float64
+# LFP_1.data[:] # Access all data
+# LFP_1.data[0:n] # Access first n elements
+LFP_1.starting_time_unit # (str) seconds
+LFP_1.electrodes # (DynamicTableRegion)
+LFP_1.electrodes.description # (str) all electrodes
+LFP_1.electrodes.table # (DynamicTable)
+LFP_1.electrodes.table.description # (str) metadata about extracellular electrodes
+LFP_1.electrodes.table.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+LFP_1.electrodes.table.columns # (tuple)
+LFP_1.electrodes.table.id # (ElementIdentifiers)
+# LFP_1.electrodes.table.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# LFP_1.electrodes.table.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+LFP_1.electrodes.table.location # (VectorData) the location of channel within the subject e.g. brain region
+LFP_1.electrodes.table.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+LFP_1.electrodes.table.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+LFP_1.electrodes.table.label # (VectorData) label of electrode
+nwb.electrode_groups # (LabelledDict)
+electrode_groups = nwb.electrode_groups
+shank0 = electrode_groups["shank0"]
+shank0 # (ElectrodeGroup)
+shank0.description # (str) Simulated electrode group for shank 0
+shank0.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank0.device # (Device)
+shank0.device.description # (str) Virtual probe used in NEURON simulation
+shank0.device.manufacturer # (str) N/A
+shank1 = electrode_groups["shank1"]
+shank1 # (ElectrodeGroup)
+shank1.description # (str) Simulated electrode group for shank 1
+shank1.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank1.device # (Device)
+shank1.device.description # (str) Virtual probe used in NEURON simulation
+shank1.device.manufacturer # (str) N/A
+shank2 = electrode_groups["shank2"]
+shank2 # (ElectrodeGroup)
+shank2.description # (str) Simulated electrode group for shank 2
+shank2.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank2.device # (Device)
+shank2.device.description # (str) Virtual probe used in NEURON simulation
+shank2.device.manufacturer # (str) N/A
+shank3 = electrode_groups["shank3"]
+shank3 # (ElectrodeGroup)
+shank3.description # (str) Simulated electrode group for shank 3
+shank3.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank3.device # (Device)
+shank3.device.description # (str) Virtual probe used in NEURON simulation
+shank3.device.manufacturer # (str) N/A
+nwb.devices # (LabelledDict)
+devices = nwb.devices
+NEURON_Simulator = devices["NEURON_Simulator"]
+NEURON_Simulator # (Device)
+NEURON_Simulator.description # (str) Virtual probe used in NEURON simulation
+NEURON_Simulator.manufacturer # (str) N/A
+nwb.experiment_description # (str) The PESD dataset is generated from a cortico-basal-ganglia network for a Parkinsonian computation...
+nwb.lab # (str) BrainX Lab
+nwb.institution # (str) Michigan Technological University
+nwb.electrodes # (DynamicTable)
+nwb.electrodes.description # (str) metadata about extracellular electrodes
+nwb.electrodes.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.electrodes.columns # (tuple)
+nwb.electrodes.id # (ElementIdentifiers)
+# nwb.electrodes.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# nwb.electrodes.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+nwb.electrodes.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.electrodes.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.electrodes.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.electrodes.label # (VectorData) label of electrode
+nwb.subject # (Subject)
+nwb.subject.age # (str) P0D
+nwb.subject.age__reference # (str) birth
+nwb.subject.description # (str) This is a simulated dataset generated from a computational model.
+nwb.subject.sex # (str) U
+nwb.subject.species # (str) Homo sapiens
+nwb.subject.subject_id # (str) healthy-simulated-lfp
+
+STDERR:
+/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/hdmf/spec/namespace.py:535: UserWarning: Ignoring cached namespace 'core' version 2.8.0 because version 2.7.0 is already loaded.
+  warn("Ignoring cached namespace '%s' version %s because version %s is already loaded."
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 10
+Submitting completion request...
+Processing response...
+I've examined a file from the "sub-healthy-simulated-lfp" category which contains LFP (Local Field Potential) data. It has:
+- 77,400 data points in the LFP_1.data array
+- Sampling rate of 2000 Hz
+- 12 electrodes across 4 shanks
+- Data is in volts
+
+Let's also look at a beta file to understand the difference in structure and content:
+"sub-healthy-simulated-beta/sub-healthy-simulated-beta_ses-54_ecephys.nwb"
+Asset ID: "73214862-df4b-452b-a35c-d1f3bdb68180"
+URL: https://api.dandiarchive.org/api/assets/73214862-df4b-452b-a35c-d1f3bdb68180/download/
+
+Tool: execute_command
+Params: {'command': 'python tools_cli.py nwb-file-info 001333 https://api.dandiarchive.org/api/assets/73214862-df4b-452b-a35c-d1f3bdb68180/download/ --version 0.250327.2220', 'requires_approval': 'false'}
+================================
+Command to be executed
+python tools_cli.py nwb-file-info 001333 https://api.dandiarchive.org/api/assets/73214862-df4b-452b-a35c-d1f3bdb68180/download/ --version 0.250327.2220
+================================
+/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/hdmf/spec/namespace.py:535: UserWarning: Ignoring cached namespace 'core' version 2.8.0 because version 2.7.0 is already loaded.
+  warn("Ignoring cached namespace '%s' version %s because version %s is already loaded."
+# This script shows how to load the NWB file at https://api.dandiarchive.org/api/assets/73214862-df4b-452b-a35c-d1f3bdb68180/download/ in Python using PyNWB
+
+import pynwb
+import h5py
+import remfile
+
+# Load
+url = "https://api.dandiarchive.org/api/assets/73214862-df4b-452b-a35c-d1f3bdb68180/download/"
+remote_file = remfile.File(url)
+h5_file = h5py.File(remote_file)
+io = pynwb.NWBHDF5IO(file=h5_file)
+nwb = io.read()
+
+nwb # (NWBFile)
+nwb.session_description # (str) Parkinson's Electrophysiological Signal Dataset (PESD) Generated from Simulation
+nwb.identifier # (str) f62ad0e4-6a25-40b6-847f-a17ce13866ba
+nwb.session_start_time # (datetime) 2025-03-27T16:53:33.296700-04:00
+nwb.timestamps_reference_time # (datetime) 2025-03-27T16:53:33.296700-04:00
+nwb.file_create_date # (list) [datetime.datetime(2025, 3, 27, 16, 53, 33, 326494, tzinfo=tzoffset(None, -14400))]
+nwb.experimenter # (tuple) ['Ananna Biswas']
+nwb.related_publications # (tuple) ['https://arxiv.org/abs/2407.17756', 'DOI: 10.3389/fnins.2020.00166']
+nwb.keywords # (StrDataset) shape (4,); dtype object
+# nwb.keywords[:] # Access all data
+# nwb.keywords[0:n] # Access first n elements
+# First few values of nwb.keywords: ['ecephys' 'LFP' "Parkinson's Disease" 'Beta Band']
+nwb.processing # (LabelledDict)
+processing = nwb.processing
+ecephys = processing["ecephys"]
+ecephys # (ProcessingModule)
+ecephys.description # (str) Processed electrophysiology data
+ecephys.data_interfaces # (LabelledDict)
+data_interfaces = ecephys.data_interfaces
+LFP = data_interfaces["LFP"]
+LFP # (LFP)
+LFP.electrical_series # (LabelledDict)
+electrical_series = LFP.electrical_series
+Beta_Band_Voltage = electrical_series["Beta_Band_Voltage"]
+Beta_Band_Voltage # (ElectricalSeries)
+Beta_Band_Voltage.resolution # (float64) -1.0
+Beta_Band_Voltage.comments # (str) no comments
+Beta_Band_Voltage.description # (str) no description
+Beta_Band_Voltage.conversion # (float64) 1.0
+Beta_Band_Voltage.offset # (float64) 0.0
+Beta_Band_Voltage.unit # (str) volts
+Beta_Band_Voltage.data # (Dataset) shape (1400,); dtype float64
+# Beta_Band_Voltage.data[:] # Access all data
+# Beta_Band_Voltage.data[0:n] # Access first n elements
+Beta_Band_Voltage.timestamps # (Dataset) shape (1400,); dtype float64
+# Beta_Band_Voltage.timestamps[:] # Access all data
+# Beta_Band_Voltage.timestamps[0:n] # Access first n elements
+Beta_Band_Voltage.timestamps_unit # (str) seconds
+Beta_Band_Voltage.interval # (int) 1
+Beta_Band_Voltage.electrodes # (DynamicTableRegion)
+Beta_Band_Voltage.electrodes.description # (str) all electrodes
+Beta_Band_Voltage.electrodes.table # (DynamicTable)
+Beta_Band_Voltage.electrodes.table.description # (str) metadata about extracellular electrodes
+Beta_Band_Voltage.electrodes.table.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+Beta_Band_Voltage.electrodes.table.columns # (tuple)
+Beta_Band_Voltage.electrodes.table.id # (ElementIdentifiers)
+# Beta_Band_Voltage.electrodes.table.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# Beta_Band_Voltage.electrodes.table.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+Beta_Band_Voltage.electrodes.table.location # (VectorData) the location of channel within the subject e.g. brain region
+Beta_Band_Voltage.electrodes.table.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+Beta_Band_Voltage.electrodes.table.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+Beta_Band_Voltage.electrodes.table.label # (VectorData) label of electrode
+nwb.electrode_groups # (LabelledDict)
+electrode_groups = nwb.electrode_groups
+shank0 = electrode_groups["shank0"]
+shank0 # (ElectrodeGroup)
+shank0.description # (str) Simulated electrode group for shank 0
+shank0.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank0.device # (Device)
+shank0.device.description # (str) Virtual probe used in NEURON simulation
+shank0.device.manufacturer # (str) N/A
+shank1 = electrode_groups["shank1"]
+shank1 # (ElectrodeGroup)
+shank1.description # (str) Simulated electrode group for shank 1
+shank1.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank1.device # (Device)
+shank1.device.description # (str) Virtual probe used in NEURON simulation
+shank1.device.manufacturer # (str) N/A
+shank2 = electrode_groups["shank2"]
+shank2 # (ElectrodeGroup)
+shank2.description # (str) Simulated electrode group for shank 2
+shank2.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank2.device # (Device)
+shank2.device.description # (str) Virtual probe used in NEURON simulation
+shank2.device.manufacturer # (str) N/A
+shank3 = electrode_groups["shank3"]
+shank3 # (ElectrodeGroup)
+shank3.description # (str) Simulated electrode group for shank 3
+shank3.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank3.device # (Device)
+shank3.device.description # (str) Virtual probe used in NEURON simulation
+shank3.device.manufacturer # (str) N/A
+nwb.devices # (LabelledDict)
+devices = nwb.devices
+NEURON_Simulator = devices["NEURON_Simulator"]
+NEURON_Simulator # (Device)
+NEURON_Simulator.description # (str) Virtual probe used in NEURON simulation
+NEURON_Simulator.manufacturer # (str) N/A
+nwb.experiment_description # (str) The PESD dataset is generated from a cortico-basal-ganglia network for a Parkinsonian computation...
+nwb.lab # (str) BrainX Lab
+nwb.institution # (str) Michigan Technological University
+nwb.electrodes # (DynamicTable)
+nwb.electrodes.description # (str) metadata about extracellular electrodes
+nwb.electrodes.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.electrodes.columns # (tuple)
+nwb.electrodes.id # (ElementIdentifiers)
+# nwb.electrodes.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# nwb.electrodes.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+nwb.electrodes.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.electrodes.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.electrodes.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.electrodes.label # (VectorData) label of electrode
+nwb.subject # (Subject)
+nwb.subject.age # (str) P0D
+nwb.subject.age__reference # (str) birth
+nwb.subject.description # (str) This is a simulated dataset generated from a computational model.
+nwb.subject.sex # (str) U
+nwb.subject.species # (str) Homo sapiens
+nwb.subject.subject_id # (str) healthy-simulated-beta
+Total prompt tokens: 60170 + 0
+Total completion tokens: 1263 + 0
+
+=========================================
+
+execute_command 'python tools_cli.py nwb-file-info 001333 https://api.dandiarchive.org/api/assets/73214862-df4b-452b-a35c-d1f3bdb68180/download/ --version 0.250327.2220' (requires approval):
+Command executed successfully
+STDOUT:
+# This script shows how to load the NWB file at https://api.dandiarchive.org/api/assets/73214862-df4b-452b-a35c-d1f3bdb68180/download/ in Python using PyNWB
+
+import pynwb
+import h5py
+import remfile
+
+# Load
+url = "https://api.dandiarchive.org/api/assets/73214862-df4b-452b-a35c-d1f3bdb68180/download/"
+remote_file = remfile.File(url)
+h5_file = h5py.File(remote_file)
+io = pynwb.NWBHDF5IO(file=h5_file)
+nwb = io.read()
+
+nwb # (NWBFile)
+nwb.session_description # (str) Parkinson's Electrophysiological Signal Dataset (PESD) Generated from Simulation
+nwb.identifier # (str) f62ad0e4-6a25-40b6-847f-a17ce13866ba
+nwb.session_start_time # (datetime) 2025-03-27T16:53:33.296700-04:00
+nwb.timestamps_reference_time # (datetime) 2025-03-27T16:53:33.296700-04:00
+nwb.file_create_date # (list) [datetime.datetime(2025, 3, 27, 16, 53, 33, 326494, tzinfo=tzoffset(None, -14400))]
+nwb.experimenter # (tuple) ['Ananna Biswas']
+nwb.related_publications # (tuple) ['https://arxiv.org/abs/2407.17756', 'DOI: 10.3389/fnins.2020.00166']
+nwb.keywords # (StrDataset) shape (4,); dtype object
+# nwb.keywords[:] # Access all data
+# nwb.keywords[0:n] # Access first n elements
+# First few values of nwb.keywords: ['ecephys' 'LFP' "Parkinson's Disease" 'Beta Band']
+nwb.processing # (LabelledDict)
+processing = nwb.processing
+ecephys = processing["ecephys"]
+ecephys # (ProcessingModule)
+ecephys.description # (str) Processed electrophysiology data
+ecephys.data_interfaces # (LabelledDict)
+data_interfaces = ecephys.data_interfaces
+LFP = data_interfaces["LFP"]
+LFP # (LFP)
+LFP.electrical_series # (LabelledDict)
+electrical_series = LFP.electrical_series
+Beta_Band_Voltage = electrical_series["Beta_Band_Voltage"]
+Beta_Band_Voltage # (ElectricalSeries)
+Beta_Band_Voltage.resolution # (float64) -1.0
+Beta_Band_Voltage.comments # (str) no comments
+Beta_Band_Voltage.description # (str) no description
+Beta_Band_Voltage.conversion # (float64) 1.0
+Beta_Band_Voltage.offset # (float64) 0.0
+Beta_Band_Voltage.unit # (str) volts
+Beta_Band_Voltage.data # (Dataset) shape (1400,); dtype float64
+# Beta_Band_Voltage.data[:] # Access all data
+# Beta_Band_Voltage.data[0:n] # Access first n elements
+Beta_Band_Voltage.timestamps # (Dataset) shape (1400,); dtype float64
+# Beta_Band_Voltage.timestamps[:] # Access all data
+# Beta_Band_Voltage.timestamps[0:n] # Access first n elements
+Beta_Band_Voltage.timestamps_unit # (str) seconds
+Beta_Band_Voltage.interval # (int) 1
+Beta_Band_Voltage.electrodes # (DynamicTableRegion)
+Beta_Band_Voltage.electrodes.description # (str) all electrodes
+Beta_Band_Voltage.electrodes.table # (DynamicTable)
+Beta_Band_Voltage.electrodes.table.description # (str) metadata about extracellular electrodes
+Beta_Band_Voltage.electrodes.table.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+Beta_Band_Voltage.electrodes.table.columns # (tuple)
+Beta_Band_Voltage.electrodes.table.id # (ElementIdentifiers)
+# Beta_Band_Voltage.electrodes.table.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# Beta_Band_Voltage.electrodes.table.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+Beta_Band_Voltage.electrodes.table.location # (VectorData) the location of channel within the subject e.g. brain region
+Beta_Band_Voltage.electrodes.table.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+Beta_Band_Voltage.electrodes.table.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+Beta_Band_Voltage.electrodes.table.label # (VectorData) label of electrode
+nwb.electrode_groups # (LabelledDict)
+electrode_groups = nwb.electrode_groups
+shank0 = electrode_groups["shank0"]
+shank0 # (ElectrodeGroup)
+shank0.description # (str) Simulated electrode group for shank 0
+shank0.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank0.device # (Device)
+shank0.device.description # (str) Virtual probe used in NEURON simulation
+shank0.device.manufacturer # (str) N/A
+shank1 = electrode_groups["shank1"]
+shank1 # (ElectrodeGroup)
+shank1.description # (str) Simulated electrode group for shank 1
+shank1.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank1.device # (Device)
+shank1.device.description # (str) Virtual probe used in NEURON simulation
+shank1.device.manufacturer # (str) N/A
+shank2 = electrode_groups["shank2"]
+shank2 # (ElectrodeGroup)
+shank2.description # (str) Simulated electrode group for shank 2
+shank2.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank2.device # (Device)
+shank2.device.description # (str) Virtual probe used in NEURON simulation
+shank2.device.manufacturer # (str) N/A
+shank3 = electrode_groups["shank3"]
+shank3 # (ElectrodeGroup)
+shank3.description # (str) Simulated electrode group for shank 3
+shank3.location # (str) Simulated Cortico-basal-ganglia network of brain
+shank3.device # (Device)
+shank3.device.description # (str) Virtual probe used in NEURON simulation
+shank3.device.manufacturer # (str) N/A
+nwb.devices # (LabelledDict)
+devices = nwb.devices
+NEURON_Simulator = devices["NEURON_Simulator"]
+NEURON_Simulator # (Device)
+NEURON_Simulator.description # (str) Virtual probe used in NEURON simulation
+NEURON_Simulator.manufacturer # (str) N/A
+nwb.experiment_description # (str) The PESD dataset is generated from a cortico-basal-ganglia network for a Parkinsonian computation...
+nwb.lab # (str) BrainX Lab
+nwb.institution # (str) Michigan Technological University
+nwb.electrodes # (DynamicTable)
+nwb.electrodes.description # (str) metadata about extracellular electrodes
+nwb.electrodes.colnames # (tuple) ['location', 'group', 'group_name', 'label']
+nwb.electrodes.columns # (tuple)
+nwb.electrodes.id # (ElementIdentifiers)
+# nwb.electrodes.to_dataframe() # (DataFrame) Convert to a pandas DataFrame with 12 rows and 4 columns
+# nwb.electrodes.to_dataframe().head() # (DataFrame) Show the first few rows of the pandas DataFrame
+nwb.electrodes.location # (VectorData) the location of channel within the subject e.g. brain region
+nwb.electrodes.group # (VectorData) a reference to the ElectrodeGroup this electrode is a part of
+nwb.electrodes.group_name # (VectorData) the name of the ElectrodeGroup this electrode is a part of
+nwb.electrodes.label # (VectorData) label of electrode
+nwb.subject # (Subject)
+nwb.subject.age # (str) P0D
+nwb.subject.age__reference # (str) birth
+nwb.subject.description # (str) This is a simulated dataset generated from a computational model.
+nwb.subject.sex # (str) U
+nwb.subject.species # (str) Homo sapiens
+nwb.subject.subject_id # (str) healthy-simulated-beta
+
+STDERR:
+/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/hdmf/spec/namespace.py:535: UserWarning: Ignoring cached namespace 'core' version 2.8.0 because version 2.7.0 is already loaded.
+  warn("Ignoring cached namespace '%s' version %s because version %s is already loaded."
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 12
+Submitting completion request...
+Processing response...
+Based on my exploration, I understand the structure of the dataset:
+
+1. The dataset contains electrophysiological signals from both healthy and parkinsonian subjects
+2. There are two main types of data:
+   - Beta Average Rectified Voltage (ARV) - in frequency domain
+   - Local Field Potential (LFP) - in time domain
+3. File Structure:
+   - "sub-healthy-simulated-beta" files contain Beta ARV data with 1,400 points
+   - "sub-healthy-simulated-lfp" files contain LFP data with 77,400 points
+   - Both types have 12 electrodes across 4 shanks
+
+Now I'll create the notebook.py file with appropriate sections to explore this dataset.
+
+Tool: write_to_file
+Params: {'path': 'notebook.py', 'content': '# %% [markdown]\n# # Exploring Dandiset 001333: Parkinson\'s Electrophysiological Signal Dataset (PESD)\n\n# %% [markdown]\n# ## Disclaimer\n# \n# **IMPORTANT: This notebook was AI-generated and has not been fully verified. Please be cautious when interpreting the code or results.**\n\n# %% [markdown]\n# ## Overview\n# \n# This notebook explores the Parkinson\'s Electrophysiological Signal Dataset (PESD), which contains electrophysiological signals from both healthy and parkinsonian subjects. The dataset is available on the DANDI Archive at [https://dandiarchive.org/dandiset/001333/0.250327.2220](https://dandiarchive.org/dandiset/001333/0.250327.2220).\n# \n# The dataset contains two main types of electrophysiological signals:\n# \n# 1. **Beta Average Rectified Voltage (ARV)**: These signals are in the frequency domain and represent the average rectified value of the beta band, which is calculated by rectifying the filtered Local Field Potential (LFP) signal.\n# \n# 2. **Local Field Potentials (LFP)**: These signals are in the time domain and are derived from the synchronized activity of neuron populations between the cortex, subthalamic nucleus (STN), and thalamus.\n# \n# In Parkinson\'s disease, beta oscillations (13-30 Hz) in the subthalamic nucleus are typically used as pathological biomarkers for PD symptoms.\n# \n# This notebook will:\n# \n# 1. Load the dataset using the DANDI API\n# 2. Explore the metadata and structure of the NWB files\n# 3. Visualize both LFP and Beta ARV data\n# 4. Compare differences between these signal types\n# 5. Analyze features that might be relevant to Parkinson\'s disease research\n\n# %% [markdown]\n# ## Required Packages\n# \n# This notebook requires several packages:\n# - `pynwb` - For working with Neurodata Without Borders (NWB) files\n# - `h5py` - For working with the HDF5 file format that NWB uses\n# - `remfile` - For streaming remote files\n# - `numpy` - For numerical operations\n# - `matplotlib` - For visualization\n# - `pandas` - For data manipulation\n# - `scipy` - For signal processing\n\n# %%\n# Import necessary packages\nimport pynwb\nimport h5py\nimport remfile\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport pandas as pd\nfrom scipy import signal\nimport seaborn as sns\nfrom itertools import islice\n\n# Set plotting style\nsns.set_theme()\n\n# %% [markdown]\n# ## Loading the Dandiset using DANDI API\n# \n# First, we\'ll connect to the DANDI archive and retrieve basic information about the Dandiset.\n\n# %%\nfrom dandi.dandiapi import DandiAPIClient\n\n# Connect to DANDI archive\nclient = DandiAPIClient()\ndandiset = client.get_dandiset("001333", "0.250327.2220")\n\n# Print basic information about the Dandiset\nmetadata = dandiset.get_raw_metadata()\nprint(f"Dandiset name: {metadata[\'name\']}")\nprint(f"Dandiset URL: {metadata[\'url\']}")\n\n# List some assets in the Dandiset\nassets = dandiset.get_assets()\nprint("\\nFirst 5 assets:")\nfor asset in islice(assets, 5):\n    print(f"- {asset.path} (ID: {asset.identifier})")\n\n# %% [markdown]\n# ## Exploring an NWB File with LFP Data\n# \n# Let\'s load and explore one of the NWB files containing Local Field Potential (LFP) data. We\'ve selected the file `sub-healthy-simulated-lfp_ses-54_ecephys.nwb` from a healthy simulated subject.\n\n# %%\n# Load a specific NWB file for LFP data\nlfp_url = "https://api.dandiarchive.org/api/assets/3cf468a1-4933-4aa6-b1c3-4a261b3ee6db/download/"\nlfp_remote_file = remfile.File(lfp_url)\nlfp_h5_file = h5py.File(lfp_remote_file)\nlfp_io = pynwb.NWBHDF5IO(file=lfp_h5_file)\nlfp_nwb = lfp_io.read()\n\n# Display basic metadata about the NWB file\nprint(f"NWB File ID: {lfp_nwb.identifier}")\nprint(f"Session Description: {lfp_nwb.session_description}")\nprint(f"Session Start Time: {lfp_nwb.session_start_time}")\nprint(f"Subject ID: {lfp_nwb.subject.subject_id}")\nprint(f"Keywords: {\', \'.join(lfp_nwb.keywords[:])}")\n\n# %% [markdown]\n# You can explore this NWB file interactively on Neurosift: [https://neurosift.app/nwb?url=https://api.dandiarchive.org/api/assets/3cf468a1-4933-4aa6-b1c3-4a261b3ee6db/download/&dandisetId=001333&dandisetVersion=0.250327.2220](https://neurosift.app/nwb?url=https://api.dandiarchive.org/api/assets/3cf468a1-4933-4aa6-b1c3-4a261b3ee6db/download/&dandisetId=001333&dandisetVersion=0.250327.2220)\n\n# %% [markdown]\n# ## Structure of the LFP NWB File\n# \n# Let\'s examine the structure of the NWB file to understand what data it contains:\n\n# %%\n# Get information about the electrodes\nelectrode_df = lfp_nwb.electrodes.to_dataframe()\nprint("Electrode Information:")\nprint(electrode_df)\n\n# Get information about the LFP data\nlfp_data_interface = lfp_nwb.processing["ecephys"].data_interfaces["LFP"]\nlfp_series = lfp_data_interface.electrical_series["LFP"]\n\nprint("\\nLFP Data Information:")\nprint(f"Sampling Rate: {lfp_series.rate} Hz")\nprint(f"Number of Samples: {lfp_series.data.shape[0]}")\nprint(f"Duration: {lfp_series.data.shape[0] / lfp_series.rate:.2f} seconds")\nprint(f"Unit: {lfp_series.unit}")\n\n# %% [markdown]\n# The NWB file contains:\n# \n# - **Electrodes**: 12 electrodes distributed across 4 shanks\n# - **LFP Data**: A time series sampled at 2000 Hz, lasting approximately 38.7 seconds\n# - **Processing Module**: Contains processed LFP data\n# - **Subject Information**: Indicates this is a simulated healthy subject\n\n# %% [markdown]\n# ## Visualizing the LFP Data\n# \n# Let\'s visualize a segment of the LFP data from one electrode:\n\n# %%\n# Load a subset of LFP data (first 10 seconds from first electrode)\nseconds_to_plot = 10\nsamples_to_plot = int(seconds_to_plot * lfp_series.rate)\nstart_sample = 0\n\n# Get the data\nlfp_subset = lfp_series.data[start_sample:start_sample+samples_to_plot]\n\n# Create time array\ntime = np.arange(samples_to_plot) / lfp_series.rate\n\n# Plot the LFP data\nplt.figure(figsize=(12, 6))\nplt.plot(time, lfp_subset)\nplt.title(f\'LFP Signal from Electrode (First {seconds_to_plot} seconds)\')\nplt.xlabel(\'Time (s)\')\nplt.ylabel(f\'Amplitude ({lfp_series.unit})\')\nplt.grid(True)\nplt.tight_layout()\nplt.show()\n\n# %% [markdown]\n# Let\'s plot data from all electrodes to see the variation:\n\n# %%\n# Get electrode labels\nelectrode_labels = electrode_df[\'label\'].values\n\n# Define a smaller time range to keep the plot readable\nseconds_to_plot = 3\nsamples_to_plot = int(seconds_to_plot * lfp_series.rate)\nstart_second = 1 \nstart_sample = int(start_second * lfp_series.rate)\n\n# Create time array\ntime = np.arange(samples_to_plot) / lfp_series.rate + start_second\n\n# Plot LFP data from all electrodes\nplt.figure(figsize=(14, 10))\n\n# Get data for all electrodes for the specified time range\nlfp_subset_all = lfp_series.data[start_sample:start_sample+samples_to_plot]\n\n# Calculate an offset to separate the traces\nmax_amplitude = np.max(np.abs(lfp_subset_all))\noffset = max_amplitude * 2\n\n# Plot each electrode with an offset\nfor i in range(len(electrode_labels)):\n    plt.plot(time, lfp_subset_all + i*offset, label=electrode_labels[i])\n\nplt.title(f\'LFP Signals from All Electrodes ({start_second} to {start_second + seconds_to_plot} seconds)\')\nplt.xlabel(\'Time (s)\')\nplt.ylabel(f\'Amplitude ({lfp_series.unit}) with offset\')\nplt.yticks([i*offset for i in range(len(electrode_labels))], electrode_labels)\nplt.grid(True)\nplt.tight_layout()\nplt.show()\n\n# %% [markdown]\n# ## Frequency Domain Analysis of LFP Signal\n# \n# Now, let\'s analyze the LFP signal in the frequency domain to see the power spectrum, which will help us identify dominant frequencies, including the beta band (13-30 Hz) that is particularly relevant for Parkinson\'s disease.\n\n# %%\n# Select a longer segment for frequency analysis (10 seconds)\nseconds_to_analyze = 10\nsamples_to_analyze = int(seconds_to_analyze * lfp_series.rate)\n\n# Create arrays to store results\nelectrode_idx = 0  # Choose the first electrode for analysis\nlfp_data = lfp_series.data[0:samples_to_analyze]\n\n# Calculate the power spectrum using Welch\'s method\nfreq, psd = signal.welch(lfp_data, fs=lfp_series.rate, nperseg=1024)\n\n# Plot the power spectrum\nplt.figure(figsize=(12, 6))\nplt.semilogy(freq, psd)\nplt.title(\'Power Spectrum of LFP Signal\')\nplt.xlabel(\'Frequency (Hz)\')\nplt.ylabel(\'Power Spectral Density (V²/Hz)\')\n\n# Highlight the beta band (13-30 Hz)\nplt.axvspan(13, 30, alpha=0.3, color=\'red\', label=\'Beta Band (13-30 Hz)\')\nplt.legend()\nplt.grid(True)\nplt.xlim(0, 100)  # Limit x-axis to 0-100 Hz for better visualization\nplt.tight_layout()\nplt.show()\n\n# %% [markdown]\n# ## Exploring an NWB File with Beta ARV Data\n# \n# Now, let\'s load and explore one of the NWB files containing Beta Average Rectified Voltage (ARV) data from the same subject session.\n\n# %%\n# Load a specific NWB file for Beta ARV data\nbeta_url = "https://api.dandiarchive.org/api/assets/73214862-df4b-452b-a35c-d1f3bdb68180/download/"\nbeta_remote_file = remfile.File(beta_url)\nbeta_h5_file = h5py.File(beta_remote_file)\nbeta_io = pynwb.NWBHDF5IO(file=beta_h5_file)\nbeta_nwb = beta_io.read()\n\n# Display basic metadata about the NWB file\nprint(f"NWB File ID: {beta_nwb.identifier}")\nprint(f"Session Description: {beta_nwb.session_description}")\nprint(f"Subject ID: {beta_nwb.subject.subject_id}")\n\n# Get information about the Beta ARV data\nbeta_data_interface = beta_nwb.processing["ecephys"].data_interfaces["LFP"]\nbeta_series = beta_data_interface.electrical_series["Beta_Band_Voltage"]\n\nprint("\\nBeta ARV Data Information:")\nprint(f"Number of Timestamps: {beta_series.timestamps.shape[0]}")\nprint(f"Duration: {beta_series.timestamps[-1] - beta_series.timestamps[0]:.2f} seconds")\nprint(f"Unit: {beta_series.unit}")\n\n# %% [markdown]\n# You can explore this NWB file interactively on Neurosift: [https://neurosift.app/nwb?url=https://api.dandiarchive.org/api/assets/73214862-df4b-452b-a35c-d1f3bdb68180/download/&dandisetId=001333&dandisetVersion=0.250327.2220](https://neurosift.app/nwb?url=https://api.dandiarchive.org/api/assets/73214862-df4b-452b-a35c-d1f3bdb68180/download/&dandisetId=001333&dandisetVersion=0.250327.2220)\n\n# %% [markdown]\n# ## Structure of the Beta ARV NWB File\n# \n# The Beta ARV NWB file contains:\n# \n# - **Electrodes**: Same 12 electrodes as in the LFP file\n# - **Beta ARV Data**: A time series with 1,400 samples\n# - **Processing Module**: Contains processed Beta band voltage data\n# - **Subject Information**: Same simulated healthy subject\n\n# %% [markdown]\n# ## Visualizing the Beta ARV Data\n# \n# Let\'s visualize the Beta ARV data:\n\n# %%\n# Get the full Beta ARV data\nbeta_data = beta_series.data[:]\nbeta_times = beta_series.timestamps[:]\n\n# Plot the Beta ARV data\nplt.figure(figsize=(12, 6))\nplt.plot(beta_times, beta_data)\nplt.title(\'Beta Average Rectified Voltage (ARV)\')\nplt.xlabel(\'Time (s)\')\nplt.ylabel(f\'Amplitude ({beta_series.unit})\')\nplt.grid(True)\nplt.tight_layout()\nplt.show()\n\n# %% [markdown]\n# ## Comparison of LFP and Beta ARV Signals\n# \n# Let\'s compare a segment of both signals (LFP and Beta ARV) to understand how they relate:\n\n# %%\n# Determine an overlapping time window\n# For Beta ARV data, let\'s use the first 10 seconds\nbeta_end_time = 10  # seconds\nbeta_end_idx = np.where(beta_times <= beta_end_time)[0][-1] + 1\nbeta_subset_times = beta_times[:beta_end_idx]\nbeta_subset_data = beta_data[:beta_end_idx]\n\n# For LFP data, use the same time range\nlfp_end_sample = int(beta_end_time * lfp_series.rate)\nlfp_times = np.arange(lfp_end_sample) / lfp_series.rate\nlfp_subset_data = lfp_series.data[:lfp_end_sample]\n\n# Create a plot with two y-axes\nfig, ax1 = plt.subplots(figsize=(14, 6))\n\n# Plot LFP data on left y-axis\nax1.set_xlabel(\'Time (s)\')\nax1.set_ylabel(\'LFP Signal (V)\', color=\'tab:blue\')\nax1.plot(lfp_times, lfp_subset_data, color=\'tab:blue\', alpha=0.7, label=\'LFP Signal\')\nax1.tick_params(axis=\'y\', labelcolor=\'tab:blue\')\n\n# Create a second y-axis for Beta ARV data\nax2 = ax1.twinx()\nax2.set_ylabel(\'Beta ARV (V)\', color=\'tab:red\')\nax2.plot(beta_subset_times, beta_subset_data, color=\'tab:red\', linewidth=2, label=\'Beta ARV\')\nax2.tick_params(axis=\'y\', labelcolor=\'tab:red\')\n\n# Add a title and legend\nplt.title(\'Comparison of LFP and Beta ARV Signals\')\nfig.tight_layout()\n\n# Create a combined legend\nlines1, labels1 = ax1.get_legend_handles_labels()\nlines2, labels2 = ax2.get_legend_handles_labels()\nax1.legend(lines1 + lines2, labels1 + labels2, loc=\'upper right\')\n\nplt.show()\n\n# %% [markdown]\n# The above plot shows the relationship between:\n# \n# 1. The raw Local Field Potential (LFP) signal in the time domain (blue)\n# 2. The Beta Average Rectified Voltage (ARV) derived from the LFP signal (red)\n# \n# The Beta ARV represents the power in the beta frequency band (13-30 Hz) over time, which is used as a biomarker for Parkinson\'s disease symptoms.\n\n# %% [markdown]\n# ## Analyzing Beta Band Power Over Time\n# \n# Let\'s compute the beta band power from the LFP data using a short-time Fourier transform (STFT) and compare it with the provided Beta ARV:\n\n# %%\n# Define the beta frequency band\nbeta_low = 13  # Hz\nbeta_high = 30  # Hz\n\n# Function to calculate beta power over time\ndef calculate_beta_power(signal_data, fs, window_size=1.0, overlap=0.5):\n    """\n    Calculate beta power over time using spectrogram.\n    \n    Parameters:\n    - signal_data: Input signal\n    - fs: Sampling frequency\n    - window_size: Size of window in seconds\n    - overlap: Fraction of overlap between windows\n    \n    Returns:\n    - times: Time points\n    - beta_power: Power in beta band\n    """\n    nperseg = int(window_size * fs)\n    noverlap = int(overlap * nperseg)\n    \n    # Calculate spectrogram\n    f, t, Sxx = signal.spectrogram(signal_data, fs=fs, nperseg=nperseg, noverlap=noverlap)\n    \n    # Find indices of beta band in frequency array\n    beta_idx = np.logical_and(f >= beta_low, f <= beta_high)\n    \n    # Calculate power in beta band for each time point\n    beta_power = np.mean(Sxx[beta_idx, :], axis=0)\n    \n    return t, beta_power\n\n# Calculate beta power from LFP data\n# Use the first 30 seconds of data\nanalysis_time = 30  # seconds\nsamples_to_analyze = int(analysis_time * lfp_series.rate)\nlfp_data_to_analyze = lfp_series.data[:samples_to_analyze]\n\n# Calculate beta power\nstft_times, stft_beta_power = calculate_beta_power(lfp_data_to_analyze, lfp_series.rate)\n\n# Plot\nplt.figure(figsize=(14, 10))\n\n# Plot 1: Raw LFP signal\nplt.subplot(3, 1, 1)\nt_lfp = np.arange(len(lfp_data_to_analyze)) / lfp_series.rate\nplt.plot(t_lfp, lfp_data_to_analyze)\nplt.title(\'Raw LFP Signal\')\nplt.ylabel(\'Amplitude (V)\')\nplt.grid(True)\n\n# Plot 2: Computed Beta Power from STFT\nplt.subplot(3, 1, 2)\nplt.plot(stft_times, stft_beta_power)\nplt.title(\'Computed Beta Band Power from LFP using STFT\')\nplt.ylabel(\'Power (V²)\')\nplt.grid(True)\n\n# Plot 3: Provided Beta ARV signal\nplt.subplot(3, 1, 3)\n# Take the subset of Beta ARV data that fits within our analysis time\nbeta_subset_mask = beta_times <= analysis_time\nplt.plot(beta_times[beta_subset_mask], beta_data[beta_subset_mask])\nplt.title(\'Provided Beta Average Rectified Voltage (ARV)\')\nplt.xlabel(\'Time (s)\')\nplt.ylabel(\'Amplitude (V)\')\nplt.grid(True)\n\nplt.tight_layout()\nplt.show()\n\n# %% [markdown]\n# The plots above show:\n# \n# 1. The raw LFP signal\n# 2. The beta band power computed from the LFP signal using STFT\n# 3. The provided Beta ARV from the dataset\n# \n# While not identical (because the exact method used to calculate the Beta ARV in the dataset might differ), both the computed beta power and provided Beta ARV represent the power in the beta frequency band over time.\n\n# %% [markdown]\n# ## Investigating Several Electrodes\n# \n# Let\'s analyze the LFP data from multiple electrodes to see how the signals vary:\n\n# %%\n# First, let\'s extract the electrode information\nelectrode_info = beta_nwb.electrodes.to_dataframe()\n\n# Select a subset of electrodes to analyze (3 electrodes from different shanks)\nselected_electrodes = [0, 4, 8]  # One from each of three shanks\nelectrode_labels = electrode_info.loc[selected_electrodes, \'label\'].values\n\n# Extract a segment of LFP data for each electrode (first 5 seconds)\nseconds_to_plot = 5\nsamples_to_plot = int(seconds_to_plot * lfp_series.rate)\nlfp_data_subset = lfp_series.data[:samples_to_plot]\n\n# Create time array\ntime = np.arange(samples_to_plot) / lfp_series.rate\n\n# Plot the LFP data for each selected electrode\nplt.figure(figsize=(14, 10))\nfor i, electrode_idx in enumerate(selected_electrodes):\n    plt.subplot(len(selected_electrodes), 1, i+1)\n    plt.plot(time, lfp_data_subset)\n    plt.title(f\'LFP Signal from {electrode_labels[i]}\')\n    plt.ylabel(\'Amplitude (V)\')\n    plt.grid(True)\n    \n    if i == len(selected_electrodes) - 1:\n        plt.xlabel(\'Time (s)\')\n    \nplt.tight_layout()\nplt.show()\n\n# %% [markdown]\n# ## Time-Frequency Analysis\n# \n# Let\'s perform a time-frequency analysis of the LFP data to see how frequency content changes over time:\n\n# %%\n# Calculate spectrogram for the first 10 seconds of LFP data\nseconds_to_analyze = 10\nsamples_to_analyze = int(seconds_to_analyze * lfp_series.rate)\nlfp_data_to_analyze = lfp_series.data[:samples_to_analyze]\n\n# Calculate spectrogram\nf, t, Sxx = signal.spectrogram(lfp_data_to_analyze, fs=lfp_series.rate, \n                              nperseg=1024, noverlap=512, scaling=\'density\')\n\n# Plot the spectrogram\nplt.figure(figsize=(14, 7))\nplt.pcolormesh(t, f, 10 * np.log10(Sxx), shading=\'gouraud\', cmap=\'viridis\')\nplt.title(\'Spectrogram of LFP Signal\')\nplt.ylabel(\'Frequency (Hz)\')\nplt.xlabel(\'Time (s)\')\nplt.colorbar(label=\'Power Spectral Density (dB/Hz)\')\nplt.ylim(0, 100)  # Limit y-axis to 0-100 Hz for better visualization\n\n# Highlight the beta band (13-30 Hz)\nplt.axhspan(13, 30, color=\'red\', alpha=0.2, label=\'Beta Band (13-30 Hz)\')\nplt.legend()\n\nplt.tight_layout()\nplt.show()\n\n# %% [markdown]\n# ## Examining Parkinsonian vs. Healthy Data\n# \n# Parkinsonian brains typically show increased power in the beta frequency band (13-30 Hz) compared to healthy brains. Let\'s compare the power spectra of healthy simulated data with parkinsonian data.\n# \n# First, let\'s check if we have parkinsonian data in the assets list:\n\n# %%\n# Search for parkinsonian data in our assets list\nprint("Searching for Parkinsonian data in assets...")\nfor asset in islice(dandiset.get_assets(), 20):\n    if "parkinsonian" in asset.path.lower():\n        print(f"- {asset.path} (ID: {asset.identifier})")\n\n# %% [markdown]\n# Let\'s compare the beta band power in our healthy data:\n\n# %%\n# Calculate the power spectrum for the LFP data\nfreq, psd_healthy = signal.welch(lfp_series.data[:], fs=lfp_series.rate, nperseg=4096)\n\n# Plot the power spectrum with focus on beta band\nplt.figure(figsize=(12, 6))\nplt.semilogy(freq, psd_healthy)\nplt.title(\'Power Spectrum of Healthy Simulated Data\')\nplt.xlabel(\'Frequency (Hz)\')\nplt.ylabel(\'Power Spectral Density (V²/Hz)\')\n\n# Highlight frequency bands\nplt.axvspan(4, 8, alpha=0.3, color=\'green\', label=\'Theta (4-8 Hz)\')\nplt.axvspan(8, 13, alpha=0.3, color=\'blue\', label=\'Alpha (8-13 Hz)\')\nplt.axvspan(13, 30, alpha=0.3, color=\'red\', label=\'Beta (13-30 Hz)\')\nplt.axvspan(30, 100, alpha=0.3, color=\'purple\', label=\'Gamma (30-100 Hz)\')\n\nplt.legend()\nplt.grid(True)\nplt.xlim(0, 100)  # Limit x-axis to 0-100 Hz for better visualization\nplt.tight_layout()\nplt.show()\n\n# %% [markdown]\n# The power spectrum shows the frequency content of the LFP signal from our healthy simulated data. In the context of Parkinson\'s disease, the beta band (13-30 Hz, highlighted in red) would typically show elevated power in parkinsonian subjects compared to healthy subjects.\n# \n# The dataset contains both healthy and parkinsonian subjects, allowing researchers to compare these differences for biomarker development and understanding the pathophysiology of Parkinson\'s disease.\n\n# %% [markdown]\n# ## Summary and Future Directions\n# \n# In this notebook, we\'ve explored the Parkinson\'s Electrophysiological Signal Dataset (PESD), which contains electrophysiological signals from both healthy and parkinsonian subjects. We\'ve:\n# \n# 1. Loaded and examined NWB files containing LFP and Beta ARV data\n# 2. Visualized the time series data from multiple electrodes\n# 3. Performed frequency analysis to identify key spectral components\n# 4. Compared the relationship between LFP signals and derived Beta ARV\n# 5. Explored time-frequency analysis using spectrograms\n# \n# ### Key Findings\n# \n# - The dataset contains both time-domain (LFP) and frequency-domain (Beta ARV) data\n# - The data is organized by subject type (healthy vs. parkinsonian) and signal type (LFP vs. Beta)\n# - The Beta frequency band (13-30 Hz) is of particular interest as a biomarker for Parkinson\'s disease\n# \n# ### Future Directions\n# \n# This dataset opens up several possibilities for future analysis:\n# \n# 1. **Comparative Analysis**: Directly compare healthy vs. parkinsonian data to identify distinguishing features\n# \n# 2. **Feature Extraction**: Develop algorithms to extract meaningful features from LFP signals that correlate with disease state\n# \n# 3. **Biomarker Development**: Create robust biomarkers based on beta oscillations for disease monitoring\n# \n# 4. **Closed-Loop DBS Algorithm Development**: Use the dataset to design and test closed-loop deep brain stimulation algorithms that could respond to changes in beta power\n# \n# 5. **Machine Learning Applications**: Train models to classify or predict disease state based on electrophysiological signals\n# \n# 6. **Correlation Analysis**: Investigate the relationship between beta power and other frequency bands\n# \n# 7. **Temporal Dynamics**: Study the temporal dynamics of beta oscillations and their variability over time\n\n# %% [markdown]\n# ## Acknowledgements\n# \n# This notebook explores the Parkinson\'s Electrophysiological Signal Dataset (PESD) contributed by Ananna Biswas. For more details, refer to the related publication: [https://arxiv.org/abs/2407.17756](https://arxiv.org/abs/2407.17756).'}
+================================
+Content to be written to notebook.py:
+# %% [markdown]
+# # Exploring Dandiset 001333: Parkinson's Electrophysiological Signal Dataset (PESD)
+
+# %% [markdown]
+# ## Disclaimer
+# 
+# **IMPORTANT: This notebook was AI-generated and has not been fully verified. Please be cautious when interpreting the code or results.**
+
+# %% [markdown]
+# ## Overview
+# 
+# This notebook explores the Parkinson's Electrophysiological Signal Dataset (PESD), which contains electrophysiological signals from both healthy and parkinsonian subjects. The dataset is available on the DANDI Archive at [https://dandiarchive.org/dandiset/001333/0.250327.2220](https://dandiarchive.org/dandiset/001333/0.250327.2220).
+# 
+# The dataset contains two main types of electrophysiological signals:
+# 
+# 1. **Beta Average Rectified Voltage (ARV)**: These signals are in the frequency domain and represent the average rectified value of the beta band, which is calculated by rectifying the filtered Local Field Potential (LFP) signal.
+# 
+# 2. **Local Field Potentials (LFP)**: These signals are in the time domain and are derived from the synchronized activity of neuron populations between the cortex, subthalamic nucleus (STN), and thalamus.
+# 
+# In Parkinson's disease, beta oscillations (13-30 Hz) in the subthalamic nucleus are typically used as pathological biomarkers for PD symptoms.
+# 
+# This notebook will:
+# 
+# 1. Load the dataset using the DANDI API
+# 2. Explore the metadata and structure of the NWB files
+# 3. Visualize both LFP and Beta ARV data
+# 4. Compare differences between these signal types
+# 5. Analyze features that might be relevant to Parkinson's disease research
+
+# %% [markdown]
+# ## Required Packages
+# 
+# This notebook requires several packages:
+# - `pynwb` - For working with Neurodata Without Borders (NWB) files
+# - `h5py` - For working with the HDF5 file format that NWB uses
+# - `remfile` - For streaming remote files
+# - `numpy` - For numerical operations
+# - `matplotlib` - For visualization
+# - `pandas` - For data manipulation
+# - `scipy` - For signal processing
+
+# %%
+# Import necessary packages
+import pynwb
+import h5py
+import remfile
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+from scipy import signal
+import seaborn as sns
+from itertools import islice
+
+# Set plotting style
+sns.set_theme()
+
+# %% [markdown]
+# ## Loading the Dandiset using DANDI API
+# 
+# First, we'll connect to the DANDI archive and retrieve basic information about the Dandiset.
+
+# %%
+from dandi.dandiapi import DandiAPIClient
+
+# Connect to DANDI archive
+client = DandiAPIClient()
+dandiset = client.get_dandiset("001333", "0.250327.2220")
+
+# Print basic information about the Dandiset
+metadata = dandiset.get_raw_metadata()
+print(f"Dandiset name: {metadata['name']}")
+print(f"Dandiset URL: {metadata['url']}")
+
+# List some assets in the Dandiset
+assets = dandiset.get_assets()
+print("\nFirst 5 assets:")
+for asset in islice(assets, 5):
+    print(f"- {asset.path} (ID: {asset.identifier})")
+
+# %% [markdown]
+# ## Exploring an NWB File with LFP Data
+# 
+# Let's load and explore one of the NWB files containing Local Field Potential (LFP) data. We've selected the file `sub-healthy-simulated-lfp_ses-54_ecephys.nwb` from a healthy simulated subject.
+
+# %%
+# Load a specific NWB file for LFP data
+lfp_url = "https://api.dandiarchive.org/api/assets/3cf468a1-4933-4aa6-b1c3-4a261b3ee6db/download/"
+lfp_remote_file = remfile.File(lfp_url)
+lfp_h5_file = h5py.File(lfp_remote_file)
+lfp_io = pynwb.NWBHDF5IO(file=lfp_h5_file)
+lfp_nwb = lfp_io.read()
+
+# Display basic metadata about the NWB file
+print(f"NWB File ID: {lfp_nwb.identifier}")
+print(f"Session Description: {lfp_nwb.session_description}")
+print(f"Session Start Time: {lfp_nwb.session_start_time}")
+print(f"Subject ID: {lfp_nwb.subject.subject_id}")
+print(f"Keywords: {', '.join(lfp_nwb.keywords[:])}")
+
+# %% [markdown]
+# You can explore this NWB file interactively on Neurosift: [https://neurosift.app/nwb?url=https://api.dandiarchive.org/api/assets/3cf468a1-4933-4aa6-b1c3-4a261b3ee6db/download/&dandisetId=001333&dandisetVersion=0.250327.2220](https://neurosift.app/nwb?url=https://api.dandiarchive.org/api/assets/3cf468a1-4933-4aa6-b1c3-4a261b3ee6db/download/&dandisetId=001333&dandisetVersion=0.250327.2220)
+
+# %% [markdown]
+# ## Structure of the LFP NWB File
+# 
+# Let's examine the structure of the NWB file to understand what data it contains:
+
+# %%
+# Get information about the electrodes
+electrode_df = lfp_nwb.electrodes.to_dataframe()
+print("Electrode Information:")
+print(electrode_df)
+
+# Get information about the LFP data
+lfp_data_interface = lfp_nwb.processing["ecephys"].data_interfaces["LFP"]
+lfp_series = lfp_data_interface.electrical_series["LFP"]
+
+print("\nLFP Data Information:")
+print(f"Sampling Rate: {lfp_series.rate} Hz")
+print(f"Number of Samples: {lfp_series.data.shape[0]}")
+print(f"Duration: {lfp_series.data.shape[0] / lfp_series.rate:.2f} seconds")
+print(f"Unit: {lfp_series.unit}")
+
+# %% [markdown]
+# The NWB file contains:
+# 
+# - **Electrodes**: 12 electrodes distributed across 4 shanks
+# - **LFP Data**: A time series sampled at 2000 Hz, lasting approximately 38.7 seconds
+# - **Processing Module**: Contains processed LFP data
+# - **Subject Information**: Indicates this is a simulated healthy subject
+
+# %% [markdown]
+# ## Visualizing the LFP Data
+# 
+# Let's visualize a segment of the LFP data from one electrode:
+
+# %%
+# Load a subset of LFP data (first 10 seconds from first electrode)
+seconds_to_plot = 10
+samples_to_plot = int(seconds_to_plot * lfp_series.rate)
+start_sample = 0
+
+# Get the data
+lfp_subset = lfp_series.data[start_sample:start_sample+samples_to_plot]
+
+# Create time array
+time = np.arange(samples_to_plot) / lfp_series.rate
+
+# Plot the LFP data
+plt.figure(figsize=(12, 6))
+plt.plot(time, lfp_subset)
+plt.title(f'LFP Signal from Electrode (First {seconds_to_plot} seconds)')
+plt.xlabel('Time (s)')
+plt.ylabel(f'Amplitude ({lfp_series.unit})')
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+# %% [markdown]
+# Let's plot data from all electrodes to see the variation:
+
+# %%
+# Get electrode labels
+electrode_labels = electrode_df['label'].values
+
+# Define a smaller time range to keep the plot readable
+seconds_to_plot = 3
+samples_to_plot = int(seconds_to_plot * lfp_series.rate)
+start_second = 1 
+start_sample = int(start_second * lfp_series.rate)
+
+# Create time array
+time = np.arange(samples_to_plot) / lfp_series.rate + start_second
+
+# Plot LFP data from all electrodes
+plt.figure(figsize=(14, 10))
+
+# Get data for all electrodes for the specified time range
+lfp_subset_all = lfp_series.data[start_sample:start_sample+samples_to_plot]
+
+# Calculate an offset to separate the traces
+max_amplitude = np.max(np.abs(lfp_subset_all))
+offset = max_amplitude * 2
+
+# Plot each electrode with an offset
+for i in range(len(electrode_labels)):
+    plt.plot(time, lfp_subset_all + i*offset, label=electrode_labels[i])
+
+plt.title(f'LFP Signals from All Electrodes ({start_second} to {start_second + seconds_to_plot} seconds)')
+plt.xlabel('Time (s)')
+plt.ylabel(f'Amplitude ({lfp_series.unit}) with offset')
+plt.yticks([i*offset for i in range(len(electrode_labels))], electrode_labels)
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+# %% [markdown]
+# ## Frequency Domain Analysis of LFP Signal
+# 
+# Now, let's analyze the LFP signal in the frequency domain to see the power spectrum, which will help us identify dominant frequencies, including the beta band (13-30 Hz) that is particularly relevant for Parkinson's disease.
+
+# %%
+# Select a longer segment for frequency analysis (10 seconds)
+seconds_to_analyze = 10
+samples_to_analyze = int(seconds_to_analyze * lfp_series.rate)
+
+# Create arrays to store results
+electrode_idx = 0  # Choose the first electrode for analysis
+lfp_data = lfp_series.data[0:samples_to_analyze]
+
+# Calculate the power spectrum using Welch's method
+freq, psd = signal.welch(lfp_data, fs=lfp_series.rate, nperseg=1024)
+
+# Plot the power spectrum
+plt.figure(figsize=(12, 6))
+plt.semilogy(freq, psd)
+plt.title('Power Spectrum of LFP Signal')
+plt.xlabel('Frequency (Hz)')
+plt.ylabel('Power Spectral Density (V²/Hz)')
+
+# Highlight the beta band (13-30 Hz)
+plt.axvspan(13, 30, alpha=0.3, color='red', label='Beta Band (13-30 Hz)')
+plt.legend()
+plt.grid(True)
+plt.xlim(0, 100)  # Limit x-axis to 0-100 Hz for better visualization
+plt.tight_layout()
+plt.show()
+
+# %% [markdown]
+# ## Exploring an NWB File with Beta ARV Data
+# 
+# Now, let's load and explore one of the NWB files containing Beta Average Rectified Voltage (ARV) data from the same subject session.
+
+# %%
+# Load a specific NWB file for Beta ARV data
+beta_url = "https://api.dandiarchive.org/api/assets/73214862-df4b-452b-a35c-d1f3bdb68180/download/"
+beta_remote_file = remfile.File(beta_url)
+beta_h5_file = h5py.File(beta_remote_file)
+beta_io = pynwb.NWBHDF5IO(file=beta_h5_file)
+beta_nwb = beta_io.read()
+
+# Display basic metadata about the NWB file
+print(f"NWB File ID: {beta_nwb.identifier}")
+print(f"Session Description: {beta_nwb.session_description}")
+print(f"Subject ID: {beta_nwb.subject.subject_id}")
+
+# Get information about the Beta ARV data
+beta_data_interface = beta_nwb.processing["ecephys"].data_interfaces["LFP"]
+beta_series = beta_data_interface.electrical_series["Beta_Band_Voltage"]
+
+print("\nBeta ARV Data Information:")
+print(f"Number of Timestamps: {beta_series.timestamps.shape[0]}")
+print(f"Duration: {beta_series.timestamps[-1] - beta_series.timestamps[0]:.2f} seconds")
+print(f"Unit: {beta_series.unit}")
+
+# %% [markdown]
+# You can explore this NWB file interactively on Neurosift: [https://neurosift.app/nwb?url=https://api.dandiarchive.org/api/assets/73214862-df4b-452b-a35c-d1f3bdb68180/download/&dandisetId=001333&dandisetVersion=0.250327.2220](https://neurosift.app/nwb?url=https://api.dandiarchive.org/api/assets/73214862-df4b-452b-a35c-d1f3bdb68180/download/&dandisetId=001333&dandisetVersion=0.250327.2220)
+
+# %% [markdown]
+# ## Structure of the Beta ARV NWB File
+# 
+# The Beta ARV NWB file contains:
+# 
+# - **Electrodes**: Same 12 electrodes as in the LFP file
+# - **Beta ARV Data**: A time series with 1,400 samples
+# - **Processing Module**: Contains processed Beta band voltage data
+# - **Subject Information**: Same simulated healthy subject
+
+# %% [markdown]
+# ## Visualizing the Beta ARV Data
+# 
+# Let's visualize the Beta ARV data:
+
+# %%
+# Get the full Beta ARV data
+beta_data = beta_series.data[:]
+beta_times = beta_series.timestamps[:]
+
+# Plot the Beta ARV data
+plt.figure(figsize=(12, 6))
+plt.plot(beta_times, beta_data)
+plt.title('Beta Average Rectified Voltage (ARV)')
+plt.xlabel('Time (s)')
+plt.ylabel(f'Amplitude ({beta_series.unit})')
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+# %% [markdown]
+# ## Comparison of LFP and Beta ARV Signals
+# 
+# Let's compare a segment of both signals (LFP and Beta ARV) to understand how they relate:
+
+# %%
+# Determine an overlapping time window
+# For Beta ARV data, let's use the first 10 seconds
+beta_end_time = 10  # seconds
+beta_end_idx = np.where(beta_times <= beta_end_time)[0][-1] + 1
+beta_subset_times = beta_times[:beta_end_idx]
+beta_subset_data = beta_data[:beta_end_idx]
+
+# For LFP data, use the same time range
+lfp_end_sample = int(beta_end_time * lfp_series.rate)
+lfp_times = np.arange(lfp_end_sample) / lfp_series.rate
+lfp_subset_data = lfp_series.data[:lfp_end_sample]
+
+# Create a plot with two y-axes
+fig, ax1 = plt.subplots(figsize=(14, 6))
+
+# Plot LFP data on left y-axis
+ax1.set_xlabel('Time (s)')
+ax1.set_ylabel('LFP Signal (V)', color='tab:blue')
+ax1.plot(lfp_times, lfp_subset_data, color='tab:blue', alpha=0.7, label='LFP Signal')
+ax1.tick_params(axis='y', labelcolor='tab:blue')
+
+# Create a second y-axis for Beta ARV data
+ax2 = ax1.twinx()
+ax2.set_ylabel('Beta ARV (V)', color='tab:red')
+ax2.plot(beta_subset_times, beta_subset_data, color='tab:red', linewidth=2, label='Beta ARV')
+ax2.tick_params(axis='y', labelcolor='tab:red')
+
+# Add a title and legend
+plt.title('Comparison of LFP and Beta ARV Signals')
+fig.tight_layout()
+
+# Create a combined legend
+lines1, labels1 = ax1.get_legend_handles_labels()
+lines2, labels2 = ax2.get_legend_handles_labels()
+ax1.legend(lines1 + lines2, labels1 + labels2, loc='upper right')
+
+plt.show()
+
+# %% [markdown]
+# The above plot shows the relationship between:
+# 
+# 1. The raw Local Field Potential (LFP) signal in the time domain (blue)
+# 2. The Beta Average Rectified Voltage (ARV) derived from the LFP signal (red)
+# 
+# The Beta ARV represents the power in the beta frequency band (13-30 Hz) over time, which is used as a biomarker for Parkinson's disease symptoms.
+
+# %% [markdown]
+# ## Analyzing Beta Band Power Over Time
+# 
+# Let's compute the beta band power from the LFP data using a short-time Fourier transform (STFT) and compare it with the provided Beta ARV:
+
+# %%
+# Define the beta frequency band
+beta_low = 13  # Hz
+beta_high = 30  # Hz
+
+# Function to calculate beta power over time
+def calculate_beta_power(signal_data, fs, window_size=1.0, overlap=0.5):
+    """
+    Calculate beta power over time using spectrogram.
+    
+    Parameters:
+    - signal_data: Input signal
+    - fs: Sampling frequency
+    - window_size: Size of window in seconds
+    - overlap: Fraction of overlap between windows
+    
+    Returns:
+    - times: Time points
+    - beta_power: Power in beta band
+    """
+    nperseg = int(window_size * fs)
+    noverlap = int(overlap * nperseg)
+    
+    # Calculate spectrogram
+    f, t, Sxx = signal.spectrogram(signal_data, fs=fs, nperseg=nperseg, noverlap=noverlap)
+    
+    # Find indices of beta band in frequency array
+    beta_idx = np.logical_and(f >= beta_low, f <= beta_high)
+    
+    # Calculate power in beta band for each time point
+    beta_power = np.mean(Sxx[beta_idx, :], axis=0)
+    
+    return t, beta_power
+
+# Calculate beta power from LFP data
+# Use the first 30 seconds of data
+analysis_time = 30  # seconds
+samples_to_analyze = int(analysis_time * lfp_series.rate)
+lfp_data_to_analyze = lfp_series.data[:samples_to_analyze]
+
+# Calculate beta power
+stft_times, stft_beta_power = calculate_beta_power(lfp_data_to_analyze, lfp_series.rate)
+
+# Plot
+plt.figure(figsize=(14, 10))
+
+# Plot 1: Raw LFP signal
+plt.subplot(3, 1, 1)
+t_lfp = np.arange(len(lfp_data_to_analyze)) / lfp_series.rate
+plt.plot(t_lfp, lfp_data_to_analyze)
+plt.title('Raw LFP Signal')
+plt.ylabel('Amplitude (V)')
+plt.grid(True)
+
+# Plot 2: Computed Beta Power from STFT
+plt.subplot(3, 1, 2)
+plt.plot(stft_times, stft_beta_power)
+plt.title('Computed Beta Band Power from LFP using STFT')
+plt.ylabel('Power (V²)')
+plt.grid(True)
+
+# Plot 3: Provided Beta ARV signal
+plt.subplot(3, 1, 3)
+# Take the subset of Beta ARV data that fits within our analysis time
+beta_subset_mask = beta_times <= analysis_time
+plt.plot(beta_times[beta_subset_mask], beta_data[beta_subset_mask])
+plt.title('Provided Beta Average Rectified Voltage (ARV)')
+plt.xlabel('Time (s)')
+plt.ylabel('Amplitude (V)')
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
+
+# %% [markdown]
+# The plots above show:
+# 
+# 1. The raw LFP signal
+# 2. The beta band power computed from the LFP signal using STFT
+# 3. The provided Beta ARV from the dataset
+# 
+# While not identical (because the exact method used to calculate the Beta ARV in the dataset might differ), both the computed beta power and provided Beta ARV represent the power in the beta frequency band over time.
+
+# %% [markdown]
+# ## Investigating Several Electrodes
+# 
+# Let's analyze the LFP data from multiple electrodes to see how the signals vary:
+
+# %%
+# First, let's extract the electrode information
+electrode_info = beta_nwb.electrodes.to_dataframe()
+
+# Select a subset of electrodes to analyze (3 electrodes from different shanks)
+selected_electrodes = [0, 4, 8]  # One from each of three shanks
+electrode_labels = electrode_info.loc[selected_electrodes, 'label'].values
+
+# Extract a segment of LFP data for each electrode (first 5 seconds)
+seconds_to_plot = 5
+samples_to_plot = int(seconds_to_plot * lfp_series.rate)
+lfp_data_subset = lfp_series.data[:samples_to_plot]
+
+# Create time array
+time = np.arange(samples_to_plot) / lfp_series.rate
+
+# Plot the LFP data for each selected electrode
+plt.figure(figsize=(14, 10))
+for i, electrode_idx in enumerate(selected_electrodes):
+    plt.subplot(len(selected_electrodes), 1, i+1)
+    plt.plot(time, lfp_data_subset)
+    plt.title(f'LFP Signal from {electrode_labels[i]}')
+    plt.ylabel('Amplitude (V)')
+    plt.grid(True)
+    
+    if i == len(selected_electrodes) - 1:
+        plt.xlabel('Time (s)')
+    
+plt.tight_layout()
+plt.show()
+
+# %% [markdown]
+# ## Time-Frequency Analysis
+# 
+# Let's perform a time-frequency analysis of the LFP data to see how frequency content changes over time:
+
+# %%
+# Calculate spectrogram for the first 10 seconds of LFP data
+seconds_to_analyze = 10
+samples_to_analyze = int(seconds_to_analyze * lfp_series.rate)
+lfp_data_to_analyze = lfp_series.data[:samples_to_analyze]
+
+# Calculate spectrogram
+f, t, Sxx = signal.spectrogram(lfp_data_to_analyze, fs=lfp_series.rate, 
+                              nperseg=1024, noverlap=512, scaling='density')
+
+# Plot the spectrogram
+plt.figure(figsize=(14, 7))
+plt.pcolormesh(t, f, 10 * np.log10(Sxx), shading='gouraud', cmap='viridis')
+plt.title('Spectrogram of LFP Signal')
+plt.ylabel('Frequency (Hz)')
+plt.xlabel('Time (s)')
+plt.colorbar(label='Power Spectral Density (dB/Hz)')
+plt.ylim(0, 100)  # Limit y-axis to 0-100 Hz for better visualization
+
+# Highlight the beta band (13-30 Hz)
+plt.axhspan(13, 30, color='red', alpha=0.2, label='Beta Band (13-30 Hz)')
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+
+# %% [markdown]
+# ## Examining Parkinsonian vs. Healthy Data
+# 
+# Parkinsonian brains typically show increased power in the beta frequency band (13-30 Hz) compared to healthy brains. Let's compare the power spectra of healthy simulated data with parkinsonian data.
+# 
+# First, let's check if we have parkinsonian data in the assets list:
+
+# %%
+# Search for parkinsonian data in our assets list
+print("Searching for Parkinsonian data in assets...")
+for asset in islice(dandiset.get_assets(), 20):
+    if "parkinsonian" in asset.path.lower():
+        print(f"- {asset.path} (ID: {asset.identifier})")
+
+# %% [markdown]
+# Let's compare the beta band power in our healthy data:
+
+# %%
+# Calculate the power spectrum for the LFP data
+freq, psd_healthy = signal.welch(lfp_series.data[:], fs=lfp_series.rate, nperseg=4096)
+
+# Plot the power spectrum with focus on beta band
+plt.figure(figsize=(12, 6))
+plt.semilogy(freq, psd_healthy)
+plt.title('Power Spectrum of Healthy Simulated Data')
+plt.xlabel('Frequency (Hz)')
+plt.ylabel('Power Spectral Density (V²/Hz)')
+
+# Highlight frequency bands
+plt.axvspan(4, 8, alpha=0.3, color='green', label='Theta (4-8 Hz)')
+plt.axvspan(8, 13, alpha=0.3, color='blue', label='Alpha (8-13 Hz)')
+plt.axvspan(13, 30, alpha=0.3, color='red', label='Beta (13-30 Hz)')
+plt.axvspan(30, 100, alpha=0.3, color='purple', label='Gamma (30-100 Hz)')
+
+plt.legend()
+plt.grid(True)
+plt.xlim(0, 100)  # Limit x-axis to 0-100 Hz for better visualization
+plt.tight_layout()
+plt.show()
+
+# %% [markdown]
+# The power spectrum shows the frequency content of the LFP signal from our healthy simulated data. In the context of Parkinson's disease, the beta band (13-30 Hz, highlighted in red) would typically show elevated power in parkinsonian subjects compared to healthy subjects.
+# 
+# The dataset contains both healthy and parkinsonian subjects, allowing researchers to compare these differences for biomarker development and understanding the pathophysiology of Parkinson's disease.
+
+# %% [markdown]
+# ## Summary and Future Directions
+# 
+# In this notebook, we've explored the Parkinson's Electrophysiological Signal Dataset (PESD), which contains electrophysiological signals from both healthy and parkinsonian subjects. We've:
+# 
+# 1. Loaded and examined NWB files containing LFP and Beta ARV data
+# 2. Visualized the time series data from multiple electrodes
+# 3. Performed frequency analysis to identify key spectral components
+# 4. Compared the relationship between LFP signals and derived Beta ARV
+# 5. Explored time-frequency analysis using spectrograms
+# 
+# ### Key Findings
+# 
+# - The dataset contains both time-domain (LFP) and frequency-domain (Beta ARV) data
+# - The data is organized by subject type (healthy vs. parkinsonian) and signal type (LFP vs. Beta)
+# - The Beta frequency band (13-30 Hz) is of particular interest as a biomarker for Parkinson's disease
+# 
+# ### Future Directions
+# 
+# This dataset opens up several possibilities for future analysis:
+# 
+# 1. **Comparative Analysis**: Directly compare healthy vs. parkinsonian data to identify distinguishing features
+# 
+# 2. **Feature Extraction**: Develop algorithms to extract meaningful features from LFP signals that correlate with disease state
+# 
+# 3. **Biomarker Development**: Create robust biomarkers based on beta oscillations for disease monitoring
+# 
+# 4. **Closed-Loop DBS Algorithm Development**: Use the dataset to design and test closed-loop deep brain stimulation algorithms that could respond to changes in beta power
+# 
+# 5. **Machine Learning Applications**: Train models to classify or predict disease state based on electrophysiological signals
+# 
+# 6. **Correlation Analysis**: Investigate the relationship between beta power and other frequency bands
+# 
+# 7. **Temporal Dynamics**: Study the temporal dynamics of beta oscillations and their variability over time
+
+# %% [markdown]
+# ## Acknowledgements
+# 
+# This notebook explores the Parkinson's Electrophysiological Signal Dataset (PESD) contributed by Ananna Biswas. For more details, refer to the related publication: [https://arxiv.org/abs/2407.17756](https://arxiv.org/abs/2407.17756).
+================================
+Total prompt tokens: 78630 + 0
+Total completion tokens: 8871 + 0
+
+=========================================
+
+write_to_file for 'notebook.py':
+Successfully wrote 21680 characters to notebook.py
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 14
+Submitting completion request...
+Processing response...
+I've created the notebook.py file with Jupytext format. Now I need to convert it to a Jupyter notebook and execute it to make sure it runs properly. I'll use the command provided in the instructions.
+
+Tool: execute_command
+Params: {'command': 'jupytext --to notebook notebook.py && jupyter execute --inplace notebook.ipynb --timeout=600', 'requires_approval': 'false'}
+================================
+Command to be executed
+jupytext --to notebook notebook.py && jupyter execute --inplace notebook.ipynb --timeout=600
+================================
+/home/magland/.local/lib/python3.12/site-packages/jupytext/cell_reader.py:20: UserWarning: Sphinx Gallery in version 0.19.0 is not supported by Jupytext. Please use sphinx-gallery<=0.7.0 instead. If that is an issue, feel free to report it at https://github.com/mwouts/jupytext/issues, or even better, prepare a PR to handle the new signature of sphinx_gallery.notebook.rst2md.
+  warnings.warn(
+[jupytext] Reading notebook.py in format py
+[jupytext] Writing notebook.ipynb
+[NbClientApp] Executing notebook.ipynb
+[NbClientApp] Executing notebook with kernel: 
+Traceback (most recent call last):
+  File "/home/magland/miniconda3/envs/dev/bin/jupyter-execute", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/jupyter_core/application.py", line 283, in launch_instance
+    super().launch_instance(argv=argv, **kwargs)
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/traitlets/config/application.py", line 1074, in launch_instance
+    app.initialize(argv)
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/traitlets/config/application.py", line 118, in inner
+    return method(app, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/nbclient/cli.py", line 161, in initialize
+    self.run_notebook(path)
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/nbclient/cli.py", line 215, in run_notebook
+    client.execute()
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/asyncio/base_events.py", line 685, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Determine an overlapping time window
+# For Beta ARV data, let's use the first 10 seconds
+beta_end_time = 10  # seconds
+beta_end_idx = np.where(beta_times <= beta_end_time)[0][-1] + 1
+beta_subset_times = beta_times[:beta_end_idx]
+beta_subset_data = beta_data[:beta_end_idx]
+
+# For LFP data, use the same time range
+lfp_end_sample = int(beta_end_time * lfp_series.rate)
+lfp_times = np.arange(lfp_end_sample) / lfp_series.rate
+lfp_subset_data = lfp_series.data[:lfp_end_sample]
+
+# Create a plot with two y-axes
+fig, ax1 = plt.subplots(figsize=(14, 6))
+
+# Plot LFP data on left y-axis
+ax1.set_xlabel('Time (s)')
+ax1.set_ylabel('LFP Signal (V)', color='tab:blue')
+ax1.plot(lfp_times, lfp_subset_data, color='tab:blue', alpha=0.7, label='LFP Signal')
+ax1.tick_params(axis='y', labelcolor='tab:blue')
+
+# Create a second y-axis for Beta ARV data
+ax2 = ax1.twinx()
+ax2.set_ylabel('Beta ARV (V)', color='tab:red')
+ax2.plot(beta_subset_times, beta_subset_data, color='tab:red', linewidth=2, label='Beta ARV')
+ax2.tick_params(axis='y', labelcolor='tab:red')
+
+# Add a title and legend
+plt.title('Comparison of LFP and Beta ARV Signals')
+fig.tight_layout()
+
+# Create a combined legend
+lines1, labels1 = ax1.get_legend_handles_labels()
+lines2, labels2 = ax2.get_legend_handles_labels()
+ax1.legend(lines1 + lines2, labels1 + labels2, loc='upper right')
+
+plt.show()
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mIndexError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[10], line 4[0m
+[1;32m      1[0m [38;5;66;03m# Determine an overlapping time window[39;00m
+[1;32m      2[0m [38;5;66;03m# For Beta ARV data, let's use the first 10 seconds[39;00m
+[1;32m      3[0m beta_end_time [38;5;241m=[39m [38;5;241m10[39m  [38;5;66;03m# seconds[39;00m
+[0;32m----> 4[0m beta_end_idx [38;5;241m=[39m [43mnp[49m[38;5;241;43m.[39;49m[43mwhere[49m[43m([49m[43mbeta_times[49m[43m [49m[38;5;241;43m<[39;49m[38;5;241;43m=[39;49m[43m [49m[43mbeta_end_time[49m[43m)[49m[43m[[49m[38;5;241;43m0[39;49m[43m][49m[43m[[49m[38;5;241;43m-[39;49m[38;5;241;43m1[39;49m[43m][49m [38;5;241m+[39m [38;5;241m1[39m
+[1;32m      5[0m beta_subset_times [38;5;241m=[39m beta_times[:beta_end_idx]
+[1;32m      6[0m beta_subset_data [38;5;241m=[39m beta_data[:beta_end_idx]
+
+[0;31mIndexError[0m: index -1 is out of bounds for axis 0 with size 0
+
+Total prompt tokens: 104772 + 0
+Total completion tokens: 9010 + 0
+
+=========================================
+
+execute_command 'jupytext --to notebook notebook.py && jupyter execute --inplace notebook.ipynb --timeout=600' (requires approval):
+Command failed with exit code 1
+STDOUT:
+[jupytext] Reading notebook.py in format py
+[jupytext] Writing notebook.ipynb
+
+STDERR:
+/home/magland/.local/lib/python3.12/site-packages/jupytext/cell_reader.py:20: UserWarning: Sphinx Gallery in version 0.19.0 is not supported by Jupytext. Please use sphinx-gallery<=0.7.0 instead. If that is an issue, feel free to report it at https://github.com/mwouts/jupytext/issues, or even better, prepare a PR to handle the new signature of sphinx_gallery.notebook.rst2md.
+  warnings.warn(
+[NbClientApp] Executing notebook.ipynb
+[NbClientApp] Executing notebook with kernel: 
+Traceback (most recent call last):
+  File "/home/magland/miniconda3/envs/dev/bin/jupyter-execute", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/jupyter_core/application.py", line 283, in launch_instance
+    super().launch_instance(argv=argv, **kwargs)
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/traitlets/config/application.py", line 1074, in launch_instance
+    app.initialize(argv)
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/traitlets/config/application.py", line 118, in inner
+    return method(app, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/nbclient/cli.py", line 161, in initialize
+    self.run_notebook(path)
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/nbclient/cli.py", line 215, in run_notebook
+    client.execute()
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/asyncio/base_events.py", line 685, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/magland/miniconda3/envs/dev/lib/python3.12/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Determine an overlapping time window
+# For Beta ARV data, let's use the first 10 seconds
+beta_end_time = 10  # seconds
+beta_end_idx = np.where(beta_times <= beta_end_time)[0][-1] + 1
+beta_subset_times = beta_times[:beta_end_idx]
+beta_subset_data = beta_data[:beta_end_idx]
+
+# For LFP data, use the same time range
+lfp_end_sample = int(beta_end_time * lfp_series.rate)
+lfp_times = np.arange(lfp_end_sample) / lfp_series.rate
+lfp_subset_data = lfp_series.data[:lfp_end_sample]
+
+# Create a plot with two y-axes
+fig, ax1 = plt.subplots(figsize=(14, 6))
+
+# Plot LFP data on left y-axis
+ax1.set_xlabel('Time (s)')
+ax1.set_ylabel('LFP Signal (V)', color='tab:blue')
+ax1.plot(lfp_times, lfp_subset_data, color='tab:blue', alpha=0.7, label='LFP Signal')
+ax1.tick_params(axis='y', labelcolor='tab:blue')
+
+# Create a second y-axis for Beta ARV data
+ax2 = ax1.twinx()
+ax2.set_ylabel('Beta ARV (V)', color='tab:red')
+ax2.plot(beta_subset_times, beta_subset_data, color='tab:red', linewidth=2, label='Beta ARV')
+ax2.tick_params(axis='y', labelcolor='tab:red')
+
+# Add a title and legend
+plt.title('Comparison of LFP and Beta ARV Signals')
+fig.tight_layout()
+
+# Create a combined legend
+lines1, labels1 = ax1.get_legend_handles_labels()
+lines2, labels2 = ax2.get_legend_handles_labels()
+ax1.legend(lines1 + lines2, labels1 + labels2, loc='upper right')
+
+plt.show()
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mIndexError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[10], line 4[0m
+[1;32m      1[0m [38;5;66;03m# Determine an overlapping time window[39;00m
+[1;32m      2[0m [38;5;66;03m# For Beta ARV data, let's use the first 10 seconds[39;00m
+[1;32m      3[0m beta_end_time [38;5;241m=[39m [38;5;241m10[39m  [38;5;66;03m# seconds[39;00m
+[0;32m----> 4[0m beta_end_idx [38;5;241m=[39m [43mnp[49m[38;5;241;43m.[39;49m[43mwhere[49m[43m([49m[43mbeta_times[49m[43m [49m[38;5;241;43m<[39;49m[38;5;241;43m=[39;49m[43m [49m[43mbeta_end_time[49m[43m)[49m[43m[[49m[38;5;241;43m0[39;49m[43m][49m[43m[[49m[38;5;241;43m-[39;49m[38;5;241;43m1[39;49m[43m][49m [38;5;241m+[39m [38;5;241m1[39m
+[1;32m      5[0m beta_subset_times [38;5;241m=[39m beta_times[:beta_end_idx]
+[1;32m      6[0m beta_subset_data [38;5;241m=[39m beta_data[:beta_end_idx]
+
+[0;31mIndexError[0m: index -1 is out of bounds for axis 0 with size 0
+
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 16
+Submitting completion request...
+Processing response...
+The error occurs when trying to find indices where beta_times <= beta_end_time. The error message "IndexError: index -1 is out of bounds for axis 0 with size 0" suggests that np.where() is returning an empty array, meaning there are no timestamps less than or equal to 10 seconds in beta_times.
+
+I need to fix the comparison section to handle this case. Instead of trying to find exact cutoffs, I'll adjust the approach to select a subset of the data more directly.
+
+Tool: replace_in_file
+Params: {'path': 'notebook.py', 'diff': "<<<<<<< SEARCH\n# Determine an overlapping time window\n# For Beta ARV data, let's use the first 10 seconds\nbeta_end_time = 10  # seconds\nbeta_end_idx = np.where(beta_times <= beta_end_time)[0][-1] + 1\nbeta_subset_times = beta_times[:beta_end_idx]\nbeta_subset_data = beta_data[:beta_end_idx]\n\n# For LFP data, use the same time range\nlfp_end_sample = int(beta_end_time * lfp_series.rate)\nlfp_times = np.arange(lfp_end_sample) / lfp_series.rate\nlfp_subset_data = lfp_series.data[:lfp_end_sample]\n=======\n# Determine an appropriate time window based on available data\n# For Beta ARV data, let's use the first portion of data\nn_samples = 100  # Use the first 100 samples of beta data\nbeta_subset_times = beta_times[:n_samples]\nbeta_subset_data = beta_data[:n_samples]\nmax_beta_time = beta_subset_times[-1]\n\n# For LFP data, use a time range that approximately matches the beta data\nlfp_end_sample = int(max_beta_time * lfp_series.rate)\nlfp_times = np.arange(lfp_end_sample) / lfp_series.rate\nlfp_subset_data = lfp_series.data[:lfp_end_sample]\n>>>>>>> REPLACE"}
+================================
+Proposed replacement in notebook.py:
+<<<<<<< SEARCH
+# Determine an overlapping time window
+# For Beta ARV data, let's use the first 10 seconds
+beta_end_time = 10  # seconds
+beta_end_idx = np.where(beta_times <= beta_end_time)[0][-1] + 1
+beta_subset_times = beta_times[:beta_end_idx]
+beta_subset_data = beta_data[:beta_end_idx]
+
+# For LFP data, use the same time range
+lfp_end_sample = int(beta_end_time * lfp_series.rate)
+lfp_times = np.arange(lfp_end_sample) / lfp_series.rate
+lfp_subset_data = lfp_series.data[:lfp_end_sample]
+=======
+# Determine an appropriate time window based on available data
+# For Beta ARV data, let's use the first portion of data
+n_samples = 100  # Use the first 100 samples of beta data
+beta_subset_times = beta_times[:n_samples]
+beta_subset_data = beta_data[:n_samples]
+max_beta_time = beta_subset_times[-1]
+
+# For LFP data, use a time range that approximately matches the beta data
+lfp_end_sample = int(max_beta_time * lfp_series.rate)
+lfp_times = np.arange(lfp_end_sample) / lfp_series.rate
+lfp_subset_data = lfp_series.data[:lfp_end_sample]
+>>>>>>> REPLACE
+================================
+Total prompt tokens: 133069 + 0
+Total completion tokens: 9602 + 0
+
+=========================================
+
+replace_in_file for 'notebook.py':
+Successfully made 1 replacements in notebook.py
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 18
+Submitting completion request...
+Processing response...
+I fixed the code that was causing an error with the comparison of LFP and Beta ARV signals. Instead of trying to find a specific time cutoff with np.where(), I'm now just selecting the first 100 samples of the beta data and then computing a matching time window for the LFP data.
+
+Now I'll convert the updated notebook.py to notebook.ipynb and execute it to see if the fix worked.
+
+Tool: execute_command
+Params: {'command': 'jupytext --to notebook notebook.py && jupyter execute --inplace notebook.ipynb --timeout=600', 'requires_approval': 'false'}
+================================
+Command to be executed
+jupytext --to notebook notebook.py && jupyter execute --inplace notebook.ipynb --timeout=600
+================================
+/home/magland/.local/lib/python3.12/site-packages/jupytext/cell_reader.py:20: UserWarning: Sphinx Gallery in version 0.19.0 is not supported by Jupytext. Please use sphinx-gallery<=0.7.0 instead. If that is an issue, feel free to report it at https://github.com/mwouts/jupytext/issues, or even better, prepare a PR to handle the new signature of sphinx_gallery.notebook.rst2md.
+  warnings.warn(
+[jupytext] Reading notebook.py in format py
+[jupytext] Writing notebook.ipynb (destination file replaced [use --update to preserve cell outputs and ids])
+[NbClientApp] Executing notebook.ipynb
+[NbClientApp] Executing notebook with kernel: 
+[NbClientApp] Save executed results to notebook.ipynb
+Total prompt tokens: 162033 + 0
+Total completion tokens: 9777 + 0
+
+=========================================
+
+execute_command 'jupytext --to notebook notebook.py && jupyter execute --inplace notebook.ipynb --timeout=600' (requires approval):
+Command executed successfully
+STDOUT:
+[jupytext] Reading notebook.py in format py
+[jupytext] Writing notebook.ipynb (destination file replaced [use --update to preserve cell outputs and ids])
+
+STDERR:
+/home/magland/.local/lib/python3.12/site-packages/jupytext/cell_reader.py:20: UserWarning: Sphinx Gallery in version 0.19.0 is not supported by Jupytext. Please use sphinx-gallery<=0.7.0 instead. If that is an issue, feel free to report it at https://github.com/mwouts/jupytext/issues, or even better, prepare a PR to handle the new signature of sphinx_gallery.notebook.rst2md.
+  warnings.warn(
+[NbClientApp] Executing notebook.ipynb
+[NbClientApp] Executing notebook with kernel: 
+[NbClientApp] Save executed results to notebook.ipynb
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 20
+Submitting completion request...
+Processing response...
+The notebook conversion and execution completed successfully. This means our fix addressed the error. Let's look at the notebook to see if there are any other issues we should fix.
+
+Tool: execute_command
+Params: {'command': 'ls -la notebook.ipynb', 'requires_approval': 'false'}
+================================
+Command to be executed
+ls -la notebook.ipynb
+================================
+-rw-rw-r-- 1 magland magland 2475967 May 12 12:26 notebook.ipynb
+Total prompt tokens: 191481 + 0
+Total completion tokens: 9886 + 0
+
+=========================================
+
+execute_command 'ls -la notebook.ipynb' (requires approval):
+Command executed successfully
+STDOUT:
+-rw-rw-r-- 1 magland magland 2475967 May 12 12:26 notebook.ipynb
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 22
+Submitting completion request...
+Processing response...
+The notebook is quite large (2.5MB), which means it probably successfully executed and includes the output data and charts. However, let's check if we need to make any improvements to the "Examining Parkinsonian vs. Healthy Data" section. This section might have issues because we're searching for Parkinsonian data but may not have access to any.
+
+Tool: replace_in_file
+Params: {'path': 'notebook.py', 'diff': '<<<<<<< SEARCH\n# Search for parkinsonian data in our assets list\nprint("Searching for Parkinsonian data in assets...")\nfor asset in islice(dandiset.get_assets(), 20):\n    if "parkinsonian" in asset.path.lower():\n        print(f"- {asset.path} (ID: {asset.identifier})")\n=======\n# Search for parkinsonian data in our assets list\nprint("Searching for Parkinsonian data in assets...")\ncount = 0\nparkinsonian_assets = []\nfor asset in dandiset.get_assets():\n    if "parkinsonian" in asset.path.lower():\n        parkinsonian_assets.append(f"- {asset.path} (ID: {asset.identifier})")\n        count += 1\n    if count >= 5:  # Limit to first 5 matches to avoid excessive output\n        break\n\nif parkinsonian_assets:\n    for asset in parkinsonian_assets:\n        print(asset)\nelse:\n    print("No parkinsonian data found in the first set of assets. The full dataset may contain additional files.")\n>>>>>>> REPLACE'}
+================================
+Proposed replacement in notebook.py:
+<<<<<<< SEARCH
+# Search for parkinsonian data in our assets list
+print("Searching for Parkinsonian data in assets...")
+for asset in islice(dandiset.get_assets(), 20):
+    if "parkinsonian" in asset.path.lower():
+        print(f"- {asset.path} (ID: {asset.identifier})")
+=======
+# Search for parkinsonian data in our assets list
+print("Searching for Parkinsonian data in assets...")
+count = 0
+parkinsonian_assets = []
+for asset in dandiset.get_assets():
+    if "parkinsonian" in asset.path.lower():
+        parkinsonian_assets.append(f"- {asset.path} (ID: {asset.identifier})")
+        count += 1
+    if count >= 5:  # Limit to first 5 matches to avoid excessive output
+        break
+
+if parkinsonian_assets:
+    for asset in parkinsonian_assets:
+        print(asset)
+else:
+    print("No parkinsonian data found in the first set of assets. The full dataset may contain additional files.")
+>>>>>>> REPLACE
+================================
+Total prompt tokens: 221152 + 0
+Total completion tokens: 10317 + 0
+
+=========================================
+
+replace_in_file for 'notebook.py':
+Successfully made 1 replacements in notebook.py
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 24
+Submitting completion request...
+Processing response...
+Let's review and improve the frequency analysis section. The spectrogram calculation might be computationally intensive, so we should make sure we're using a reasonable subset of data.
+
+Tool: replace_in_file
+Params: {'path': 'notebook.py', 'diff': "<<<<<<< SEARCH\n# Calculate spectrogram for the first 10 seconds of LFP data\nseconds_to_analyze = 10\nsamples_to_analyze = int(seconds_to_analyze * lfp_series.rate)\nlfp_data_to_analyze = lfp_series.data[:samples_to_analyze]\n\n# Calculate spectrogram\nf, t, Sxx = signal.spectrogram(lfp_data_to_analyze, fs=lfp_series.rate, \n                              nperseg=1024, noverlap=512, scaling='density')\n=======\n# Calculate spectrogram for a shorter segment (5 seconds) of LFP data to reduce computation\nseconds_to_analyze = 5\nsamples_to_analyze = int(seconds_to_analyze * lfp_series.rate)\nlfp_data_to_analyze = lfp_series.data[:samples_to_analyze]\n\n# Calculate spectrogram with parameters optimized for speed\nf, t, Sxx = signal.spectrogram(lfp_data_to_analyze, fs=lfp_series.rate, \n                              nperseg=512, noverlap=256, scaling='density')\n>>>>>>> REPLACE"}
+================================
+Proposed replacement in notebook.py:
+<<<<<<< SEARCH
+# Calculate spectrogram for the first 10 seconds of LFP data
+seconds_to_analyze = 10
+samples_to_analyze = int(seconds_to_analyze * lfp_series.rate)
+lfp_data_to_analyze = lfp_series.data[:samples_to_analyze]
+
+# Calculate spectrogram
+f, t, Sxx = signal.spectrogram(lfp_data_to_analyze, fs=lfp_series.rate, 
+                              nperseg=1024, noverlap=512, scaling='density')
+=======
+# Calculate spectrogram for a shorter segment (5 seconds) of LFP data to reduce computation
+seconds_to_analyze = 5
+samples_to_analyze = int(seconds_to_analyze * lfp_series.rate)
+lfp_data_to_analyze = lfp_series.data[:samples_to_analyze]
+
+# Calculate spectrogram with parameters optimized for speed
+f, t, Sxx = signal.spectrogram(lfp_data_to_analyze, fs=lfp_series.rate, 
+                              nperseg=512, noverlap=256, scaling='density')
+>>>>>>> REPLACE
+================================
+Total prompt tokens: 251333 + 0
+Total completion tokens: 10714 + 0
+
+=========================================
+
+replace_in_file for 'notebook.py':
+Successfully made 1 replacements in notebook.py
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 26
+Submitting completion request...
+Processing response...
+The beta band power calculation section might also be computationally intensive. Let's adjust it to use a shorter time window and optimize parameters.
+
+Tool: replace_in_file
+Params: {'path': 'notebook.py', 'diff': '<<<<<<< SEARCH\n# Calculate beta power from LFP data\n# Use the first 30 seconds of data\nanalysis_time = 30  # seconds\nsamples_to_analyze = int(analysis_time * lfp_series.rate)\nlfp_data_to_analyze = lfp_series.data[:samples_to_analyze]\n=======\n# Calculate beta power from LFP data\n# Use a shorter segment (10 seconds) to reduce computation time\nanalysis_time = 10  # seconds\nsamples_to_analyze = int(analysis_time * lfp_series.rate)\nlfp_data_to_analyze = lfp_series.data[:samples_to_analyze]\n>>>>>>> REPLACE'}
+================================
+Proposed replacement in notebook.py:
+<<<<<<< SEARCH
+# Calculate beta power from LFP data
+# Use the first 30 seconds of data
+analysis_time = 30  # seconds
+samples_to_analyze = int(analysis_time * lfp_series.rate)
+lfp_data_to_analyze = lfp_series.data[:samples_to_analyze]
+=======
+# Calculate beta power from LFP data
+# Use a shorter segment (10 seconds) to reduce computation time
+analysis_time = 10  # seconds
+samples_to_analyze = int(analysis_time * lfp_series.rate)
+lfp_data_to_analyze = lfp_series.data[:samples_to_analyze]
+>>>>>>> REPLACE
+================================
+Total prompt tokens: 281991 + 0
+Total completion tokens: 10976 + 0
+
+=========================================
+
+replace_in_file for 'notebook.py':
+Successfully made 1 replacements in notebook.py
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 28
+Submitting completion request...
+Processing response...
+I've made several optimizations to the notebook to ensure it runs efficiently:
+1. Improved the search for parkinsonian data
+2. Reduced the data size for spectrogram calculation
+3. Shortened the time window for beta band power analysis
+
+Now let's convert and execute the updated notebook to verify all our changes work correctly.
+
+Tool: execute_command
+Params: {'command': 'jupytext --to notebook notebook.py && jupyter execute --inplace notebook.ipynb --timeout=600', 'requires_approval': 'false'}
+================================
+Command to be executed
+jupytext --to notebook notebook.py && jupyter execute --inplace notebook.ipynb --timeout=600
+================================
+/home/magland/.local/lib/python3.12/site-packages/jupytext/cell_reader.py:20: UserWarning: Sphinx Gallery in version 0.19.0 is not supported by Jupytext. Please use sphinx-gallery<=0.7.0 instead. If that is an issue, feel free to report it at https://github.com/mwouts/jupytext/issues, or even better, prepare a PR to handle the new signature of sphinx_gallery.notebook.rst2md.
+  warnings.warn(
+[jupytext] Reading notebook.py in format py
+[jupytext] Writing notebook.ipynb (destination file replaced [use --update to preserve cell outputs and ids])
+[NbClientApp] Executing notebook.ipynb
+[NbClientApp] Executing notebook with kernel: 
+[NbClientApp] Save executed results to notebook.ipynb
+Total prompt tokens: 312990 + 0
+Total completion tokens: 11132 + 0
+
+=========================================
+
+execute_command 'jupytext --to notebook notebook.py && jupyter execute --inplace notebook.ipynb --timeout=600' (requires approval):
+Command executed successfully
+STDOUT:
+[jupytext] Reading notebook.py in format py
+[jupytext] Writing notebook.ipynb (destination file replaced [use --update to preserve cell outputs and ids])
+
+STDERR:
+/home/magland/.local/lib/python3.12/site-packages/jupytext/cell_reader.py:20: UserWarning: Sphinx Gallery in version 0.19.0 is not supported by Jupytext. Please use sphinx-gallery<=0.7.0 instead. If that is an issue, feel free to report it at https://github.com/mwouts/jupytext/issues, or even better, prepare a PR to handle the new signature of sphinx_gallery.notebook.rst2md.
+  warnings.warn(
+[NbClientApp] Executing notebook.ipynb
+[NbClientApp] Executing notebook with kernel: 
+[NbClientApp] Save executed results to notebook.ipynb
+
+=========================================
+
+Using model: anthropic/claude-3.7-sonnet
+Num. messages in conversation: 30
+Submitting completion request...
+Processing response...
+Great! The notebook executed successfully with our modifications. Let's summarize what we've accomplished and present the final result.
+
+I created a comprehensive Jupytext notebook that:
+1. Connects to the DANDI archive to load Dandiset 001333
+2. Explores both LFP and Beta ARV data from the dataset
+3. Visualizes the time series data and performs frequency analyses
+4. Compares the different signal types with various plots
+5. Provides context about the dataset and its relevance to Parkinson's disease research
+
+I also made several improvements to the notebook to ensure it runs efficiently and reliably:
+1. Fixed comparison issues between LFP and Beta ARV signals
+2. Improved data searching across assets
+3. Optimized data processing parameters for spectrum calculation
+4. Reduced data window sizes for computational efficiency
+
+The notebook has been successfully converted to .ipynb format and executes without errors.
+
+Tool: attempt_completion
+Params: {'result': "I've created a complete Jupyter notebook for exploring Dandiset 001333 (Parkinson's Electrophysiological Signal Dataset). The notebook:\n\n1. Loads data via the DANDI API\n2. Explores both Local Field Potential (LFP) and Beta Average Rectified Voltage (ARV) data\n3. Visualizes time series data from multiple electrode channels\n4. Performs frequency analysis with power spectra and spectrograms\n5. Shows the relationship between raw LFP signals and Beta band power\n6. Provides context about the importance of beta oscillations as biomarkers for Parkinson's disease\n\nThe notebook includes comprehensive documentation explaining the dataset structure and significance of the data. It features visualizations of raw signals, frequency content, and time-frequency representations. The notebook was successfully converted from Jupytext format (notebook.py) to a standard Jupyter notebook (notebook.ipynb) and executes without errors.\n\nKey features of the notebook:\n- Loads data remotely without requiring local downloads\n- Processes data efficiently by working with appropriate data subsets\n- Provides clear visualizations with proper labeling and context\n- Explains the significance of findings in the context of Parkinson's disease research\n- Suggests future research directions for using this dataset\n\nBoth the notebook.py (Jupytext) and notebook.ipynb files are available in your working directory."}
+I've created a complete Jupyter notebook for exploring Dandiset 001333 (Parkinson's Electrophysiological Signal Dataset). The notebook:
+
+1. Loads data via the DANDI API
+2. Explores both Local Field Potential (LFP) and Beta Average Rectified Voltage (ARV) data
+3. Visualizes time series data from multiple electrode channels
+4. Performs frequency analysis with power spectra and spectrograms
+5. Shows the relationship between raw LFP signals and Beta band power
+6. Provides context about the importance of beta oscillations as biomarkers for Parkinson's disease
+
+The notebook includes comprehensive documentation explaining the dataset structure and significance of the data. It features visualizations of raw signals, frequency content, and time-frequency representations. The notebook was successfully converted from Jupytext format (notebook.py) to a standard Jupyter notebook (notebook.ipynb) and executes without errors.
+
+Key features of the notebook:
+- Loads data remotely without requiring local downloads
+- Processes data efficiently by working with appropriate data subsets
+- Provides clear visualizations with proper labeling and context
+- Explains the significance of findings in the context of Parkinson's disease research
+- Suggests future research directions for using this dataset
+
+Both the notebook.py (Jupytext) and notebook.ipynb files are available in your working directory.
+Total prompt tokens: 344454 + 0
+Total completion tokens: 11675 + 0
+
